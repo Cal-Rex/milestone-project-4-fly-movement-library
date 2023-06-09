@@ -97,3 +97,18 @@ Flows Table:
 
 ## Imagery & Media
 ___
+
+# B U G S
+
+## Resolved bugs
+- Initial heroku build failed, failed to compile python app
+    - Error thrown:
+    ```
+    lib/zoneinfo_module.c:600:19: error: ‘_PyLong_One’ undeclared (first use in this function); did you mean ‘_PyLong_New’?
+               600 |             one = _PyLong_One;
+                   |                   ^~~~~~~~~~~
+                   |                   _PyLong_New
+             lib/zoneinfo_module.c:600:19: note: each undeclared identifier is reported only once for each function it appears in
+             error: command '/usr/bin/gcc' failed with exit code 1
+    ```
+    - Solution: replace `backports.zoneinfo==0.2.1` with `backports.zoneinfo;python_version<"3.9"` in requirements.txt
