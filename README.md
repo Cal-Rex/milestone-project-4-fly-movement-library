@@ -134,3 +134,14 @@ ___
 - 403 Error when accessing Admin panel
     - error thrown:"csrf verification failed. request aborted."
     - Solution: Add CSRF_TRUSTED_ORIGINS list variable with permitted domains to settings.py
+
+___
+
+# C R E D I T S
+
+- https://www.csestack.org/django-default-user-model-fields/
+- https://stackoverflow.com/questions/44109/extending-the-user-model-with-custom-fields-in-django
+- https://docs.djangoproject.com/en/4.2/topics/class-based-views/generic-display/
+- https://realpython.com/customize-django-admin-python/
+- https://dev.to/thepylot/how-to-add-tags-to-your-models-in-django-django-packages-series-1-3704
+- https://medium.com/@inem.patrick/django-database-integrity-foreignkey-on-delete-option-db7d160762e4

@@ -32,3 +32,9 @@ class Tag(models.Model):
     chest = models.BooleanField(default=False)
     shoulders = models.BooleanField(default=False)
     back = models.BooleanField(default=False)
+
+
+class UserNonAuthField(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.PROTECT)
+    terms = models.BooleanField(default=False)
+    last_movement = models.CharField(max_length=200, default="")
