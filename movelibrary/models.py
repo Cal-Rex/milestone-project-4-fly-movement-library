@@ -5,17 +5,20 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 
 
-class MovementLibrary(models.Model):
+class Movement(models.Model):
     movement_name = models.CharField(max_length=200, unique=True)
-    vid_link = models.TextField(unique=True)
+    vid_link = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     bookmarks = models.ManyToManyField(
         User, related_name='bookmarks', blank=True
         )
 
+    def __str__(self):
+        return f"{self.movement_name}"
 
-class Tags(models.Model):
-    movement = models.ForeignKey(MovementLibrary, on_delete=models.CASCADE,)
+
+class Tag(models.Model):
+    movement = models.ForeignKey(Movement, on_delete=models.CASCADE,)
     upper_body = models.BooleanField(default=False)
     lower_body = models.BooleanField(default=False)
     barbell = models.BooleanField(default=False)
