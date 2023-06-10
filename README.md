@@ -65,6 +65,8 @@ ___
 
 ### **Structure Plane**
 
+#### __Table Diagrams__
+
 User Details table model:
 |     id     | first_name | last_name | username    | password  |   email    | T_and_Cs |
 | ---------- | ---------- | --------- | ----------- | --------- | ---------- | -------- |
@@ -72,10 +74,18 @@ User Details table model:
 |     1      | Andy       | Roux      | exampleUser | Guest+1   | e@mail.com | True     |
 
 MovementLibrary Table:
-|     id     | movement_name |   vid_link    |       tags        |
-| ---------- | ------------- | ------------- | ----------------- |
-| PrimaryKey |   TextField   |   TextField   |       [list]      |
-|     1      |  Split Squat  | x.youtube.com | [lower, strength] |
+|     id     | movement_name |   vid_link    |   Slug    |       bookmarks       |
+| ---------- | ------------- | ------------- | --------- | --------------------- |
+| PrimaryKey |   TextField   |   TextField   | SlugField | ManyToManyField(User) |
+|     1      |  Split Squat  | x.youtube.com |           |
+
+Tags table:
+
+| movement    | upper_body   | lower_body   | barbell | dumbbell | kettlebell | olympic | power   | strength | arms    | chest   | shoulders | back    |
+| ----------- | ------- | ------- | ------- | -------- | ---------- | ------- | ------- | -------- | ------- | ------- | --------- | ------- |
+| ForeignKey | Boolean | Boolean | Boolean | Boolean  | Boolean    | Boolean | Boolean | Boolean  | Boolean | Boolean | Boolean   | Boolean |
+| MovementLibrary.id | True    | False   | True    | False    | False      | False   | True    | False    | True    | False   | True      | False   |
+
 
 Bookmarks Table:
 |  user_id   |                     bookmarked                   |
@@ -88,6 +98,15 @@ Flows Table:
 | ---------- | ----------------------------------------------------------------- |
 | ForeignKey | {'named flow': [list, of, MovementLibrary.ids, as, ForeignKeys],} |
 |     1      |         {'International Chest Day': [3, 5, 8, 7, 4, 2],}          |
+
+#### __Entity Relationship Diagram__
+
+A movement:
+| Key | Name |      Type      |
+| --- | ---- | -------------- |
+|     | Name | Charfield[100] |
+|     | link | string         |
+|     | slug |                |
 
 ### **Skeleton Plane**
 
@@ -111,4 +130,4 @@ ___
              lib/zoneinfo_module.c:600:19: note: each undeclared identifier is reported only once for each function it appears in
              error: command '/usr/bin/gcc' failed with exit code 1
     ```
-    - Solution: replace `backports.zoneinfo==0.2.1` with `backports.zoneinfo;python_version<"3.9"` in requirements.txt
+    - Solution: replace stock package install of `backports.zoneinfo==0.2.1` with `backports.zoneinfo;python_version<"3.9"` in requirements.txt
