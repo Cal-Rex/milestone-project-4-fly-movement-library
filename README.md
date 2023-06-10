@@ -131,3 +131,6 @@ ___
              error: command '/usr/bin/gcc' failed with exit code 1
     ```
     - Solution: replace stock package install of `backports.zoneinfo==0.2.1` with `backports.zoneinfo;python_version<"3.9"` in requirements.txt
+- 403 Error when accessing Admin panel
+    - error thrown:"csrf verification failed. request aborted."
+    - Solution: Add CSRF_TRUSTED_ORIGINS list variable with permitted domains to settings.py
