@@ -16,6 +16,7 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
+CSRF_TRUSTED_ORIGINS = ['https://fly-movement-library.herokuapp.com/', 'https://8000-calrex-milestoneproject-bpezwguw4cw.ws-eu99.gitpod.io']
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
