@@ -10,13 +10,18 @@ class MovementAdmin(SummernoteModelAdmin):
     list_display = ('movement_name', 'vid_link')
     search_fields = ['movement_name']
 
+
 @admin.register(Tag)
 class TagAdmin(SummernoteModelAdmin):
 
     list_display = ('movement',)
 
 
-admin.site.register(UserNonAuthField)
+@admin.register(UserNonAuthField)
+class UserNonAuthFieldAdmin(SummernoteModelAdmin):
+
+    list_display = ('user_id', 'last_movement', 'terms',)
+
 # Alternative method for if multiple arguments or packages
 # needed to be added to tables:
 # @admin.register(MovementLibrary)
