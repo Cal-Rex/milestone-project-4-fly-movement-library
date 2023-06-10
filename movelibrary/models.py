@@ -9,6 +9,7 @@ class Movement(models.Model):
     movement_name = models.CharField(max_length=200, unique=True)
     vid_link = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
+    directions = models.TextField(default="")
     bookmarks = models.ManyToManyField(
         User, related_name='bookmarks', blank=True
         )
