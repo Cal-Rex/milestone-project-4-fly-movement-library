@@ -135,6 +135,20 @@ ___
     - error thrown:"csrf verification failed. request aborted."
     - Solution: Add CSRF_TRUSTED_ORIGINS list variable with permitted domains to settings.py
 
+## Un-resolved bugs
+- iframe in index will not respond to style rules set in style.css
+    - had to implement style rules directly into index.html
+- cant remove header from youtube video
+    - can be done potentially by using jquery:
+        - https://stackoverflow.com/questions/583753/using-css-to-affect-div-style-inside-iframe/30545122#30545122
+        -   ``` js
+            $('iframe').load( function() {
+                $('iframe').contents().find("head")
+                    .append($("<style type='text/css'>  .my-class{display:none;}  </style>"));
+            });
+            ```
+        - will address fix later
+
 ___
 
 # C R E D I T S
