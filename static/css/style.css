@@ -1,0 +1,15 @@
+h1 {
+    color: red;
+}
+
+.offcanvas-collapse {
+    right: 100%;
+}
+
+.offcanvas.offcanvas-end {
+    left: 0;
+}
+
+.offcanvas.offcanvas-end {
+    transform: translateX(100%);
+}
