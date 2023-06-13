@@ -159,3 +159,5 @@ ___
 - https://realpython.com/customize-django-admin-python/
 - https://dev.to/thepylot/how-to-add-tags-to-your-models-in-django-django-packages-series-1-3704
 - https://medium.com/@inem.patrick/django-database-integrity-foreignkey-on-delete-option-db7d160762e4
+- https://www.w3schools.com/css/css_form.asp
+- https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder

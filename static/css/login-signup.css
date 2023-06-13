@@ -4,4 +4,61 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 50% 50%;
+    height: 25vh;
+    margin-top: 15vh;
 }
+
+.fly-hero-title {
+    text-align: center;
+    margin-bottom: 10vh;
+}
+
+.fly-auth-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.fly-auth-btn {
+    border-radius: 40px 40px 40px 40px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 10px 25px;
+}
+
+.btn-primary {
+    --bs-btn-color: #000000;
+    --bs-btn-bg: #2EF74F;
+    --bs-btn-border-color: #2EF74F;
+    --bs-btn-hover-color: #000000;
+    --bs-btn-hover-bg: #2ae549;
+    --bs-btn-hover-border-color: #2ae549;
+    --bs-btn-active-color: #000000;
+    --bs-btn-active-bg: #2EF74F;
+    --bs-btn-active-border-color: #2EF74F;
+    --bs-btn-disabled-color: #000000;
+    --bs-btn-disabled-bg: #24d041;
+    --bs-btn-disabled-border-color: #24d041;
+}
+
+/* forms */
+form > p > label {
+    display: none;
+}
+
+input {
+    border: none;
+    border-bottom: solid 1px #000000;
+}
+
+input:focus-visible {
+    outline: none;
+    text-align: center;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+label[for="id_remember"] {
+    display: inline;
+ }
