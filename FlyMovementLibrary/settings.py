@@ -41,12 +41,24 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'django_summernote',
     'cloudinary',
     'movelibrary',
 ]
+
+SITE_ID = 1
+
+# ADD LOGOUT REDIRECT HERE?
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+# REMOVE AND TEST EMAIL VERIFICATION BEFORE GOING LIVE
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

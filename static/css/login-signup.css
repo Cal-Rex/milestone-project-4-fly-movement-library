@@ -1,0 +1,7 @@
+/* hero image on login */
+.fly-hero {
+    background-image: url(../media/FlyLogo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+}
