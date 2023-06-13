@@ -69,14 +69,16 @@
     </div>
   </div>
 </div> -->
-
 <div class="container-fluid">
   <div class="row">
+    <div class="row">
+      <div class="col-12 login-spacer"></div>
+    </div>
     <div class="col-5 offset-1 col-sm-3 offset-sm-3 col-lg-2 offset-lg-4 fly-auth-container">
       <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
     </div>
     <div class="col-4 offset-1 col-sm-4 offset-sm-0 col-lg-2 fly-auth-container">
-      <a class="button secondaryAction" href="{% url 'account_reset_password' %}">Sign up</a>
+      <a class="button secondaryAction" href="{% url 'account_signup' %}">Sign up</a>
     </div>
   </div>
   <div class="row">
