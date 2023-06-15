@@ -50,3 +50,9 @@ class UserOneRepMax(models.Model):
 
         def __str__(self):
             return f"{self.one_rep_max}KG | recorded on {self.date_recorded}"
+
+
+class UserMovementNotes(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    movement = models.ForeignKey(Movement, on_delete=models.CASCADE)
+    movement_notes = TextField()
