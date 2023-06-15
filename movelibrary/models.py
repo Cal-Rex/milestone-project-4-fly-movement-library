@@ -38,3 +38,15 @@ class UserNonAuthField(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.PROTECT)
     terms = models.BooleanField(default=False)
     last_movement = models.CharField(max_length=200, default="")
+
+
+class UserMovement(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    one_rep_max = models.IntegerField(default=0, unique=False)
+    date_recorded = models.DateTimeField(auto_now_add=True)
+
+    class meta:
+        ordering = ['date_recorded']
+
+        def __str__(self):
+            return f"{self.one_rep_max}KG | recorded on {self.date_recorded}"

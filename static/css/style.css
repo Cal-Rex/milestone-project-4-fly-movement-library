@@ -25,8 +25,16 @@ h1 {
 }
 
 /* videos structure and styling */
+.main-body {
+    height: 50vh;
+}
 
 /* footer styling */
+.socials-footer {
+    position: sticky;
+    top: 100%;
+}
+
 .socials>p {
     text-align: center;
     font-size: 2rem;

@@ -134,6 +134,8 @@ ___
 - 403 Error when accessing Admin panel
     - error thrown:"csrf verification failed. request aborted."
     - Solution: Add CSRF_TRUSTED_ORIGINS list variable with permitted domains to settings.py
+- JQuery functions producing type error:
+    - error caused by cloudinary having insufficient capacity to run size of static files on free subscription plan. uninstalled package and now pulling script from CDN
 
 ## Un-resolved bugs
 - iframe in index will not respond to style rules set in style.css
@@ -175,3 +177,8 @@ ___
 - https://www.youtube.com/watch?v=K8YrX15e31s
 - https://stackoverflow.com/questions/25779966/youtube-iframe-loop-doesnt-work
 - https://stackoverflow.com/questions/40642374/how-to-disable-full-screen-on-youtube-iframe
+- https://www.geeksforgeeks.org/booleanfield-django-models/
+- https://docs.djangoproject.com/en/4.2/ref/csrf/
+- https://stackoverflow.com/questions/29573163/django-admin-login-suddenly-demanding-csrf-token
+- https://docs.djangoproject.com/en/4.0/ref/settings/#csrf-trusted-origins
+
