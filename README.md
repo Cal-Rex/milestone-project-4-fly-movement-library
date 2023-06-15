@@ -161,3 +161,17 @@ ___
 - https://medium.com/@inem.patrick/django-database-integrity-foreignkey-on-delete-option-db7d160762e4
 - https://www.w3schools.com/css/css_form.asp
 - https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder
+- https://yoast.com/how-to-make-youtube-videos-responsive/
+- https://getbootstrap.com/docs/4.0/getting-started/introduction/
+- https://www.google.com/
+- https://dev.to/thepylot/how-to-add-tags-to-your-models-in-django-django-packages-series-1-3704
+- https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message
+- https://stackoverflow.com/questions/47471970/django-how-to-pull-a-logged-in-users-data-from-a-database-table
+- https://stackoverflow.com/questions/69390875/django-filter-data-in-table-based-on-value-from-another-table
+- https://stackoverflow.com/questions/67553372/bootstrap-5-off-canvas-left-to-right
+- https://www.w3schools.com/css/css_rwd_videos.asp
+- https://www.scaler.com/topics/html-video-autoplay/
+- https://www.cincopa.com/blog/how-to-embed-youtube-videos-without-showing-controls/
+- https://www.youtube.com/watch?v=K8YrX15e31s
+- https://stackoverflow.com/questions/25779966/youtube-iframe-loop-doesnt-work
+- https://stackoverflow.com/questions/40642374/how-to-disable-full-screen-on-youtube-iframe
