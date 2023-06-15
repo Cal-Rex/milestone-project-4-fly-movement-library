@@ -55,4 +55,4 @@ class UserOneRepMax(models.Model):
 class UserMovementNotes(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     movement = models.ForeignKey(Movement, on_delete=models.CASCADE)
-    movement_notes = TextField()
+    movement_notes = models.TextField()
