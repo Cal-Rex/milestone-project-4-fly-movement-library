@@ -40,7 +40,7 @@ class UserNonAuthField(models.Model):
     last_movement = models.CharField(max_length=200, default="")
 
 
-class UserMovement(models.Model):
+class UserOneRepMax(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     one_rep_max = models.IntegerField(default=0, unique=False)
     date_recorded = models.DateTimeField(auto_now_add=True)
