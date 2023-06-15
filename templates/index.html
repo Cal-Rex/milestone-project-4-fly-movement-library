@@ -7,25 +7,49 @@
         <div class="col-12">
             <h1>Hello World!</h1>
         </div>
-        <div class="row lead">Here's what you last viewed: (placeholder) </div>
     </div>
+
+    <div class="row">
+        <div class="col-12 lead">
+            Here's what you last viewed: (placeholder)
+        </div>
+    </div>
+
 </div>
+
 <!-- video content -->
 <div class="container-fluid main-body">
+
     <div class="row">
         <!-- video -->
         <div class="col-12 col-lg-7 col-xl-7">
-            <iframe class="video-iframe" style="width: 100%; aspect-ratio: 16 / 9;"
-                src="https://www.youtube.com/embed/cj-netkLgL8?rel=0&autoplay=1&loop=1&mute=1&controls=0&&playlist=cj-netkLgL8">
-            </iframe>
+            <div class="wrapper">
+
+                <iframe class="video-iframe" style="width: 100%; aspect-ratio: 16 / 9;"
+                    src="https://www.youtube.com/embed/cj-netkLgL8?rel=0&autoplay=1&loop=1&mute=1&controls=0&&playlist=cj-netkLgL8">
+                </iframe>
+
+                <div class="container overlay">
+                    <div class="row">
+                        <div class="col-4 view-button-wrapper offset-8">
+                            <button>VIEW</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <!-- explanation -->
+
+    </div>
+
+
+    <div class="row">
         <div class="col-12 col-lg-5 col-xl-5">
-            <h2>THIS IS AN EXTRA COLUMN RIGHT NOW</h2>
         </div>
     </div>
-</div>
 
 </div>
-</div>
+
+<!-- explanation -->
+
 {% endblock %}
