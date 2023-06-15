@@ -43,6 +43,13 @@ h1 {
     position: absolute;
     top: 0%;
     height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding: 0% 5% 5% 0%;
     
 }
 
@@ -52,8 +59,6 @@ h1 {
 
 .view-button-wrapper {
     text-align: center;
-    display: flex;
-    flex-direction: column-reverse;
     padding-bottom: 5%;
 }
 
