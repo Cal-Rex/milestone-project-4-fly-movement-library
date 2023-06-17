@@ -37,7 +37,7 @@ class Tag(models.Model):
 class UserNonAuthField(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.PROTECT)
     terms = models.BooleanField(default=False)
-    last_movement = models.CharField(max_length=200, default="")
+    last_movement = models.ForeignKey(Movement, on_delete=models.PROTECT)
 
 
 class UserOneRepMax(models.Model):
