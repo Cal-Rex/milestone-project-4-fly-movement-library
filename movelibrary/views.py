@@ -48,3 +48,18 @@ class MovementDetail(View):
                 "library_movement": movement_from_library,
             }
         )
+
+
+class MovementSearch(generic.ListView):
+
+    def get(self, request):
+        # Get the search query from the GET parameters
+        query = request.GET.get('query').title()
+        queries = query.split()
+        # results = {}
+        # for q in queries:
+        # results[q] = Movement.objects.filter()
+        # Perform the database lookup
+        results = Movement.objects.filter(movement_name=query)
+        print(results)
+        return render(request, 'search_results.html', {'results': results})

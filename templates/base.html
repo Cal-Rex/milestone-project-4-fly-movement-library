@@ -32,8 +32,9 @@
 
             <!-- form -->
             <div class="col-12 col-md-8 offset-md-2 col-lg-4 offset-lg-0">
-                <form class="d-flex mt-3 align-content-sm-center" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                {% load static %}
+                <form class="d-flex mt-3 align-content-sm-center" method="GET" action="{% url 'search_results' %}" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" name="query" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
