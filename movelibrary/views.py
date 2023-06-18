@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-class Landing(generic.DetailView):
+class Landing(generic.ListView):  # change to DetailView when figured out
     model = Movement
     template_name = 'index.html'
     context_object_name = 'movement'
@@ -29,3 +29,22 @@ class Landing(generic.DetailView):
 
 # class login(View):
 #     template_name = "account/login.html"
+
+
+class MovementDetail(View):
+
+    def get(self, request, slug, *args, **kwargs):
+        movement_from_library = get_object_or_404(Movement, slug=slug)
+        bookmarked = False
+        if movement_from_library.bookmarks.filter(
+            id=self.request.user.id
+        ).exists():
+            bookmarked = True
+
+        return render(
+            request,
+            "movement.html",
+            {
+                "library_movement": movement_from_library,
+            }
+        )

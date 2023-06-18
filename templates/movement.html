@@ -5,9 +5,9 @@
     <!-- maybe use this row as a "welcome back [NAME]" -->
     <div class="row">
         <div class="col-12">
-            <h1>Hello World!</h1>
+            <h1>{{ library_movement.movement_name }}</h1>
         </div>
-        <div class="row lead">Here's what you last viewed: (placeholder) </div>
+        <!-- <div class="row lead">Here's what you last viewed: (placeholder) </div> -->
     </div>
 </div>
 <!-- video content -->
@@ -15,17 +15,13 @@
     <div class="row">
         <!-- video -->
         <div class="col-12 col-lg-7 col-xl-7">
-                <iframe style="width: 100%; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/cj-netkLgL8?rel=0&autoplay=1&loop=1&mute=1&controls=0&&playlist=cj-netkLgL8">
+                <iframe style="width: 100%; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/{{ library_movement.vid_link }}?rel=0&autoplay=1&loop=1&mute=1&controls=0&&playlist={{ library_movement.vid_link }}">
                 </iframe>
         </div>
         <!-- explanation -->
         <div class="col-12 col-lg-5 col-xl-5">
-           <h2>[ MOVEMENT NAME ]</h2>
-            <ul>
-                <li>Start with eyes directly under the bar </li>
-                <li>Build a platform by creating an arch in the upper back </li>
-                <li>Bar moves towards sternum, pause then drive</li>
-            </ul>
+           <h2>{{ library_movement.movement_name }}</h2>
+            {{ library_movement.directions | safe }}
         </div>
     </div>
 </div>
