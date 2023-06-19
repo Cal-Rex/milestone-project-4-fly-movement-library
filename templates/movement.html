@@ -57,6 +57,25 @@
             <iframe id="mvmnt" style="width: 100%; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/{{ library_movement.vid_link }}?rel=0&autoplay=1&loop=1&mute=1&controls=0&playlist={{ library_movement.vid_link }}">
             </iframe>
         </div>
+        <!-- Bookmark feature -->
+        <div class="col-12 col-lg-7 col-xl-7">
+          <strong>
+              {% if user.is_authenticated %}
+                <form class="d-inline" action="{% url 'movement_bookmark' library_movement.slug %}" method="POST"></form>
+                {% csrf_token %}
+                {% if bookmarked %}
+                  <button type="submit" name="bookmark_button" value="{{library_movement.slug}}" class="bookmark-btn"><i class="fas fa-heart"></i></button>
+                  <p><strong>Bookmarked!</strong></p>
+                {% else %}
+                  <button type="submit" name="bookmark_button" value="{{library_movement.slug}}" class="bookmark-btn"><i class="far fa-heart"></i></button>
+                  </form>
+                {% endif %}
+              {% else %}
+                <span class="unauth-bookmark"><i class="far fa-heart"></i></span>
+              {% endif %}
+
+          </strong>
+      </div>
         <!-- explanation -->
         <div class="col-12 col-lg-5 col-xl-5">
             <h2>{{ library_movement.movement_name }}</h2>

@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from .models import Movement, Tag, UserNonAuthField, User
 from django.contrib.auth.decorators import login_required
 
@@ -46,6 +47,7 @@ class MovementDetail(View):
             "movement.html",
             {
                 "library_movement": movement_from_library,
+                "bookmarked": bookmarked,
             }
         )
 
@@ -58,3 +60,14 @@ class MovementSearch(generic.ListView):
         results = Movement.objects.filter(movement_name__contains=query)
         print(results)
         return render(request, 'search_results.html', {'results': results})
+
+
+class MovementBookmark(View):
+
+    def movement(self, request, slug):
+        movement = get_object_or_404(Movement, slug=slug)
+        if movement.bookmarks.filter(id=request.user.id).exists():
+            movement.bookmarks.remove(request.user)
+        else:
+            movement.bookmarks.add(request.user)
+        return HttpResponseRedirect(reverse('movement_bookmark', args=[slug]))

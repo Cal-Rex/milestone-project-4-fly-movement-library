@@ -152,7 +152,9 @@ ___
         - will address fix later
 - Youtube videos will always fail on first load:
     - known issue by google and community, currently google are fixing
-    - javascript and API ovveride attempted, but couldn't get it to work
+        - https://issuetracker.google.com/issues/249707272?pli=1
+    - javascript and API override attempted, but couldn't get it to work
+        - https://stackoverflow.com/questions/19410789/youtube-player-api-with-loop
     - client has alternative hosting service already set up. Will use this instead.
 ___
 
