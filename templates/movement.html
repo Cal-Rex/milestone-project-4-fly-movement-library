@@ -28,20 +28,20 @@
 </head> -->
 <!-- <div id="video-id" style="display: none;">{{ library_movement.vid_link }}</div> -->
 <div class="container-fluid">
-    <!-- maybe use this row as a "welcome back [NAME]" -->
-    <div class="row">
-        <div class="col-12">
-            <h1>{{ library_movement.movement_name }}</h1>
-        </div>
-        <!-- <div class="row lead">Here's what you last viewed: (placeholder) </div> -->
+  <!-- maybe use this row as a "welcome back [NAME]" -->
+  <div class="row">
+    <div class="col-12">
+      <h1>{{ library_movement.movement_name }}</h1>
     </div>
+    <!-- <div class="row lead">Here's what you last viewed: (placeholder) </div> -->
+  </div>
 </div>
 <!-- video content -->
 <div class="container-fluid">
-    <div class="row">
-        <!-- video -->
-        <div class="col-12 col-lg-7 col-xl-7">
-            <!-- <div id="player" style="width: 100%; aspect-ratio: 16 / 9;"></div>
+  <div class="row">
+    <!-- video -->
+    <div class="col-12 col-lg-7 col-xl-7">
+      <!-- <div id="player" style="width: 100%; aspect-ratio: 16 / 9;"></div>
             <script>
                 function loadYouTubePlayer() {
                     var tag = document.createElement('script');
@@ -53,34 +53,47 @@
                 // Load the YouTube Player API asynchronously
                 loadYouTubePlayer();
             </script> -->
-
-            <iframe id="mvmnt" style="width: 100%; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/{{ library_movement.vid_link }}?rel=0&autoplay=1&loop=1&mute=1&controls=0&playlist={{ library_movement.vid_link }}">
-            </iframe>
-        </div>
-        <!-- Bookmark feature -->
-        <div class="col-12 col-lg-7 col-xl-7">
-          <strong>
-              {% if user.is_authenticated %}
-                <form class="d-inline" action="{% url 'movement_bookmark' library_movement.slug %}" method="POST"></form>
-                {% csrf_token %}
-                {% if bookmarked %}
-                  <button type="submit" name="bookmark_button" value="{{library_movement.slug}}" class="bookmark-btn"><i class="fas fa-heart"></i></button>
-                  <p><strong>Bookmarked!</strong></p>
-                {% else %}
-                  <button type="submit" name="bookmark_button" value="{{library_movement.slug}}" class="bookmark-btn"><i class="far fa-heart"></i></button>
-                  </form>
-                {% endif %}
-              {% else %}
-                <span class="unauth-bookmark"><i class="far fa-heart"></i></span>
-              {% endif %}
-
-          </strong>
-      </div>
-        <!-- explanation -->
-        <div class="col-12 col-lg-5 col-xl-5">
-            <h2>{{ library_movement.movement_name }}</h2>
-            {{ library_movement.directions | safe }}
-        </div>
+      <!-- Temp if statement being used while library being transferred to different provider -->
+      {% if library_movement.vid_link|length >= 12 %}
+      <!-- Vimeo player -->
+      <iframe style="width: 100%; aspect-ratio: 16 / 9;"
+          src="https://player.vimeo.com/video/{{ library_movement.vid_link }}&muted=1&autoplay=1&loop=1&background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+          frameborder="0" allow="autoplay;" loop="1" autoplay="1"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Nordic Curls ML3"></iframe>
+      <script src="https://player.vimeo.com/api/player.js"></script>
+      {% else %}
+      <!-- Youtube player -->
+      <iframe style="width: 100%; aspect-ratio: 16 / 9;"
+        src="https://www.youtube.com/embed/{{ library_movement.vid_link }}?rel=0&autoplay=1&loop=1&mute=1&controls=0&playlist={{ library_movement.vid_link }}">
+      </iframe>
+      {% endif %}
     </div>
+    <!-- Bookmark feature -->
+    <div class="col-12 order-lg-3 col-lg-7 order-xl-3 col-xl-7">
+      <strong>
+        {% if user.is_authenticated %}
+        <form class="d-inline" action="{% url 'movement_bookmark' library_movement.slug %}" method="POST"></form>
+        {% csrf_token %}
+        {% if bookmarked %}
+        <button type="submit" name="bookmark_button" value="{{library_movement.slug}}" class="bookmark-btn"><i
+            class="fas fa-heart"></i></button>
+        <p><strong>Bookmarked!</strong></p>
+        {% else %}
+        <button type="submit" name="bookmark_button" value="{{library_movement.slug}}" class="bookmark-btn"><i
+            class="far fa-heart"></i></button>
+        </form>
+        {% endif %}
+        {% else %}
+        <span class="unauth-bookmark"><i class="far fa-heart"></i></span>
+        {% endif %}
+
+      </strong>
+    </div>
+    <!-- explanation -->
+    <div class="col-12 col-lg-5 col-xl-5">
+      <h2>{{ library_movement.movement_name }}</h2>
+      {{ library_movement.directions | safe }}
+    </div>
+  </div>
 </div>
 {% endblock %}
