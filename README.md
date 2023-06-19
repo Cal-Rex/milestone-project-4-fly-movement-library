@@ -150,7 +150,10 @@ ___
             });
             ```
         - will address fix later
-
+- Youtube videos will always fail on first load:
+    - known issue by google and community, currently google are fixing
+    - javascript and API ovveride attempted, but couldn't get it to work
+    - client has alternative hosting service already set up. Will use this instead.
 ___
 
 # C R E D I T S

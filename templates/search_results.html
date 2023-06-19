@@ -7,7 +7,7 @@
         <div class="col-12">
             <ul>
                 {% for result in results %}
-                  <li>{{ result }}</li>
+                  <li><a href="{% url 'movement_detail' result.slug %}">{{ result }}</a></li>
                 {% empty %}
                   <li>No results found.</li>
                 {% endfor %}

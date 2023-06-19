@@ -27,6 +27,10 @@ h1 {
 }
 
 /* videos structure and styling */
+#video-id {
+    display: hidden !important;
+}
+
 .wrapper {
     /* padding-right: calc(var(--bs-gutter-x) * .5);
     padding-left: calc(var(--bs-gutter-x) * .5); */

@@ -1,6 +1,32 @@
 {% extends "base.html" %}
 
 {% block content %}
+<!-- <head>
+    <script>
+        var player;
+    
+        function onYouTubeIframeAPIReady() {
+          player = new YT.Player('player', {
+            videoId: '{{ library_movement.vid_link }}',
+            events: {
+              'onReady': onPlayerReady,
+              'onError': onPlayerError
+            }
+          });
+        }
+    
+        function onPlayerReady(event) {
+          event.target.playVideo();
+        }
+    
+        function onPlayerError(event) {
+          if (event.data === 100 || event.data === 150) {
+            player.loadVideoById('{{ library_movement.vid_link }}');
+          }
+        }
+      </script>
+</head> -->
+<!-- <div id="video-id" style="display: none;">{{ library_movement.vid_link }}</div> -->
 <div class="container-fluid">
     <!-- maybe use this row as a "welcome back [NAME]" -->
     <div class="row">
@@ -15,12 +41,25 @@
     <div class="row">
         <!-- video -->
         <div class="col-12 col-lg-7 col-xl-7">
-                <iframe style="width: 100%; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/{{ library_movement.vid_link }}?rel=0&autoplay=1&loop=1&mute=1&controls=0&&playlist={{ library_movement.vid_link }}">
-                </iframe>
+            <!-- <div id="player" style="width: 100%; aspect-ratio: 16 / 9;"></div>
+            <script>
+                function loadYouTubePlayer() {
+                    var tag = document.createElement('script');
+                    tag.src = "https://www.youtube.com/iframe_api";
+                    var firstScriptTag = document.getElementsByTagName('script')[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                }
+
+                // Load the YouTube Player API asynchronously
+                loadYouTubePlayer();
+            </script> -->
+
+            <iframe id="mvmnt" style="width: 100%; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/{{ library_movement.vid_link }}?rel=0&autoplay=1&loop=1&mute=1&controls=0&playlist={{ library_movement.vid_link }}">
+            </iframe>
         </div>
         <!-- explanation -->
         <div class="col-12 col-lg-5 col-xl-5">
-           <h2>{{ library_movement.movement_name }}</h2>
+            <h2>{{ library_movement.movement_name }}</h2>
             {{ library_movement.directions | safe }}
         </div>
     </div>
