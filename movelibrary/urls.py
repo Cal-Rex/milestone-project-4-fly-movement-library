@@ -10,7 +10,7 @@ urlpatterns = [
         name='movement_detail'
     ),
     path(
-        'bookmark/<slug:slug>',
+        'bookmark/<slug:slug>/',
         views.MovementBookmark.as_view(),
         name='movement_bookmark'
     ),

@@ -1,16 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
 
+* {
+    background-color: #000;
+    color: #fff;
+}
+
 body {
     width: 100vw;
     height: 100vh;
-}
-
-h1 {
-    color: red;
-}
-
-#test {
-    background-color: red;
 }
 
 /* nav bar structure */
@@ -24,6 +21,42 @@ h1 {
 
 .offcanvas.offcanvas-end {
     transform: translateX(100%);
+}
+
+.navbar-brand {
+    color: #2EF74F;
+    text-transform: uppercase;
+}
+
+.navbar-toggler-icon {
+    background-image: url(../media/nav-btn.png);
+}
+
+.bg-body-tertiary {
+    background-color: #000 !important;
+}
+
+/* nav search field */
+.form-control {
+    color: #fff;
+    background-color: #000;
+    border-top: none;
+    border-right: none;
+    border-radius: 0rem;
+    border-color: #fafafa;
+}
+
+.form-control:focus {
+    color: #fff;
+    outline: none;
+    background-color: #000;
+    border-color: #2EF74F;
+    box-shadow: 0 0 0 0.25rem #2ef74f20;
+}
+
+.form-control::placeholder {
+    color: fff !important;
+    opacity: 1;
 }
 
 /* videos structure and styling */

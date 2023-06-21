@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.db.models import Q
 from .models import Movement, Tag, UserNonAuthField, User
 from django.contrib.auth.decorators import login_required
 
@@ -64,10 +65,21 @@ class MovementSearch(generic.ListView):
 
 class MovementBookmark(View):
 
-    def movement(self, request, slug):
+    # the name of the function is actually calling the POST method.
+    def post(self, request, slug):
         movement = get_object_or_404(Movement, slug=slug)
         if movement.bookmarks.filter(id=request.user.id).exists():
             movement.bookmarks.remove(request.user)
         else:
             movement.bookmarks.add(request.user)
-        return HttpResponseRedirect(reverse('movement_bookmark', args=[slug]))
+        return HttpResponseRedirect(reverse('movement_detail', args=[slug]))
+
+
+# class BookmarksList(generic.ListView):
+#     def get(self, request, Movement, *args, **kwargs):
+#         q1 = Movement.objects.filter(bookmarks.User.id=request.user.id)
+
+    # def get(self, request, bookmarks, *args, **kwargs):
+    #     queryset = Movement.objects.filter(bookmarks=True)
+    #     queryset_refine = queryset.objects.filter(id=request.user.id)
+    #     return queryset_refine

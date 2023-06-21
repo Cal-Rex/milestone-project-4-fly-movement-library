@@ -28,14 +28,7 @@
 </head> -->
 <!-- <div id="video-id" style="display: none;">{{ library_movement.vid_link }}</div> -->
 <div class="container-fluid">
-  <!-- maybe use this row as a "welcome back [NAME]" -->
-  <div class="row">
-    <div class="col-12">
-      <h1>{{ library_movement.movement_name }}</h1>
-    </div>
-    <!-- <div class="row lead">Here's what you last viewed: (placeholder) </div> -->
-  </div>
-</div>
+
 <!-- video content -->
 <div class="container-fluid">
   <div class="row">
@@ -72,14 +65,14 @@
     <div class="col-12 order-lg-3 col-lg-7 order-xl-3 col-xl-7">
       <strong>
         {% if user.is_authenticated %}
-        <form class="d-inline" action="{% url 'movement_bookmark' library_movement.slug %}" method="POST"></form>
+        <form class="d-inline" action="{% url 'movement_bookmark' library_movement.slug %}" method="POST">
         {% csrf_token %}
         {% if bookmarked %}
-        <button type="submit" name="bookmark_button" value="{{library_movement.slug}}" class="bookmark-btn"><i
+        <button type="submit" name="bookmark_button" value="{{ library_movement.slug }}" class="bookmark-btn"><i
             class="fas fa-heart"></i></button>
         <p><strong>Bookmarked!</strong></p>
         {% else %}
-        <button type="submit" name="bookmark_button" value="{{library_movement.slug}}" class="bookmark-btn"><i
+        <button type="submit" name="bookmark_button" value="{{ library_movement.slug }}" class="bookmark-btn"><i
             class="far fa-heart"></i></button>
         </form>
         {% endif %}

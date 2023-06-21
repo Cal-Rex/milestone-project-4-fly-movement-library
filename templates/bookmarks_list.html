@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- maybe use this row as a "welcome back [NAME]" -->
+    <div class="row">
+        <div class="col-12">
+            <ul>
+                {% for result in results %}
+                  <li><a href="{% url 'movement_detail' result.slug %}">{{ result }}</a></li>
+                {% empty %}
+                  <li>No results found.</li>
+                {% endfor %}
+              </ul>
+        </div>
+{% endblock %}
