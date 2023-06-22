@@ -6,11 +6,16 @@
     <div class="row">
         <div class="col-12">
             <ul>
-                {% for result in results %}
-                  <li><a href="{% url 'movement_detail' result.slug %}">{{ result }}</a></li>
+              {% if bookmarks %}
+                {% for mark in bookmarks %}
+                  <li><a href="{% url 'movement_detail' mark.slug %}">{{ mark }}</a></li>
                 {% empty %}
                   <li>No results found.</li>
                 {% endfor %}
+              {% else %}
+              <li>No results found.</li>
+              {% endif %}
+
               </ul>
         </div>
 {% endblock %}

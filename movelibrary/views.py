@@ -75,11 +75,20 @@ class MovementBookmark(View):
         return HttpResponseRedirect(reverse('movement_detail', args=[slug]))
 
 
-# class BookmarksList(generic.ListView):
-#     def get(self, request, Movement, *args, **kwargs):
-#         q1 = Movement.objects.filter(bookmarks.User.id=request.user.id)
+class BookmarksList(generic.ListView):
 
-    # def get(self, request, bookmarks, *args, **kwargs):
-    #     queryset = Movement.objects.filter(bookmarks=True)
-    #     queryset_refine = queryset.objects.filter(id=request.user.id)
-    #     return queryset_refine
+    model = Movement
+
+    def get(self, request, *args, **kwargs):
+        bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
+        return render(
+            request,
+            'bookmarks_list.html',
+            {
+                "bookmarks": bookmarks
+            }
+            )
+
+    template_name = 'bookmarks_list.html'
+    context_object_name = 'bookmarked_movement'
+    paginate_by = 8
