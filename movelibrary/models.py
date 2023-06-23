@@ -32,6 +32,7 @@ class Tag(models.Model):
     chest = models.BooleanField(default=False)
     shoulders = models.BooleanField(default=False)
     back = models.BooleanField(default=False)
+    one_rm = models.BooleanField(default=False)
 
 
 class UserNonAuthField(models.Model):
@@ -40,8 +41,15 @@ class UserNonAuthField(models.Model):
     last_movement = models.ForeignKey(Movement, on_delete=models.PROTECT)
 
 
+class UserMovementNotes(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    movement = models.ForeignKey(Movement, on_delete=models.CASCADE)
+    movement_notes = models.TextField()
+
+
 class UserOneRepMax(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    movement = models.ForeignKey(Movement, on_delete=models.CASCADE)
     one_rep_max = models.IntegerField(default=0, unique=False)
     date_recorded = models.DateTimeField(auto_now_add=True)
 
@@ -50,9 +58,3 @@ class UserOneRepMax(models.Model):
 
         def __str__(self):
             return f"{self.one_rep_max}KG | recorded on {self.date_recorded}"
-
-
-class UserMovementNotes(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    movement = models.ForeignKey(Movement, on_delete=models.CASCADE)
-    movement_notes = models.TextField()

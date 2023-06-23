@@ -16,7 +16,7 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
-CSRF_TRUSTED_ORIGINS = ['https://fly-movement-library.herokuapp.com/', 'https://8000-calrex-milestoneproject-6lxje46vlvy.ws-eu100.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://fly-movement-library.herokuapp.com/', 'https://8000-calrex-milestoneproject-lidipx0e4o6.ws-eu100.gitpod.io']
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://fly-movement-library.herokuapp.com/', '8000-calrex-milestoneproject-6lxje46vlvy.ws-eu100.gitpod.io', 'localhost']
+ALLOWED_HOSTS = ['https://fly-movement-library.herokuapp.com/', '8000-calrex-milestoneproject-lidipx0e4o6.ws-eu100.gitpod.io', 'localhost']
 
 # Application definition
 

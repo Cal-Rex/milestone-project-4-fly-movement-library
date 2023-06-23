@@ -8,16 +8,16 @@ urlpatterns = [
         'bookmarks/',
         views.BookmarksList.as_view(),
         name='bookmarks_list'
+        ),
+    path(
+        'bookmark/<slug:slug>/',
+        views.MovementBookmark.as_view(),
+        name='movement_bookmark'
     ),
     path(
         '<slug:slug>/',
         views.MovementDetail.as_view(),
         name='movement_detail'
-    ),
-    path(
-        'bookmark/<slug:slug>/',
-        views.MovementBookmark.as_view(),
-        name='movement_bookmark'
     ),
     # path('accounts/login/', allauth_views.LoginView.as_view(), name='login'),
 ]
