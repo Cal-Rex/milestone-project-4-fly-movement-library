@@ -35,11 +35,11 @@ class Landing(generic.ListView):  # change to DetailView when figured out
 
 
 class MovementDetail(View):
-# needing to go out now, but so i can troubleshoot later:
-# can't get one rep max for movement to show up on the page.
-# haven't checked if the record of 20 for barbell push press has been successfully logged to the database
-# checked the variable "one_rm_records" via print statement to see it's value (it's empty)
-# need to go and check the admin panel to see f any data recorded. and then work from there. may need to go back to editing the form 
+    # needing to go out now, but so i can troubleshoot later:
+    # can't get one rep max for movement to show up on the page.
+    # haven't checked if the record of 20 for barbell push press has been successfully logged to the database  # noqa
+    # checked the variable "one_rm_records" via print statement to see it's value (it's empty)  # noqa
+    # need to go and check the admin panel to see f any data recorded. and then work from there. may need to go back to editing the form  # noqa
     def get(self, request, slug, *args, **kwargs):
         movement_from_library = get_object_or_404(Movement, slug=slug)
         one_rm_records = movement_from_library.one_rm_list.filter(

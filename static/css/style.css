@@ -8,6 +8,7 @@
 body {
     width: 100vw;
     height: 100vh;
+    background-color: #000;
 }
 
 .btn-close {
@@ -132,6 +133,10 @@ nav>.offcanvas.offcanvas-end {
     vertical-align: top;
 }
 
+button>i {
+    font-size: 2rem;
+}
+
 /* footer styling */
 .socials-footer {
     position: sticky;
@@ -143,7 +148,7 @@ nav>.offcanvas.offcanvas-end {
     font-size: 2rem;
 }
 
-.socials p>i {
+i {
     color: #2EF74F;
 }
 
