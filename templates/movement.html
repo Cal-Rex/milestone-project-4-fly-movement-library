@@ -29,12 +29,12 @@
 <!-- <div id="video-id" style="display: none;">{{ library_movement.vid_link }}</div> -->
 <div class="container-fluid">
 
-<!-- video content -->
-<div class="container-fluid">
-  <div class="row">
-    <!-- video -->
-    <div class="col-12 col-lg-7 col-xl-7">
-      <!-- <div id="player" style="width: 100%; aspect-ratio: 16 / 9;"></div>
+  <!-- video content -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- video -->
+      <div class="col-12 col-lg-7 order-lg-1 col-xl-7">
+        <!-- <div id="player" style="width: 100%; aspect-ratio: 16 / 9;"></div>
             <script>
                 function loadYouTubePlayer() {
                     var tag = document.createElement('script');
@@ -46,47 +46,161 @@
                 // Load the YouTube Player API asynchronously
                 loadYouTubePlayer();
             </script> -->
-      <!-- Temp if statement being used while library being transferred to different provider -->
-      {% if library_movement.vid_link|length >= 12 %}
-      <!-- Vimeo player -->
-      <iframe style="width: 100%; aspect-ratio: 16 / 9;"
+        <!-- Temp if statement being used while library being transferred to different provider -->
+        {% if library_movement.vid_link|length >= 12 %}
+        <!-- Vimeo player -->
+        <iframe style="width: 100%; aspect-ratio: 16 / 9;"
           src="https://player.vimeo.com/video/{{ library_movement.vid_link }}&muted=1&autoplay=1&loop=1&background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
           frameborder="0" allow="autoplay;" loop="1" autoplay="1"
           style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Nordic Curls ML3"></iframe>
-      <script src="https://player.vimeo.com/api/player.js"></script>
-      {% else %}
-      <!-- Youtube player -->
-      <iframe style="width: 100%; aspect-ratio: 16 / 9;"
-        src="https://www.youtube.com/embed/{{ library_movement.vid_link }}?rel=0&autoplay=1&loop=1&mute=1&controls=0&playlist={{ library_movement.vid_link }}">
-      </iframe>
-      {% endif %}
-    </div>
-    <!-- Bookmark feature -->
-    <div class="col-12 order-lg-3 col-lg-7 order-xl-3 col-xl-7">
-      <strong>
-        {% if user.is_authenticated %}
-        <form class="d-inline" action="{% url 'movement_bookmark' library_movement.slug %}" method="POST">
-        {% csrf_token %}
-        {% if bookmarked %}
-        <button type="submit" name="bookmark_button" value="{{ library_movement.slug }}" class="bookmark-btn"><i
-            class="fas fa-heart"></i></button>
-        <p><strong>Bookmarked!</strong></p>
+        <script src="https://player.vimeo.com/api/player.js"></script>
         {% else %}
-        <button type="submit" name="bookmark_button" value="{{ library_movement.slug }}" class="bookmark-btn"><i
-            class="far fa-heart"></i></button>
-        </form>
+        <!-- Youtube player -->
+        <iframe style="width: 100%; aspect-ratio: 16 / 9;"
+          src="https://www.youtube.com/embed/{{ library_movement.vid_link }}?rel=0&autoplay=1&loop=1&mute=1&controls=0&playlist={{ library_movement.vid_link }}">
+        </iframe>
         {% endif %}
-        {% else %}
-        <span class="unauth-bookmark"><i class="far fa-heart"></i></span>
-        {% endif %}
+      </div>
 
-      </strong>
-    </div>
-    <!-- explanation -->
-    <div class="col-12 col-lg-5 col-xl-5">
-      <h2>{{ library_movement.movement_name }}</h2>
-      {{ library_movement.directions | safe }}
+      <!-- user features -->
+      <div class="col-12 col-lg-7 order-lg-3 col-xl-7">
+        <div class="row justify-content-between">
+
+          <!-- 1-RM display -->
+          <div class="col-10 col-sm-11 col-lg-3 order-lg-3 offset-lg-4 one-rm-feats">
+            <p>1-rm</p>
+          </div>
+
+          <!-- edit 1-RM -->
+          <div class="col-2 col-sm-1 col-lg-1 offset-lg-0 order-lg-4 one-rm-feats">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-e"
+              aria-controls="offcanvasWithBothOptions">E</button>
+            <!-- offcanvas for notes -->
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="oc-orm-e"
+              aria-labelledby="offcanvasWithBothOptionsLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+              </div>
+              <div class="offcanvas-body">
+                <form method="POST">
+                  <!-- .as_p renders form fields in paragraphs -->
+                  <!-- .as_table renders form in a table format -->
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <div>
+                    <p>
+                      <button type="submit"><strong>Edit</strong></button>
+                    </p>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bookmark feature -->
+          <div class="col-2 col-sm-1 col-md-1 col-lg-1">
+            <strong>
+              {% if user.is_authenticated %}
+              <form class="d-inline" action="{% url 'movement_bookmark' library_movement.slug %}" method="POST">
+                {% csrf_token %}
+                {% if bookmarked %}
+                <button type="submit" name="bookmark_button" value="{{ library_movement.slug }}" class="bookmark-btn"><i
+                    class="fas fa-heart"></i></button>
+                <p><strong>Bookmarked!</strong></p>
+                {% else %}
+                <button type="submit" name="bookmark_button" value="{{ library_movement.slug }}" class="bookmark-btn"><i
+                    class="far fa-heart"></i></button>
+              </form>
+              {% endif %}
+              {% else %}
+              <span class="unauth-bookmark"><i class="far fa-heart"></i></span>
+              {% endif %}
+            </strong>
+          </div>
+
+          <!-- notes button -->
+          <div class="col-2 col-sm-1 col-md-1 col-lg-1">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#ocn"
+              aria-controls="offcanvasWithBothOptions">N</button>
+            <!-- offcanvas for notes -->
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="ocn"
+              aria-labelledby="offcanvasWithBothOptionsLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+              </div>
+              <div class="offcanvas-body">
+                <p>Try scrolling the rest of the page to see this option in action.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- add 1-RM -->
+          <div class="col-2 col-sm-1 offset-sm-8 col-md-1 offset-md-8 col-lg-1 offset-lg-0 order-lg-5 one-rm-feats">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-a"
+              aria-controls="offcanvasWithBothOptions">A</button>
+            <!-- offcanvas for notes -->
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="oc-orm-a"
+              aria-labelledby="offcanvasWithBothOptionsLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+              </div>
+              <div class="offcanvas-body">
+                <form method="POST">
+                  <!-- .as_p renders form fields in paragraphs -->
+                  <!-- .as_table renders form in a table format -->
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <div>
+                    <p>
+                      <button type="submit"><strong>Edit</strong></button>
+                    </p>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- 1-RM Records -->
+          <div class="col-2 col-sm-1 col-md-1 col-lg-1 order-lg-last one-rm-feats">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-hof"
+              aria-controls="offcanvasWithBothOptions">H</button>
+            <!-- offcanvas for records -->
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="oc-orm-hof"
+              aria-labelledby="offcanvasWithBothOptionsLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">1-Rep Max History for {{ library_movement.movement_name }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+              </div>
+              <div class="offcanvas-body">
+                <form method="POST">
+                  <!-- .as_p renders form fields in paragraphs -->
+                  <!-- .as_table renders form in a table format -->
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <div>
+                    <p>
+                      <button type="submit"><strong>Edit</strong></button>
+                    </p>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- explanation -->
+      <div class="col-12 col-lg-5 order-lg-2 col-xl-5">
+        <h2>{{ library_movement.movement_name }}</h2>
+        {{ library_movement.directions | safe }}
+      </div>
     </div>
   </div>
-</div>
-{% endblock %}
+  {% endblock %}

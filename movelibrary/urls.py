@@ -15,6 +15,11 @@ urlpatterns = [
         name='movement_bookmark'
     ),
     path(
+        'add1rm/<slug:slug>/',
+        views.OneRepMaxRecords.as_view(),
+        name='movement_detail'
+    ),
+    path(
         '<slug:slug>/',
         views.MovementDetail.as_view(),
         name='movement_detail'

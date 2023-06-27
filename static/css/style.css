@@ -10,16 +10,23 @@ body {
     height: 100vh;
 }
 
+.btn-close {
+    --bs-btn-close-color: #fff;
+    --bs-btn-close-bg: none;
+    color: fff;
+    cursor: pointer;
+}
+
 /* nav bar structure */
-.offcanvas-collapse {
+nav>.offcanvas-collapse {
     right: 100%;
 }
 
-.offcanvas.offcanvas-end {
+nav>.offcanvas.offcanvas-end {
     left: 0;
 }
 
-.offcanvas.offcanvas-end {
+nav>.offcanvas.offcanvas-end {
     transform: translateX(100%);
 }
 
@@ -108,12 +115,21 @@ body {
     letter-spacing: 2px;
 }
 
-
-
 #view-movement {
     position: absolute;
     top: 75%;
     left: 80%;
+}
+
+
+/* User movement features */
+
+.one-rm-feats {
+    text-align: right;
+}
+
+.one-rm-feats > p {
+    vertical-align: top;
 }
 
 /* footer styling */

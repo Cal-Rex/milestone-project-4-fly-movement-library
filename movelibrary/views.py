@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.db.models import Q
-from .models import Movement, Tag, UserNonAuthField, User
+from .models import Movement, Tag, UserNonAuthField, UserOneRepMax, User
+from .forms import OneRmForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -87,8 +88,36 @@ class BookmarksList(generic.ListView):
             {
                 "bookmarks": bookmarks
             }
-            )
+        )
 
     template_name = 'bookmarks_list.html'
     context_object_name = 'bookmarked_movement'
     paginate_by = 8
+
+
+class OneRepMaxRecords(generic.ListView):
+
+    def get(self, request, slug, *args, **kwargs):
+        movement = get_object_or_404(Movement, slug=slug)
+        one_rm_records = UserOneRepMax.objects.filter(
+            user_id=request.user.id
+            ).filter(~Q(movement=Movement.slug))
+        return render(
+            request,
+            "movement_detail",
+            {
+                "one_rm_records": one_rm_records
+            }
+        )
+
+    def post(self, request, UserOneRepMax_id):
+        one_rm_record = get_object_or_404(UserOneRepMax,)
+
+
+class AddOneRmRecord(View):
+    def post(self, request, slug):
+        movement = get_object_or_404(Movement, slug=slug)
+        form = OneRmForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("movement_detail")
