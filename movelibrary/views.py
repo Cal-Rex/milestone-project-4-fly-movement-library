@@ -35,12 +35,17 @@ class Landing(generic.ListView):  # change to DetailView when figured out
 
 
 class MovementDetail(View):
-
+# needing to go out now, but so i can troubleshoot later:
+# can't get one rep max for movement to show up on the page.
+# haven't checked if the record of 20 for barbell push press has been successfully logged to the database
+# checked the variable "one_rm_records" via print statement to see it's value (it's empty)
+# need to go and check the admin panel to see f any data recorded. and then work from there. may need to go back to editing the form 
     def get(self, request, slug, *args, **kwargs):
         movement_from_library = get_object_or_404(Movement, slug=slug)
         one_rm_records = movement_from_library.one_rm_list.filter(
             id=request.user.id
-        )
+        ).order_by("-date_recorded")
+        print("HEYYYYYYYYYYYYYY", one_rm_records)
         bookmarked = False
         if movement_from_library.bookmarks.filter(
             id=self.request.user.id
@@ -55,6 +60,38 @@ class MovementDetail(View):
                 "one_rm_records": one_rm_records,
                 "bookmarked": bookmarked,
                 "one_rm_form": OneRmForm()
+            }
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+
+        movement_from_library = get_object_or_404(Movement, slug=slug)
+        one_rm_records = movement_from_library.one_rm_list.filter(
+            id=request.user.id
+        ).order_by("-date_recorded")
+        bookmarked = False
+        if movement_from_library.bookmarks.filter(
+            id=self.request.user.id
+        ).exists():
+            bookmarked = True
+
+        one_rm_form = OneRmForm(data=request.POST)
+        if one_rm_form.is_valid():
+            one_rm_form.instance.user_id = request.user.id
+            one_rep_max = one_rm_form.save(commit=False)
+            one_rep_max.movement = movement_from_library
+            one_rep_max.save()
+        else:
+            one_rm_form = OneRmForm()
+
+        return render(
+            request,
+            "movement.html",
+            {
+                "library_movement": movement_from_library,
+                "one_rm_records": one_rm_records,
+                "bookmarked": bookmarked,
+                "one_rm_form": One_Rm_Form,
             }
         )
 
