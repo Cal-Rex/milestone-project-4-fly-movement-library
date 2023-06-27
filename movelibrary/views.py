@@ -38,6 +38,9 @@ class MovementDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
         movement_from_library = get_object_or_404(Movement, slug=slug)
+        one_rm_records = movement_from_library.one_rm_list.filter(
+            id=request.user.id
+        )
         bookmarked = False
         if movement_from_library.bookmarks.filter(
             id=self.request.user.id
@@ -49,7 +52,9 @@ class MovementDetail(View):
             "movement.html",
             {
                 "library_movement": movement_from_library,
+                "one_rm_records": one_rm_records,
                 "bookmarked": bookmarked,
+                "one_rm_form": OneRmForm()
             }
         )
 

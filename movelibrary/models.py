@@ -49,7 +49,7 @@ class UserMovementNotes(models.Model):
 
 class UserOneRepMax(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    movement = models.ForeignKey(Movement, on_delete=models.CASCADE)
+    movement = models.ForeignKey(Movement, on_delete=models.CASCADE, related_name="one_rm_list")
     one_rep_max = models.IntegerField(default=0, unique=False)
     date_recorded = models.DateTimeField(auto_now_add=True)
 
