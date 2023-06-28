@@ -137,6 +137,10 @@ button>i {
     font-size: 2rem;
 }
 
+.list-of-one-rms {
+    text-align: left;
+}
+
 /* footer styling */
 .socials-footer {
     position: sticky;

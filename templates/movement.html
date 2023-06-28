@@ -61,7 +61,7 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Bookmark feature -->
           <div class="col-2 col-sm-1 col-md-1 col-lg-1">
             <strong>
@@ -69,13 +69,15 @@
               <form class="d-inline" action="{% url 'movement_bookmark' library_movement.slug %}" method="POST">
                 {% csrf_token %}
                 {% if bookmarked %}
-                <button class="btn" type="submit" name="bookmark_button" value="{{ library_movement.slug }}" class="bookmark-btn"><i class="fa-solid fa-bookmark"></i></button>
+                <button class="btn" type="submit" name="bookmark_button" value="{{ library_movement.slug }}"
+                  class="bookmark-btn"><i class="fa-solid fa-bookmark"></i></button>
                 {% else %}
-                <button class="btn" type="submit" name="bookmark_button" value="{{ library_movement.slug }}" class="bookmark-btn"><i class="fa-regular fa-bookmark"></i></button>
+                <button class="btn" type="submit" name="bookmark_button" value="{{ library_movement.slug }}"
+                  class="bookmark-btn"><i class="fa-regular fa-bookmark"></i></button>
               </form>
               {% endif %}
               {% else %}
-              
+
               {% endif %}
             </strong>
           </div>
@@ -131,22 +133,16 @@
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="oc-orm-hof"
               aria-labelledby="offcanvasWithBothOptionsLabel">
               <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">1-Rep Max History for {{ library_movement.movement_name }}</h5>
+                  <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">1-Rep Max History for
+                    {{ library_movement.movement_name }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
               </div>
-              <div class="offcanvas-body">
-                <form method="POST">
-                  <!-- .as_p renders form fields in paragraphs -->
-                  <!-- .as_table renders form in a table format -->
-                  {% csrf_token %}
-                  {{ form.as_p }}
-                  <div>
-                    <p>
-                      <button type="submit"><strong>Edit</strong></button>
-                    </p>
-                  </div>
-                </form>
-
+              <div class="offcanvas-body list-of-one-rms">
+                <ul>
+                  {% for record in one_rm_records %}
+                  <li>{{ record.date_recorded }}: {{ record.one_rep_max }} KG</li>
+                  {% endfor %}
+                </ul>
               </div>
             </div>
           </div>

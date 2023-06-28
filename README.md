@@ -156,6 +156,7 @@ ___
     - javascript and API override attempted, but couldn't get it to work
         - https://stackoverflow.com/questions/19410789/youtube-player-api-with-loop
     - client has alternative hosting service already set up. Will use this instead.
+- when a 1rm is entered, movement becomes un-bookmarked
 ___
 
 # C R E D I T S

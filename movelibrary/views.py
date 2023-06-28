@@ -15,25 +15,6 @@ class Landing(generic.ListView):  # change to DetailView when figured out
     context_object_name = 'movement'
 
 
-# class Landing(generic.DetailView):
-
-#     login = request.session.get(User)
-
-#     def __getitem__(login):
-#         if not Login.is_authenticated:
-#             return redirect('login')
-#         else:
-#             user = request.User.id
-#             user_last_movement = UserNonAuthField.last_movement
-#             model = Movement
-#             template_name = 'index.html'
-#             context_object_name = 'last_movement_viewed'
-
-
-# class login(View):
-#     template_name = "account/login.html"
-
-
 class MovementDetail(View):
     # needing to go out now, but so i can troubleshoot later:
     # can't get one rep max for movement to show up on the page.
@@ -64,11 +45,11 @@ class MovementDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
-
         movement_from_library = get_object_or_404(Movement, slug=slug)
         one_rm_records = movement_from_library.one_rm_list.filter(
-            id=request.user.id
+            user_id=request.user.id
         ).order_by("-date_recorded")
+        print("HEYYYYYYYYYYYYYY", one_rm_records)
         bookmarked = False
         if movement_from_library.bookmarks.filter(
             id=self.request.user.id
@@ -76,24 +57,50 @@ class MovementDetail(View):
             bookmarked = True
 
         one_rm_form = OneRmForm(data=request.POST)
+
         if one_rm_form.is_valid():
-            one_rm_form.instance.user_id = request.user.id
-            one_rep_max = one_rm_form.save(commit=False)
-            one_rep_max.movement = movement_from_library
-            one_rep_max.save()
+            one_rm = one_rm_form.save(commit=False)
+            one_rm.user_id = request.user
+            one_rm.movement = movement_from_library
+            one_rm.save()
         else:
+            print("WEEEEEEEEEEEEEEEEEEEEEEEE", 'form errors: ', form.errors.as_text())
             one_rm_form = OneRmForm()
 
-        return render(
-            request,
-            "movement.html",
-            {
-                "library_movement": movement_from_library,
-                "one_rm_records": one_rm_records,
-                "bookmarked": bookmarked,
-                "one_rm_form": One_Rm_Form,
-            }
-        )
+        return redirect('movement_1rm')
+
+
+    # def post(self, request, slug, *args, **kwargs):
+
+    #     movement_from_library = get_object_or_404(Movement, slug=slug)
+    #     one_rm_records = movement_from_library.one_rm_list.filter(
+    #         id=request.user.id
+    #     ).order_by("-date_recorded")
+    #     bookmarked = False
+    #     if movement_from_library.bookmarks.filter(
+    #         id=self.request.user.id
+    #     ).exists():
+    #         bookmarked = True
+
+    #     one_rm_form = OneRmForm(data=request.POST)
+    #     if one_rm_form.is_valid():
+    #         one_rm_form.instance.user_id = request.user.id
+    #         one_rep_max = one_rm_form.save(commit=False)
+    #         one_rep_max.movement = movement_from_library
+    #         one_rep_max.save()
+    #     else:
+    #         one_rm_form = OneRmForm()
+
+    #     return render(
+    #         request,
+    #         "movement.html",
+    #         {
+    #             "library_movement": movement_from_library,
+    #             "one_rm_records": one_rm_records,
+    #             "bookmarked": bookmarked,
+    #             "one_rm_form": one_rm_form,
+    #         }
+    #     )
 
 
 class MovementSearch(generic.ListView):
@@ -156,10 +163,17 @@ class OneRepMaxRecords(generic.ListView):
         one_rm_record = get_object_or_404(UserOneRepMax,)
 
 
-class AddOneRmRecord(View):
-    def post(self, request, slug):
-        movement = get_object_or_404(Movement, slug=slug)
-        form = OneRmForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("movement_detail")
+# class AddOneRmRecord(View):
+#     def post(self, request, slug):
+#         movement = get_object_or_404(Movement, slug=slug)
+#         form = OneRmForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect("movement_detail")
+
+
+# class AddOneRmRecord(CreateView):
+
+#     model = UserOneRepMax
+
+#     fields = ['one_rep_max',]

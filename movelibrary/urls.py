@@ -17,7 +17,7 @@ urlpatterns = [
     path(
         'add1rm/<slug:slug>/',
         views.OneRepMaxRecords.as_view(),
-        name='movement_detail'
+        name='movement_1rm'
     ),
     path(
         '<slug:slug>/',
