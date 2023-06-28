@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Movement, Tag, UserNonAuthField
+from .models import Movement, Tag, UserNonAuthField, UserMovementNotes, UserOneRepMax  # noqa
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -21,6 +21,19 @@ class TagAdmin(SummernoteModelAdmin):
 class UserNonAuthFieldAdmin(SummernoteModelAdmin):
 
     list_display = ('user_id', 'last_movement', 'terms',)
+
+
+@admin.register(UserMovementNotes)
+class UserMovementNotesAdmin(SummernoteModelAdmin):
+
+    list_display = ('user_id', 'movement',)
+
+
+@admin.register(UserOneRepMax)
+class UserOneRepMaxAdmin(SummernoteModelAdmin):
+
+    list_display = ('user_id', 'movement', 'one_rep_max', 'date_recorded',)
+
 
 # Alternative method for if multiple arguments or packages
 # needed to be added to tables:

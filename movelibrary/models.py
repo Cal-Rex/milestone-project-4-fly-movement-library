@@ -44,13 +44,13 @@ class UserNonAuthField(models.Model):
 class UserMovementNotes(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     movement = models.ForeignKey(Movement, on_delete=models.CASCADE)
-    movement_notes = models.TextField()
+    movement_notes = models.TextField(default="")
 
 
 class UserOneRepMax(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     movement = models.ForeignKey(Movement, on_delete=models.CASCADE, related_name="one_rm_list")
-    one_rep_max = models.IntegerField(default=0, unique=False)
+    one_rep_max = models.IntegerField(unique=False)
     date_recorded = models.DateTimeField(auto_now_add=True)
 
     class meta:
