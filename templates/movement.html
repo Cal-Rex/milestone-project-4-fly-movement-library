@@ -1,32 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- <head>
-    <script>
-        var player;
-    
-        function onYouTubeIframeAPIReady() {
-          player = new YT.Player('player', {
-            videoId: '{{ library_movement.vid_link }}',
-            events: {
-              'onReady': onPlayerReady,
-              'onError': onPlayerError
-            }
-          });
-        }
-    
-        function onPlayerReady(event) {
-          event.target.playVideo();
-        }
-    
-        function onPlayerError(event) {
-          if (event.data === 100 || event.data === 150) {
-            player.loadVideoById('{{ library_movement.vid_link }}');
-          }
-        }
-      </script>
-</head> -->
-<!-- <div id="video-id" style="display: none;">{{ library_movement.vid_link }}</div> -->
+
 <div class="container-fluid">
 
   <!-- video content -->
@@ -34,18 +9,6 @@
     <div class="row">
       <!-- video -->
       <div class="col-12 col-lg-7 order-lg-1 col-xl-7">
-        <!-- <div id="player" style="width: 100%; aspect-ratio: 16 / 9;"></div>
-            <script>
-                function loadYouTubePlayer() {
-                    var tag = document.createElement('script');
-                    tag.src = "https://www.youtube.com/iframe_api";
-                    var firstScriptTag = document.getElementsByTagName('script')[0];
-                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-                }
-
-                // Load the YouTube Player API asynchronously
-                loadYouTubePlayer();
-            </script> -->
         <!-- Temp if statement being used while library being transferred to different provider -->
         {% if library_movement.vid_link|length >= 12 %}
         <!-- Vimeo player -->
@@ -68,7 +31,7 @@
 
           <!-- 1-RM display -->
           <div class="col-10 col-sm-11 col-lg-3 order-lg-3 offset-lg-4 one-rm-feats">
-            <p>{{ one_rm_latest }} KG</p>
+            <p>{{ one_rm_records.0.one_rep_max }} KG</p>
           </div>
 
           <!-- edit 1-RM -->

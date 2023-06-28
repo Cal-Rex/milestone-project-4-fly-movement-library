@@ -43,7 +43,7 @@ class MovementDetail(View):
     def get(self, request, slug, *args, **kwargs):
         movement_from_library = get_object_or_404(Movement, slug=slug)
         one_rm_records = movement_from_library.one_rm_list.filter(
-            id=request.user.id
+            user_id=request.user.id
         ).order_by("-date_recorded")
         print("HEYYYYYYYYYYYYYY", one_rm_records)
         bookmarked = False

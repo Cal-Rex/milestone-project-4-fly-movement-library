@@ -186,4 +186,5 @@ ___
 - https://docs.djangoproject.com/en/4.2/ref/csrf/
 - https://stackoverflow.com/questions/29573163/django-admin-login-suddenly-demanding-csrf-token
 - https://docs.djangoproject.com/en/4.0/ref/settings/#csrf-trusted-origins
+- https://stackoverflow.com/questions/1479206/django-templating-how-to-access-properties-of-the-first-item-in-a-list
 
