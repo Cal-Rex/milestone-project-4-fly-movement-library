@@ -46,7 +46,7 @@
                 {% else %}
                 <button class="btn" type="submit" name="bookmark_button" value="{{ library_movement.slug }}"
                   class="bookmark-btn"><i class="fa-regular fa-bookmark"></i></button>
-              
+
                 {% endif %}
               </form>
               {% else %}
@@ -106,16 +106,26 @@
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="oc-orm-hof"
               aria-labelledby="offcanvasWithBothOptionsLabel">
               <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">1-Rep Max History for
-                    {{ library_movement.movement_name }}</h5>
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">1-Rep Max History for
+                  {{ library_movement.movement_name }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
               </div>
               <div class="offcanvas-body list-of-one-rms">
-                <ul>
+                <div class="container-fluid">
                   {% for record in one_rm_records %}
-                  <li>{{ record.date_recorded }}: {{ record.one_rep_max }} KG</li>
+                  <div class="row justify-content-between" style="line-height: 2rem;">
+                    <hr style="color: ffffff;">
+                    <div class="col-9">
+                      {{ record.date_recorded }}: {{ record.one_rep_max }} KG
+                    </div>
+                    <div class="col-3" style="text-align: right; padding: 0px 0px 10px 0px;">
+                      <a href="#"><button class="btn"><i class="fa-solid fa-square-pen one-rm-rbtn"></i></button></a><a href="#"><button class="btn"><i class="fa-solid fa-square-xmark one-rm-rbtn"></i></button></a>
+                    </div>
+                  </div>
                   {% endfor %}
-                </ul>
+                  <hr style="color: ffffff;">
+                </div>
+
               </div>
             </div>
           </div>

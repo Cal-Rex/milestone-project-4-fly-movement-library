@@ -137,6 +137,14 @@ button>i {
     font-size: 1.5rem;
 }
 
+button>i {
+    font-size: 1.5rem;
+}
+
+.one-rm-rbtn{
+    font-size: 1.25rem;
+}
+
 .list-of-one-rms {
     text-align: left;
 }
