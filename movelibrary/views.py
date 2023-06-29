@@ -63,11 +63,30 @@ class MovementDetail(View):
             one_rm.user_id = request.user
             one_rm.movement = movement_from_library
             one_rm.save()
-        else:
-            print("WEEEEEEEEEEEEEEEEEEEEEEEE", 'form errors: ', form.errors.as_text())
-            one_rm_form = OneRmForm()
+            return redirect('movement_detail', slug=slug)
 
-        return redirect('movement_1rm')
+        return render(
+            request,
+            "movement.html",
+            {
+                "library_movement": movement_from_library,
+                "one_rm_records": one_rm_records,
+                "bookmarked": bookmarked,
+                "one_rm_form": one_rm_form,
+            }
+        )
+
+        # return redirect('movement_detail', slug=slug)
+        # return render(
+        #     request,
+        #     "movement.html",
+        #     {
+        #         "library_movement": movement_from_library,
+        #         "one_rm_records": one_rm_records,
+        #         "bookmarked": bookmarked,
+        #         "one_rm_form": OneRmForm()
+        #     }
+        # )
 
 
     # def post(self, request, slug, *args, **kwargs):
