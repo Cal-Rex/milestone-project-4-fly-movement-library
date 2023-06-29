@@ -76,7 +76,7 @@
           <div class="col-2 col-sm-1 offset-sm-8 col-md-1 offset-md-8 col-lg-1 offset-lg-0 order-lg-5 one-rm-feats">
             <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-a"
               aria-controls="offcanvasWithBothOptions"><i class="fa-regular fa-square-plus"></i></button>
-            <!-- offcanvas for notes -->
+            <!-- offcanvas for 1rm -->
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="oc-orm-a"
               aria-labelledby="offcanvasWithBothOptionsLabel">
               <div class="offcanvas-header">
@@ -120,10 +120,11 @@
                     </div>
                     <div class="col-3" style="text-align: right; padding: 0px 0px 10px 0px;">
                       <!-- edit -->
-                      <button class="btn" data-bs-toggle="popover" data-bs-placement="left"
-                        data-bs-title="Popover title"
-                        data-bs-content="And here's some amazing content. It's very engaging. Right?"><i
+                      <!-- get the id of the 1rm record from the button, clarified as the "data" tag -->
+                      <button class="btn record-edit" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-e" id="{{ record.id }}"
+              aria-controls="offcanvasWithBothOptions"><i
                           class="fa-solid fa-square-pen one-rm-rbtn"></i></button>
+                          
                       <!-- delete -->
                       <a href="/delete_one_rm/{{library_movement.slug}}/{{ record.id }}"><button class="btn"><i
                             class="fa-solid fa-square-xmark one-rm-rbtn"></i></button></a>
@@ -131,13 +132,32 @@
                   </div>
                   {% endfor %}
                   <hr style="color: ffffff;">
-
-                  <!-- edit modal -->
-
                 </div>
 
               </div>
             </div>
+            <!-- offcanvas for 1rm edit form -->
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="oc-orm-e"
+              aria-labelledby="offcanvasWithBothOptionsLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Edit Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+              </div>
+              <div class="offcanvas-body">
+                <form id="edit-record-form" method="POST" action="/edit_one_rm/{{library_movement.slug}}/{{ record.id }}/">
+                  {{ one_rm_form }}
+                  {% csrf_token %}
+                  <div>
+                    <p>
+                      <button type="submit"><strong>add</strong></button>
+                    </p>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+
+
           </div>
 
         </div>
@@ -146,19 +166,9 @@
       <!-- explanation -->
       <div class="col-12 col-lg-5 order-lg-2 col-xl-5">
         <h2>{{ library_movement.movement_name }}</h2>
+        <span id="slug" style="display: none;">{{ library_movement.slug}}</span>
         {{ library_movement.directions | safe }}
       </div>
     </div>
   </div>
-  <form method="POST" action="/edit_one_rm/{{library_movement.slug}}/{{ one_rm_records.0.id }}/">
-    {{ one_rm_form }}
-    {% csrf_token %}
-    <div>
-      <p>
-        <button type="submit"><strong>add</strong></button>
-      </p>
-    </div>
-  </form>
-
-  <h1>hello world</h1>
   {% endblock %}
