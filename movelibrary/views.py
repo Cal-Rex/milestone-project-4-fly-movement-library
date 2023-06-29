@@ -182,17 +182,7 @@ class OneRepMaxRecords(generic.ListView):
         one_rm_record = get_object_or_404(UserOneRepMax,)
 
 
-# class AddOneRmRecord(View):
-#     def post(self, request, slug):
-#         movement = get_object_or_404(Movement, slug=slug)
-#         form = OneRmForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect("movement_detail")
-
-
-# class AddOneRmRecord(CreateView):
-
-#     model = UserOneRepMax
-
-#     fields = ['one_rep_max',]
+def delete_one_rm(request, slug, record_id):
+    record = get_object_or_404(UserOneRepMax, id=record_id)
+    record.delete()
+    return redirect('movement_detail', slug=slug)

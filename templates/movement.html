@@ -119,7 +119,7 @@
                       {{ record.date_recorded }}: {{ record.one_rep_max }} KG
                     </div>
                     <div class="col-3" style="text-align: right; padding: 0px 0px 10px 0px;">
-                      <a href="#"><button class="btn"><i class="fa-solid fa-square-pen one-rm-rbtn"></i></button></a><a href="#"><button class="btn"><i class="fa-solid fa-square-xmark one-rm-rbtn"></i></button></a>
+                      <a href="#"><button class="btn"><i class="fa-solid fa-square-pen one-rm-rbtn"></i></button></a><a href="/delete_one_rm/{{library_movement.slug}}/{{ record.id }}"><button class="btn"><i class="fa-solid fa-square-xmark one-rm-rbtn"></i></button></a>
                     </div>
                   </div>
                   {% endfor %}

@@ -24,5 +24,6 @@ urlpatterns = [
         views.MovementDetail.as_view(),
         name='movement_detail'
     ),
+    path('delete_one_rm/<slug:slug>/<record_id>/', views.delete_one_rm, name='delete_one_rm'),
     # path('accounts/login/', allauth_views.LoginView.as_view(), name='login'),
 ]
