@@ -182,6 +182,24 @@ class OneRepMaxRecords(generic.ListView):
         one_rm_record = get_object_or_404(UserOneRepMax,)
 
 
+def edit_one_rm(request, slug, record_id):
+    record = get_object_or_404(UserOneRepMax, id=record_id)
+    movement_from_library = get_object_or_404(Movement, slug=slug)
+    if request.method == 'POST':
+        one_rm_form = OneRmForm(data=request.POST, instance=record)
+        if one_rm_form.is_valid():
+            one_rm = one_rm_form.save(commit=False)
+            one_rm.user_id = request.user
+            one_rm.movement = movement_from_library
+            one_rm.save()
+            return redirect('movement_detail', slug=slug)
+    form = OneRmForm(instance=record)
+    context = {
+        'form': form
+    }
+    return redirect('movement_detail', slug=slug)
+
+
 def delete_one_rm(request, slug, record_id):
     record = get_object_or_404(UserOneRepMax, id=record_id)
     record.delete()

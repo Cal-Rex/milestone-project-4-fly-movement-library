@@ -24,6 +24,7 @@ urlpatterns = [
         views.MovementDetail.as_view(),
         name='movement_detail'
     ),
+    path('edit_one_rm/<slug:slug>/<record_id>/', views.edit_one_rm, name='edit_one_rm'),
     path('delete_one_rm/<slug:slug>/<record_id>/', views.delete_one_rm, name='delete_one_rm'),
     # path('accounts/login/', allauth_views.LoginView.as_view(), name='login'),
 ]

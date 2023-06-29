@@ -119,11 +119,21 @@
                       {{ record.date_recorded }}: {{ record.one_rep_max }} KG
                     </div>
                     <div class="col-3" style="text-align: right; padding: 0px 0px 10px 0px;">
-                      <a href="#"><button class="btn"><i class="fa-solid fa-square-pen one-rm-rbtn"></i></button></a><a href="/delete_one_rm/{{library_movement.slug}}/{{ record.id }}"><button class="btn"><i class="fa-solid fa-square-xmark one-rm-rbtn"></i></button></a>
+                      <!-- edit -->
+                      <button class="btn" data-bs-toggle="popover" data-bs-placement="left"
+                        data-bs-title="Popover title"
+                        data-bs-content="And here's some amazing content. It's very engaging. Right?"><i
+                          class="fa-solid fa-square-pen one-rm-rbtn"></i></button>
+                      <!-- delete -->
+                      <a href="/delete_one_rm/{{library_movement.slug}}/{{ record.id }}"><button class="btn"><i
+                            class="fa-solid fa-square-xmark one-rm-rbtn"></i></button></a>
                     </div>
                   </div>
                   {% endfor %}
                   <hr style="color: ffffff;">
+
+                  <!-- edit modal -->
+
                 </div>
 
               </div>
@@ -140,4 +150,15 @@
       </div>
     </div>
   </div>
+  <form method="POST" action="/edit_one_rm/{{library_movement.slug}}/{{ one_rm_records.0.id }}/">
+    {{ one_rm_form }}
+    {% csrf_token %}
+    <div>
+      <p>
+        <button type="submit"><strong>add</strong></button>
+      </p>
+    </div>
+  </form>
+
+  <h1>hello world</h1>
   {% endblock %}
