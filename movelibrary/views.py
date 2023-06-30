@@ -20,7 +20,7 @@ class Landing(LoginRequiredMixin, generic.ListView):
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
         return render(
             request,
-            'base.html',
+            'index.html',
             {
                 "bookmarks": bookmarks
             }
