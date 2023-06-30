@@ -156,8 +156,6 @@
               </div>
             </div>
 
-
-
           </div>
 
         </div>
@@ -166,9 +164,10 @@
       <!-- explanation -->
       <div class="col-12 col-lg-5 order-lg-2 col-xl-5">
         <h2>{{ library_movement.movement_name }}</h2>
-        <span id="slug" style="display: none;">{{ library_movement.slug}}</span>
         {{ library_movement.directions | safe }}
       </div>
     </div>
   </div>
+  <!-- slug projected to invis span for JS to pick up -->
+  <span id="slug">{{ library_movement.slug}}</span>
   {% endblock %}

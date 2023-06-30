@@ -149,6 +149,10 @@ button>i {
     text-align: left;
 }
 
+#slug {
+    display: none;
+}
+
 /* footer styling */
 .socials-footer {
     position: sticky;
