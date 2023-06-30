@@ -44,6 +44,52 @@ nav>.offcanvas.offcanvas-end {
     background-color: #000 !important;
 }
 
+/* nav menu styling */
+.dropdown-menu {
+    --bs-dropdown-bg: #000;
+    --bs-dropdown-link-color: #fff;
+    --bs-dropdown-link-hover-color: fff;
+    min-width: 100%;
+}
+
+.dropdown-menu>li {
+    margin-left: 10%;
+}
+
+.dropdown-item {
+    --bs-dropdown-item-padding-x: 0px;
+    padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+}
+
+.dropdown-item:active {
+    background-color: #00000000;
+    --bs-dropdown-bg: #000;
+    color: fff;
+    border-left: 1px solid #2EF74F !important;
+}
+
+.dropdown-item:focus {
+    --bs-dropdown-bg: #000;
+    --bs-dropdown-link-color: #fff;
+    border-bottom: 0px;
+}
+
+.dropdown-item:hover {
+    background-color: #00000000;
+    --bs-dropdown-bg: #000;
+    color: fff;
+    border-left: 1px solid #fff;
+    padding-left: 10px;
+}
+
+.dropdown-item:focus-visible {
+    outline: none;
+}
+
+.dropdown-divider {
+    border-top: 1px solid #ffffff45;
+}
+
 /* nav search field */
 .form-control {
     color: #fff;
