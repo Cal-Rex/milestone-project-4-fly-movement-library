@@ -9,7 +9,7 @@ $(function (e) {
     // Function to apply relevant post "action" to Edit 1RM form
     $('.record-edit').on('click', function (e) {
         let recordId = $(this).attr("id");
-        let movementSlug = document.getElementById('slug').innerHTML;
+        let movementSlug = $('iframe')[0].id;
         $('#edit-record-form').attr('action', `/edit_one_rm/${movementSlug}/${recordId}/`);
     });
       

@@ -224,6 +224,8 @@ Based on the results of the strategy plane the following features have been focu
 
 
 ### **Structure Plane**
+The App will use the Django web app framework to  extend specific HTML pages into a base template, then datasets from a hosted database will be rendered on html templates based on specific user and user interaction:
+
 
 #### __Table Diagrams__
 

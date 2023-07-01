@@ -12,14 +12,14 @@
         <!-- Temp if statement being used while library being transferred to different provider -->
         {% if library_movement.vid_link|length >= 12 %}
         <!-- Vimeo player -->
-        <iframe style="width: 100%; aspect-ratio: 16 / 9;"
+        <iframe id="{{ library_movement.slug}}" style="width: 100%; aspect-ratio: 16 / 9;"
           src="https://player.vimeo.com/video/{{ library_movement.vid_link }}&muted=1&autoplay=1&loop=1&background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
           frameborder="0" allow="autoplay;" loop="1" autoplay="1"
           style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Nordic Curls ML3"></iframe>
         <script src="https://player.vimeo.com/api/player.js"></script>
         {% else %}
         <!-- Youtube player -->
-        <iframe style="width: 100%; aspect-ratio: 16 / 9;"
+        <iframe id="{{ library_movement.slug}}" style="width: 100%; aspect-ratio: 16 / 9;"
           src="https://www.youtube.com/embed/{{ library_movement.vid_link }}?rel=0&autoplay=1&loop=1&mute=1&controls=0&playlist={{ library_movement.vid_link }}">
         </iframe>
         {% endif %}
@@ -168,6 +168,4 @@
       </div>
     </div>
   </div>
-  <!-- slug projected to invis span for JS to pick up -->
-  <span id="slug">{{ library_movement.slug}}</span>
   {% endblock %}
