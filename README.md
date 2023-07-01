@@ -36,7 +36,30 @@ ___
 ___
 
 # I N T R O D U C T I O N
+
+
+The Fly Movement Library is a web app that aims to streamline the accessability to online content that guides functional weightlifting and fitness, coached and promoted by [The Fly Project](https://fly.fit) in Glasgow, Scotland.
+
+Prior to the concept of this App, The Fly Project created a library of movements (to be accessed on their website) which users could access to help guide them through self-led training outside of a class or to help supplement coaching.
+
+The library in it's current state, is going through a revamp online. This project aims to demonstrate the possibilities of the Movement Library catalysing it's own value in the form of its own app, with a user experience that focuses on the personal development of the user.
+
+The initial version of this app aims to provide the service of users being able to seemlessly search for particular movements, regardless of knowing correct movement terminology. The app should also be able to recommend similar movements - or - other movements that compliment a searched movement. Additionally, users will also be able to record and track their one rep max (how much weight a user can lift in a specific movement through one iteration of the movement safely) on all weighted movements - This is an important feature for users training in functional weightlifting, as this figure is used to calculate ideal/safe weights for certain movements conducted in specific rep ranges in functional training.
+
+**This project is the fourth of the five projects to be created for the Diploma in Full Stack Software Development (Advanced Front End)**
+
+Project scope:
+>_"In this project, you'll build a Full-Stack site based on business logic used to control a centrally-owned dataset. You will set up an authentication mechanism and provide role-based access to the site's data or other activities based on the dataset."_
+
+Based on this scope this project will deliver the following:
+- Build a full-stack site based on business logic to control a centrally owned dataset
+- a site that is mediated by a role-based authentication mechanism
+    - depending on the nature of the role, users have options to conduct full CRUD functionality on specific aspects the aformentioned dataset (admin/user)
+- The site will employ the use of external libraries and frameworks to create a robust experience via the use of HTML, CSS, Javascript and Python languages
+<br>
+<br>
 ___
+
 
 # D E S I G N
 
@@ -98,24 +121,48 @@ The First version of this Project is to be submitted as an assessment piece as p
 
 ## UX
 
+### Research
+
+Training apps are absolutely not a new thing in the App market and economy, and there is an abundance of products out there to draw inspiration from. The idea for this project however, was inspired mainly by the App - [GOWOD](https://www.gowod.app/), which is an app that focuses on stretching and mobility, concepts that pair well and draw close parrallels with functional weightlifting:
+|                                                            |                          GOWOD UI                          |               |
+| :--------------------------------------------------------: | :--------------------------------------------------------: | :------------------------------------: |
+| ![gowod-preview-1](/static/media/readme-media/gowod-1.jpg) | ![gowod-preview-2](/static/media/readme-media/gowod-2.jpg) | ![gowod-preview-3](/static/media/readme-media/gowod-3.jpg) |
+
+- The app is excellent in terms of responsiveness and is very user friendly
+- it provides fantastic tailored information and data to the user based on the information the user enters into the app
+- it's serach function however is very direct, and isn't necessarily friendly to users who are new to training, or lack knowledge of movement terminology.
+
+
+<br>
+
 ## Development Planes
 
 ### **Strategy Plane**
 
 #### __User Stories__
 1. Product Users
-    - _"As a user, i want to log in and view specific workout/movement tutorials"_
-    - _"As a user, i want to be able to search for specific workouts"_
-    - _"As a user, i want to be able to bookmark movements for easy referencing"_
-    - _"As a user, i want to know what other exercises compliment the ones i have bookmarked"_
-    - _"As a user, i want to be able to create my own flow of movements to help keep me right suring my own training"_
-    - _"As a user, if i am unsure of the name of a particular movement or a workout, i want to be able to search for it in the library"_
-    - _"As a user, if i cant find the movement i am looking for, i want the app to give me suggestions based on my search"_
+    - _"as a User i want to be able to edit any 1-rep max records i have entered in the event that i was bad at math at the time of recording"_
+    - _"As a user, i want to be able to log in so that i can view specific workout/movement tutorials"_
+    - _"As a user, I want to be able to search for specific workouts, so that I can easily find the movement I am looking for"_
+    - _"As a User, I want to be able to Bookmark movements, so that I can refer to them easily at a later date"_
+    - _"As a User, I want to be able to know what other exercises compliment the ones i have bookmarked, so that I can expand my training"_
+    - _"As a User, I want to be able to create my own flow of movements, so that ** i can keep me right during my own training**"_
+    - _"As a User, i want to be able to search for movements even if i am unsure of their names so that I can find my moevements easily without having to know all the correct terminology"_
+    - _"As a user, I want to be able to have recommendations from my searches, so that if I cant find the movement I am looking for, I have alternatives to try"_
+    - _"As a User i want to be able to add my own personal notes to a movement, for my own reference so that i can keep track of different aspects of my workout and training"_
+    - _"As a User I want to be able to record my own 1-rep maxes in the app and date them so that I can track my progression"_
+    - _"as a User I want to be able to edit any notes I attach to a workout so that I can amend my notes to have relevant information when I am training"_
+    - _"as a User i want to be able to edit any 1-rep max records i have entered in the event that i was bad at math at the time of recording"_
+
 2. Stakeholders
-    - _"As a business owner, i want to be able to see who has signed up to use this app"_
-    - _"As a business owner, i want to know i have consent to access and use the data provided by users on sign up"_
-    - _"As a business owner, i want to know what movements are most popular"_
-    - _"As a business owner, i want to be able to promote my other products on this app seamlessly"_
+    - _"As a Business owner, I want to be able to ** see who has signed up to use this app**, so that Track the apps success and growth"_
+    - _"As a Business owner, I want to be able to know i have consent to access and use the data provided by users on sign up, so that I can optimise brand marketing"_
+    - _"As a Business owner, I want to be able to know what movements are most popular, so that compare them with other movements and see why they are more popular with users"_
+    - _"As a Business owner, I want to be able to promote my other products on this app seamlessly, so that I can optimise my brand marketing"_
+    - _"As an Admin, I want to be able to Add new movements to the app, so that I don't have to ask the developer to do it every time we add a new movement"_
+    - _"As an Admin, I want to be able to update movement video links, so that if/when they are re-filmed, i can update the app to show the newest content"_
+    - _"As an Admin, I want to be able to Delete movements, so that if they become obsolete, or if i need to take them down, i can do so"_
+
 
 
 ### **Scope Plane**
