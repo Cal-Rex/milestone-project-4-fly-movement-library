@@ -164,8 +164,64 @@ Training apps are absolutely not a new thing in the App market and economy, and 
     - _"As an Admin, I want to be able to Delete movements, so that if they become obsolete, or if i need to take them down, i can do so"_
 
 
+#### __Project Goals__
+
+> The Goal of this project is create a web application that enhances a user's physical fitness training through functional movement focused guidance and tracking of progress in addition to promoting elements of the client's business such as coaching, classes and community. 
+
+#### __User Goals__
+
+Based on user stories, user goals are defined as - _"create an app that..."_:
+- _allows users to search and view specific functional training movements_
+- _allows users to create, read, update, delete and track their development on specific goal-oriented movements_
+- _allows users to keep track of movements they are focusing on developing, or keeping as a handy reference_
+- _allows users to diversify their training with recommended alternatives_
+- _allows users to record their own notes and data pertaining to a specific movement_
+- _allows admins to see how many people use the app_
+- _allows admins to create, read, update and delete content within the apps dataset_
+- _allows admins to track the popularity of specific app content_
+
+
+#### __Developer Goals__
+
+- Create a an informative functional training tool
+- push personal and professional capabilities as a full-stack software developer
+- Create a web app that could potentially grow into a viable business opportunity in the future 
+- fulfill all assessment and portfolio criteria
+
 
 ### **Scope Plane**
+
+Based on the results of the strategy plane the following features have been focused on to develop:
+
+1. **A role-based authentication-mitigated experience**
+    - User's will be required to sign up and login to use the app
+    - Admins will be able to access the admin panel with specific admin credentials
+
+2. **a responsive search field that predicts what users are looking for, or lists search results based on entered criteria**
+    - This will be housed in the Nav element of the app's html, as the search function should alwasy be accessible to authenticated users
+    - the search field will generate real-time predictions based on the entered search criteria in a dropdown. selecting items from the dropdown will tae you directly to the movement, submitting criteria to the form will generate a list of possible results.
+
+3. **An easily accessible menu where users can manage bookmarked/recorded data and their own user info**
+    - off-canvas menu will be housed in the nav element of the page. When clicked, users will have immediate access to their bookmarked movements and their own profile data such as name and email address
+
+4. **View selected movements**
+    - based on the criteria given in the search, when a movement is selected, a movement video should be immediately displayed in addition to important key information relating to that movement
+
+5. **Create, Read, Update, Delete specific user records pertaining to that movement**
+    - within the view of the video and instructional content, record for the User's Latest One rep max for a weighted movement should be displayed. 
+    - if the user has no records the field will give this feedback to the user
+    - there will be buttons that will allow a user to add a new movement, or a button that will open an off-canvas element to edit or delete any of the recorded data.
+
+6. **prompts**
+    -  whenever a user performs any CRUD functionality on any dataset elements in the UI, the UI will generate a toast message to confirm the user has successfully carried out a function
+
+7. **Bookmarking**
+    - directly under the video, their will be a button that allows a user to bookmark a movement, which will then show up in their off-canvas menu.
+
+8. **promote client brand**
+    - the footer will contain links to socials, in addition to links to the Client's social media
+    - the offcanvas menu will have a button that opens a new browser window where users can book classes
+
 
 ### **Structure Plane**
 
