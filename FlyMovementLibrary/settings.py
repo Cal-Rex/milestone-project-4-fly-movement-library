@@ -53,6 +53,8 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
+ACCOUNT_FORMS = {'signup': 'movelibrary.forms.CustomSignupForm'}
+
 # ADD LOGOUT REDIRECT HERE?
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

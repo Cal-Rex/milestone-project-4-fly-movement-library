@@ -59,8 +59,13 @@ form > p > label {
 }
 
 input {
-    border: none;
-    border-bottom: solid 1px #000000;
+    text-align: center;
+    border-style: solid;
+    border-color: #ffffff45;
+    border-image: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
 }
 
 input:focus-visible {
@@ -75,5 +80,12 @@ input::placeholder {
 label[for="id_remember"] {
     display: inline;
  }
+
+
+/* notifications */
+.errorlist {
+    list-style-type: none;
+    padding-left: 0;
+}
 
  

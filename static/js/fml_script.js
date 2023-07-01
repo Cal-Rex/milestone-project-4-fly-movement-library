@@ -7,6 +7,7 @@ $(function (e) {
 
     // 1 Rep Max Related functions
     // Function to apply relevant post "action" to Edit 1RM form
+    
     $('.record-edit').on('click', function (e) {
         let recordId = $(this).attr("id");
         let movementSlug = $('iframe')[0].id;
