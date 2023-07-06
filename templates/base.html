@@ -33,7 +33,12 @@
                 {% load static %}
                 <form class="d-flex mt-3 align-content-sm-center" method="GET" action="{% url 'search_results' %}"
                     role="search">
-                    <input class="form-control me-2" type="search" placeholder="#" name="query" aria-label="Search">
+                    <input id="search-field" list="library-movements" autocomplete="off" class="form-control me-2" type="search" placeholder="search..." default="search" name="query" aria-label="Search">
+                    <datalist id="library-movements">
+                    {% for movement in movement_library_list %}
+                    <option class="datalist-item">{{ movement.movement_name }}</option>
+                    {% endfor %}
+                    </datalist>
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>

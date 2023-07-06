@@ -274,12 +274,71 @@ A movement:
 
 ### **Skeleton Plane**
 
+#### **Wireframes**
+
+Mobile View:
+
+| Login Page | Sign-up Page | Sign-out Page |
+|:-:|:-:|:-:|
+| ![Login page](/static/media/readme-media/wireframes/mobile/11-log-in.webp) | ![Sign-up Page](/static/media/readme-media/wireframes/mobile/10-sign-up.webp) | ![Sign-out page](/static/media/readme-media/wireframes/mobile/12-sign-out.webp) |
+
+| Index/dashbord | Navigation Menu | Navigation Menu Expanded |
+|:-:|:-:|:-:|
+| ![Dashboard page](/static/media/readme-media/wireframes/mobile/1-index-dashboard.webp) | ![Menu view](/static/media/readme-media/wireframes/mobile/2-menu-demo-1.webp) | ![Menu expanded](/static/media/readme-media/wireframes/mobile/3-menu-demo-2.webp) |
+
+| Edit Profile Page | Edit Profile Page with edited fields | Search Results |
+|:-:|:-:|:-:|
+| ![Edit Profile Page](/static/media/readme-media/wireframes/mobile/8-edit-profile-1.webp) | ![Edit Profile edited view](/static/media/readme-media/wireframes/mobile/9-edit-profile-2.webp) | ![Search Results page](/static/media/readme-media/wireframes/mobile/4-search-results.webp) |
+
+| Movement Detail Page | User 1-Rep-max records for that movement | add / edit a 1-rep max |
+|:-:|:-:|:-:|
+| ![Movement Detail page](/static/media/readme-media/wireframes/mobile/5-movement-detail.webp) | ![1-Rep-max records for that movement](/static/media/readme-media/wireframes/mobile/6-records-menu.webp) | ![add / edit a 1-rep max](/static/media/readme-media/wireframes/mobile/7-add-new-record.webp) |
+
+Desktop / larger screen view:
+
+| Dashboard/index | Navigation menu | Search Results Page |
+|:-:|:-:|:-:|
+| ![Dashbaord page Desktop](/static/media/readme-media/wireframes/desktop/01-dt-dashboard.webp) | ![Navigation menu desktop](/static/media/readme-media/wireframes/desktop/02-dt-menu.webp) | ![Search results page desktop](/static/media/readme-media/wireframes/desktop/03-dt-search-results.webp) |
+
+| Dashboard/index | Navigation menu | Search Results Page |
+|:-:|:-:|:-:|
+| ![Movement details page desktop](/static/media/readme-media/wireframes/desktop/04-dt-movement-details.webp) | ![User 1-Rep-max records for that movement Desktop](/static/media/readme-media/wireframes/desktop/05-dt-1rm-records.webp) | ![edit/add 1rm desktop](/static/media/readme-media/wireframes/desktop/06-dt-1rm-form.webp) |
+
+
 ## Colour Scheme
+
+As the branding and style is already created for the client, the Chrome extension [Site Palette](https://chrome.google.com/webstore/detail/site-palette/pekhihjiehdafocefoimckjpbkegknoh/related?hl=en-GB) was used to generate a board of colours to choose from when stylising the app elements:
+
+![colour palette by Site Palette](/static/media/readme-media/colour-palette-1.png)
+
+![colour palette by Site Palette](/static/media/readme-media/colour-palette-2.png)
+
+As site palette only generated "like-colours" for the app, original brand colours have been placed below using a screenshot from [Colormind](http://colormind.io/template/material-dashboard/):
+
+![Fly site Colours](/static/media/readme-media/fly-site-colours.png)
 
 ## Typography
 
+According to Dev Tools, the Fly Site uses only a thin variation of the Montserrat font. As such, The montserrat font was imported from [Google Fonts](https://fonts.google.com/) to stay congruent with the business branding
+
+![Montserrat Font: Google Fonts](/static/media/readme-media/montserrat-font-google.png)
+
+
 ## Imagery & Media
+
+Imagery such as Logos were provided by the client. Access to the Client's Vimeo account to format the videos within Vimeo's API was also given. Slugs were then taken from vimeo and imported as keys within the database.
 ___
+
+Features
+    - Design Features
+    - Visual Features
+    - Data Management
+    - 404 / 500 Features
+    - Future Development
+
+___
+
+
 
 # B U G S
 
@@ -300,6 +359,8 @@ ___
     - Solution: Add CSRF_TRUSTED_ORIGINS list variable with permitted domains to settings.py
 - JQuery functions producing type error:
     - error caused by cloudinary having insufficient capacity to run size of static files on free subscription plan. uninstalled package and now pulling script from CDN
+- when a 1rm is entered, movement becomes un-bookmarked:
+    - closing tag for the edit 1rm form was placed incorrectly inside a for loop on the template. replaced outside of loop and resolved issue
 
 ## Un-resolved bugs
 - iframe in index will not respond to style rules set in style.css
@@ -320,7 +381,8 @@ ___
     - javascript and API override attempted, but couldn't get it to work
         - https://stackoverflow.com/questions/19410789/youtube-player-api-with-loop
     - client has alternative hosting service already set up. Will use this instead.
-- when a 1rm is entered, movement becomes un-bookmarked
+- connection refused (error: 111) when trying to reset password.
+
 ___
 
 # C R E D I T S
