@@ -522,11 +522,51 @@ ___
 
 ___
 
-Technologies
-    - Languages
-    - Frameworks
-    - Libraries
-    - Programs
+# T E C H N O L O G I E S
+
+## Languages
+- [Python 3.11.4](https://www.python.org/)
+- [Javascript 5](https://en.wikipedia.org/wiki/JavaScript)
+- [CSS 3](https://en.wikipedia.org/wiki/CSS)
+- [HTML 5](https://en.wikipedia.org/wiki/HTML)
+
+## Frameworks
+- [Django 4.0](https://www.djangoproject.com/)
+    - [Summernote](https://pypi.org/project/django-summernote/)
+    - [Allauth](https://django-allauth.readthedocs.io/en/latest/)
+    - [Gunicorn](https://gunicorn.org/)
+- [Cloudinary](https://cloudinary.com/)
+
+## Libraries
+- [Bootstrap 5.3x](https://getbootstrap.com/)
+- [Jquery 3.7.0](https://jquery.com/download/)
+
+## Programs
+- [VS Code](https://code.visualstudio.com/)
+- [MS Powerpoint](https://www.microsoft.com/en-gb/)
+- [MS Word](https://www.microsoft.com/en-gb/)
+- [Google Chrome](https://www.google.com/intl/en_uk/chrome/)
+    - Desktop
+        - [Site Palette Extension](https://chrome.google.com/webstore/detail/site-palette/pekhihjiehdafocefoimckjpbkegknoh/related?hl=en-GB)
+        - Devtools
+    - Mobile
+- [Mozilla Firefox](https://www.mozilla.org/en-GB/firefox/)
+- [Safari](https://www.apple.com/uk/safari/)
+- [Opera GX](https://www.opera.com/)
+- [GIMP 2.10.32](https://www.gimp.org/)
+
+## Web Applications / Services
+- [Monday.com](https://monday.com/)
+- [Github](https://github.com/)
+- [Gitpod](https://gitpod.io/workspaces)
+- [Colormind](http://colormind.io/template/paper-dashboard/)
+- [Vimeo](https://vimeo.com/)
+- [Youtube](https://www.youtube.com/)
+- [Heroku](https://id.heroku.com/)
+- [Elephant SQL](https://www.elephantsql.com/)
+- [Chat GPT](https://openai.com/blog/chatgpt)
+- [Zoom](https://zoom.us/)
+- [Cloud Convert](https://cloudconvert.com/)
 
 ___
 
