@@ -329,12 +329,149 @@ According to Dev Tools, the Fly Site uses only a thin variation of the Montserra
 Imagery such as Logos were provided by the client. Access to the Client's Vimeo account to format the videos within Vimeo's API was also given. Slugs were then taken from vimeo and imported as keys within the database.
 ___
 
-Features
-    - Design Features
-    - Visual Features
-    - Data Management
-    - 404 / 500 Features
-    - Future Development
+# F E A T U R E S
+
+## Design Features
+
+### **Front-End Mechanical Features**
+
+**__Logging in__**
+
+- when viewing the app a non-authenticated user, the app will alays redirect to the login screen, no matter that link is used to access the app.
+- This is achieved by the use of class decorators within the views.py file, that generate that a user MUST be authenticated, else they are redirected to the login page.
+- users can log in by providing a username and password
+- Username and password are checked against the database by use of the Django Allauth plugin
+- Incorrect username or password will just redirect to the login page
+- correct details will redirect users to the dashboard of the app
+
+**__Sign up__**
+- Users can sign up if they do not have an account
+- They can do so by clicking the link on the login page, which rediects to a sign up form
+- the form requests the following fields be completed:
+    - Username
+    - Email Address
+    - First Name
+    - Last Name
+    - Password
+    - Password (again, for verification)
+- failure to correctly enter all fields will result in a refresh of the page
+- correctly submitting the form posts the data to the Database via use of the Allauth functions
+
+**__Forgot password__**
+- Users can reset their password by clicking on the "forgot password?" link on the login page, OR in the edit profile page
+- the entering an email address emails a user with a reset password link. This is all handled by Django Allauth
+
+**__Editing Personal Details__**
+- When logged in, users can edit their first name and last name by selecting "Edit profile" from the navigaton menu
+- Email change will be implemented in later iterations, as this will require some further security
+
+**__Navigation Menu__**
+- Once logged in, users can access the navigation menu by clicking the navigation button at the top left of the page
+- when clicked, an off-canvas menu will appear, allowing users to:
+    - Access a link that will always return the user to the dashboard
+    - Access any movements a user has bookmarked 
+    - Edit theiir profile
+    - Sign out
+
+**__Book Classes__**
+- If authenticated, on the dashboard page, users can click a button that will redirect them to the booking system that the client uses to manage classes
+
+**__Social features__**
+- Links to social Media platforms for the business such as Instagram and Facebook appear as branded buttons at the bottom of the page in the footer.
+- clicking on them will open the desired page in a seperate tab
+
+**__Searching movements__**
+- in the navbar, users can make use of the search field that allows them to search for specific movements
+- when searching, the search criteria filters through objects in the "Movement" database to find objects contain any string values entered into the search field, for example, the terms "floor" or "press" would both return the movement "floor press" along with any other movements that contain those string values in their names
+- on the search results page, users can click one of the results and will be redirected to the movement detail page for that movement
+
+**__Movement Details__**
+- when a moevement is selected, the database is queied and provides the following elements to the page:
+    - A demonstration video of the moevement
+    - Key information about the movement
+    - The 1-rep Max records for that moevement by the specific authenticated user
+
+**__Adding a 1-rep max__**
+- Authenticated users can click on a button that will open an off canvas element containing a form
+- The form will allow users to enter an integer value and hit submit
+- outside the field, a label will indicate that this integer should represent Kilograms
+- upon submitting, this integer is posted to the UserOneRepMax table, containing:
+    - The integer value entered
+    - The date it was recorded
+    - What movement it was for
+    - What user created the record
+
+**__Viewing 1-rep maxes__**
+- Authenticated users; when viewing a movement, will be shown their most recent 1 rep max directly below the video
+- there is also a button that users can click, which will open an offcanvas element, displaying all of their previious 1-rep-max records
+
+**__Editing/Deleting 1-rep maxes__**
+- When viewing the offcanvas menu mentioned above, there are buttons which allow a user to edit the specific 1-rep-max record
+    - This re-opens the form for adding a 1-re max in the offcanvas, but this time the target is that specific record
+    - when submitted, the change is updated on the database
+- The delete button is right next to the edit button, which; when clicked, removes the record
+
+
+## Visual Features
+
+## Data Management
+
+All Data for this project is stored on a hosted server by ElephantSQL and Amazon Web Services on a TinyTurtle Package. The server is located in Ireland and is maintined by ElephantSQL.
+
+### **Database Models/Structure**
+
+The database contains the following tables:
+
+**Movements**
+- Houses all of the movements in the movement library
+- contains the unique vimeo slug for each video, which calls the video from the vimeo database
+- a unique slug field for the app, that identifies the movement for the brower
+- a name field to identify the omvement to the user at the front end 
+
+**Tags**
+- contains a list of common tags associated with moevements in the library
+- these tags are linked in each record by a foreign key, linking to the Movement Table
+- Each tag has a boolean value of true or false, true meaning that the tag is associated with that specific movement
+- This table was implemented with the hopes of adding more advanced search functionality, but due to setbacks in this iteration, this feature was postponed
+
+**User Movement Notes**
+- Contains a record of a User's Id as a foreign key, an associated movement as a foreign key and a notes field as a text field
+- The Idea for this table is that a user can have a single record for each movement. a notes field which can be viewed and edited
+- This table was implemented with the hopes of adding such a feature, but there was insufficient time available to implement during this iteration of the Project
+
+**User Non-Auth Fields**
+- This Table was to act as an extension of the User Table implemented by Allauth
+- It contains non-sensetive user information such as:
+    - a boolean value to check if users agree toa privacy policy/GDPR
+        - As this project will not be published commercially at the time of submission/examination, this feature has not been implemented on the front end of the app
+    - The last movement a user viewed
+        - Due to time onstraints, this feature was not implemented in the first iteration of the project
+- The fields would be indexed by a foreign key linking to the User table
+
+**User One-Rep Maxes**
+- This table indexes and cross references with 2 foreign keys from the following tables:
+    - User
+    - Movement
+- it contains the following additional fields
+    - Integer Field: for recording a 1-rep max (in Kilograms)
+    - Date/Time field: Automatically fills when a form is submitted on the front end
+- This table allows users to record accurate results, track their progress, and help manage the optimum working weight of their workouts
+
+## 404 / 500 Features
+
+## Future Development
+
+The following features were not implemented in this iteration of the project due to time constraints. But will be reviewed with the next iteration of the Project after this Project has been assessed:
+
+1. Adding of User Notes on a movement
+2. Implementation of a Terms/End User License agreement/GDPR disclaimer
+3. Reactive Search field that responds in real-time to the users entered data
+    - able to bypass search results page upon selecting a movement from a provided datalist depending on values keyed into search field
+4. Remove the reloading of Page elements on submission/POST requests by utilizing async functions and fetch commmands in Javascript
+5. Add the feature of allowing users to append notes to movements
+6. Implement a secure automated method where users can request to change their email
+7. Implement a feature that allows user's to Delete their account
+8. Add a modal that asks the user to confirm deletion of a 1-rep max record upon selecting the delete button for a 1-rep max instead of just immediately deleting the item
 
 ___
 
@@ -384,6 +521,16 @@ ___
 - connection refused (error: 111) when trying to reset password.
 
 ___
+
+Technologies
+    - Languages
+    - Frameworks
+    - Libraries
+    - Programs
+
+___
+
+
 
 # C R E D I T S
 
