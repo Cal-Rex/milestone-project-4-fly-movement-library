@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.db.models import Q
 from .models import Movement, Tag, UserNonAuthField, UserOneRepMax, User
-from .forms import OneRmForm
+from .forms import OneRmForm, NameEditForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
@@ -18,7 +18,6 @@ class Landing(LoginRequiredMixin, generic.ListView):
 
     def get(self, request, *args, **kwargs):
         movement_library_list = Movement.objects.filter()
-        print("AAAAAAAAAAAAAAAAAAAAAAAHHHH", movement_library_list)
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
         return render(
             request,
@@ -172,3 +171,50 @@ def delete_one_rm(request, slug, record_id):
     record = get_object_or_404(UserOneRepMax, id=record_id)
     record.delete()
     return redirect('movement_detail', slug=slug)
+
+
+class EditProfile(LoginRequiredMixin, View):
+    login_url = '/accounts/login/'
+
+    def get(self, request):
+        bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
+        user = get_object_or_404(User, id=request.user.id)
+        user_first_name = user.first_name
+        user_last_name = user.last_name
+
+        name_edit_form = NameEditForm(instance=user)
+        return render(
+            request,
+            'profile.html',
+            {
+                "name_edit_form": name_edit_form,
+                "bookmarks": bookmarks,
+                "user_first_name": user_first_name,
+                "user_last_name": user_last_name,
+            }
+        )
+
+    def post(self, request):
+        bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
+        user = get_object_or_404(User, id=request.user.id)
+        user_first_name = user.first_name
+        user_last_name = user.last_name
+
+        name_edit_form = NameEditForm(data=request.POST, instance=user)
+        
+        if name_edit_form.is_valid():
+            new_name = name_edit_form.save(commit=False)
+            new_name.user_id = request.user
+            new_name.save()
+            return redirect('profile',)
+
+        return render(
+            request,
+            'profile.html',
+            {
+                "name_edit_form": name_edit_form,
+                "bookmarks": bookmarks,
+                "user_first_name": user_first_name,
+                "user_last_name": user_last_name,
+            }
+        )

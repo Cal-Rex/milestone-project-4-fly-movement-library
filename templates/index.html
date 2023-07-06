@@ -1,53 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container-fluid">
-    <!-- maybe use this row as a "welcome back [NAME]" -->
-    <div class="row">
-        <div class="col-12" style="text-align: center;">
-            <h1>Hello World!</h1>
-            <p>we can probably put one of the fly intro videos or promote upcoming fly stuff</p>
-
-            <p>also a button that links directly to the tem up page for folks to book in</p>
-        </div>
+<!-- welcome message -->
+<section class="row welcome align-items-center">
+    <div class="col-12">
+        <h1>Welcome Back, .</h1>
     </div>
-
-    <div class="row">
-        <div class="col-12 lead">
-            Here's what you last viewed: (placeholder)
-        </div>
-    </div>
-
-</div>
+</section>
 
 <!-- video content -->
-<div class="container-fluid main-body">
+<div class="row main-body">
+    <!-- video -->
 
-    <div class="row">
-        <!-- video -->
-        
-        <div class="col-12 col-lg-7 col-xl-7">
-            <div class="wrapper">
-
-                <iframe class="video-iframe" style="width: 100%; aspect-ratio: 16 / 9;"
-                    src="https://www.youtube.com/embed/cj-netkLgL8?rel=0&autoplay=1&loop=1&mute=1&controls=0&&playlist=cj-netkLgL8">
-                </iframe>
-
-                <div class="overlay">
-                    <button>VIEW</button>
-                </div>
-
-            </div>
-        </div>
-        
-        <div class="col-12 col-lg-5 col-xl-5">
-            EXTRA BUTTONS IN HERE
-        </div>
-
+    <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 dash-vid">
+        <iframe class="video-iframe" style="aspect-ratio: 16 / 9;"
+            src="https://www.youtube.com/embed/cj-netkLgL8?rel=0&autoplay=1&loop=1&mute=1&controls=0&&playlist=cj-netkLgL8">
+        </iframe>
     </div>
-
 </div>
 
-<!-- explanation -->
+<div class="row">
+    <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-4 offset-lg-4 col-xl-2 offset-xl-5 team-up-link">
+        <a href="https://goteamup.com/p/5379028-the-fly-project/" target="_blank" rel="noopener"><button class="btn btn-primary"><strong style="color: #000000;">Book a class</strong></button></a>
+    </div>
+</div>
 
 {% endblock %}

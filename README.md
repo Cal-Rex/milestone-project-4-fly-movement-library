@@ -571,7 +571,6 @@ ___
 ___
 
 
-
 # C R E D I T S
 
 - https://www.csestack.org/django-default-user-model-fields/

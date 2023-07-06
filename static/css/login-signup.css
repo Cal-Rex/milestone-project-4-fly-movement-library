@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap');
+* {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+
+label {
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 3rem;
+}
+
 /* hero image on login */
 .fly-hero {
     background-image: url(../media/FlyLogo.png);
@@ -18,6 +31,10 @@
 }
 
 /* buttons */
+.button-box {
+    margin-top: 3rem;
+}
+
 .fly-auth-btn {
     border-radius: 40px 40px 40px 40px;
     font-weight: 500;
@@ -77,10 +94,24 @@ input::placeholder {
     text-align: center;
 }
 
+label {
+    display: block;
+    text-align: center;
+}
+
+
 label[for="id_remember"] {
     display: inline;
  }
 
+ .edit-name-form {
+    position: relative;
+    top: 20%;
+ }
+
+ .edit-name-form>p {
+    text-align: center;
+ }
 
 /* notifications */
 .errorlist {

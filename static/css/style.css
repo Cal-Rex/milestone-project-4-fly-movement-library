@@ -1,14 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap');
 
 * {
-    background-color: #000;
+    background-color: #00000000;
     color: #fff;
 }
 
+/* layout */
 body {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    background-color: #000;
+    background-image: radial-gradient(farthest-corner at 1000% 700%, #2EF74F, black);
+}
+
+nav {
+
+}
+
+.welcome > div > h1 {
+    text-align: center;
+
+}
+
+.main-body {
+    margin-bottom: 2rem;
+}
+
+.team-up-link > button {
+    width: 100%;
+}
+
+footer {
+    position: fixed;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    bottom: 0;
+    line-height: 3rem;
+}
+
+footer > div > p {
+    margin-bottom: revert;
 }
 
 .btn-close {
@@ -18,7 +49,13 @@ body {
     cursor: pointer;
 }
 
+.offcanvas {
+    background-color: #000000a3;
+    backdrop-filter: blur(5px);
+}
+
 /* nav bar structure */
+
 nav>.offcanvas-collapse {
     right: 100%;
 }
@@ -41,7 +78,10 @@ nav>.offcanvas.offcanvas-end {
 }
 
 .bg-body-tertiary {
-    background-color: #000 !important;
+    background-color: #000000a3 !important;
+    backdrop-filter: blur(5px) !important;
+    padding-bottom: 1rem !important;
+    margin-bottom: 1rem;
 }
 
 /* nav menu styling */
@@ -113,39 +153,28 @@ nav>.offcanvas.offcanvas-end {
     opacity: 1;
 }
 
+/* dashboard styling */
+.dash-header {
+    text-align: center;
+}
+
+.dash-vid {
+    text-align: center;
+}
+
+.team-up-link {
+    text-align: center;
+}
+
 /* videos structure and styling */
+
+iframe {
+    width: 100%;
+    border-radius: 15px;
+}
+
 #video-id {
     display: hidden !important;
-}
-
-.wrapper {
-    /* padding-right: calc(var(--bs-gutter-x) * .5);
-    padding-left: calc(var(--bs-gutter-x) * .5); */
-    margin-top: var(--bs-gutter-y);
-    width: 100%;
-    height: 97%;
-    position: relative;
-    top: 0;
-    border-radius: 10px 10px 10px 10px;
-    overflow: hidden;
-}
-
-.overlay {
-    position: absolute;
-    top: 0%;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    padding: 0% 5% 5% 0%;
-    
-}
-
-.overlay > .row {
-    height: 100%;
 }
 
 .view-button-wrapper {
@@ -200,10 +229,6 @@ button>i {
 }
 
 /* footer styling */
-.socials-footer {
-    position: sticky;
-    top: 100%;
-}
 
 .socials>p {
     text-align: center;
