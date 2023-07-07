@@ -1,22 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap');
 
 * {
-    background-color: #00000000;
+    background-color: #000000;
     color: #fff;
 }
 
 /* layout */
 body {
-    background-image: radial-gradient(farthest-corner at 1000% 700%, #2EF74F, black);
+    background-image: radial-gradient(farthest-corner at -1000% -700%, #2EF74F, black) !important;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .body-container {
-    
-}
-
-.footer-container {
     
 }
 
@@ -33,14 +29,43 @@ body {
     width: 100%;
 }
 
+.book-button {
+    font-weight: 700;
+}
+
+/* footer */
+
 footer {
-    position: static;
+    position: fixed;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    bottom: 0;
+    bottom: -3.5rem;
     line-height: 3rem;
+    background-color: #000000a3;
+    backdrop-filter: blur(5px);
+    transition-duration: 0.5s;
 }
+
+footer:hover {
+    bottom: 0rem;
+    transition-timing-function: ease-in;
+}
+
+.footer-touch {
+    bottom: 0rem;
+    transition-timing-function: ease-in;
+}
+
+.footer-bar {
+    height: 5px;
+}
+
+.footer-bar-mid {
+    border-radius: 10px;
+    background-color: #eeeeeec0;
+}
+
 
 footer > div > p {
     margin-bottom: revert;
@@ -256,8 +281,8 @@ i {
 
 
 /* media queries */
-@media screen and (min-height: 678px) {
+@media screen and (min-height: 600px) {
     body {
-        height: 100vh;
+        height: 100%;
     }
 }

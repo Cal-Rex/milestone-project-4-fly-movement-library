@@ -4,6 +4,10 @@
 // https://api.jquery.com/ready/
 // _____________________________________________________________
 $(function (e) {
+    // footer animation responsiveness on touchscreen devices
+    $('footer')[0].on('click', function (e) {
+        $('footer')[0].addClass('.footer-touch');
+    });
 
     // 1 Rep Max Related functions
     // Function to apply relevant post "action" to Edit 1RM form
