@@ -2,11 +2,8 @@
 
 {% block content %}
 
-<div class="container-fluid">
-
   <!-- video content -->
-  <div class="container-fluid">
-    <div class="row">
+    <section class="row">
       <!-- video -->
       <div class="col-12 col-lg-7 order-lg-1 col-xl-7">
         <!-- Temp if statement being used while library being transferred to different provider -->
@@ -27,15 +24,10 @@
 
       <!-- user features -->
       <div class="col-12 col-lg-7 order-lg-3 col-xl-7">
-        <div class="row justify-content-between">
-
-          <!-- 1-RM display -->
-          <div class="col-10 col-sm-11 col-lg-3 order-lg-3 offset-lg-4 one-rm-feats">
-            <p>{{ one_rm_records.0.one_rep_max }} KG</p>
-          </div>
+        <div class="row">
 
           <!-- Bookmark feature -->
-          <div class="col-2 col-sm-1 col-md-1 col-lg-1">
+          <div class="col-2">
             <strong>
               {% if user.is_authenticated %}
               <form class="d-inline" action="{% url 'movement_bookmark' library_movement.slug %}" method="POST">
@@ -55,26 +47,14 @@
             </strong>
           </div>
 
-          <!-- notes button -->
-          <div class="col-2 col-sm-1 col-md-1 col-lg-1">
-            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#ocn"
-              aria-controls="offcanvasWithBothOptions"><i class="fa-regular fa-pen-to-square"></i></button>
-            <!-- offcanvas for notes -->
-            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="ocn"
-              aria-labelledby="offcanvasWithBothOptionsLabel">
-              <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
-              </div>
-              <div class="offcanvas-body">
-                <p>Try scrolling the rest of the page to see this option in action.</p>
-              </div>
-            </div>
+          <!-- 1-RM display -->
+          <div class="col-6 one-rm-feats">
+            <p>1-RM: <strong>{{ one_rm_records.0.one_rep_max }} KG</strong></p>
           </div>
 
           <!-- add 1-RM -->
-          <div class="col-2 col-sm-1 offset-sm-8 col-md-1 offset-md-8 col-lg-1 offset-lg-0 order-lg-5 one-rm-feats">
-            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-a"
+          <div class="col-2 add-one-rm-btn one-rm-feats">
+            <button class="btn add-one-rm-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-a"
               aria-controls="offcanvasWithBothOptions"><i class="fa-regular fa-square-plus"></i></button>
             <!-- offcanvas for 1rm -->
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="oc-orm-a"
@@ -99,7 +79,8 @@
           </div>
 
           <!-- 1-RM Records -->
-          <div class="col-2 col-sm-1 col-md-1 col-lg-1 order-lg-last one-rm-feats">
+          <div class="col-2 one-rm-feats">
+            <!-- 1rm records -->
             <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-hof"
               aria-controls="offcanvasWithBothOptions"><i class="fa-brands fa-square-font-awesome-stroke"></i></button>
             <!-- offcanvas for records -->
@@ -166,6 +147,5 @@
         <h2>{{ library_movement.movement_name }}</h2>
         {{ library_movement.directions | safe }}
       </div>
-    </div>
-  </div>
+    </section>
   {% endblock %}
