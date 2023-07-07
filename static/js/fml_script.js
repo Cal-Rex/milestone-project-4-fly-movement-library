@@ -4,6 +4,11 @@
 // https://api.jquery.com/ready/
 // _____________________________________________________________
 $(function (e) {
+
+    // Edit Profile form labels styling
+    $('#id_first_name')[0].labels[0].innerHTML = 'First Name';
+    $('#id_last_name')[0].labels[0].innerHTML = 'Last Name';
+    
     // footer animation responsiveness on touchscreen devices
     $('footer')[0].on('click', function (e) {
         $('footer')[0].addClass('.footer-touch');
@@ -16,9 +21,5 @@ $(function (e) {
         let movementSlug = $('iframe')[0].id;
         $('#edit-record-form').attr('action', `/edit_one_rm/${movementSlug}/${recordId}/`);
     });
-
-    // Edit Profile form labels styling
-    $('#id_first_name')[0].labels[0].innerHTML = 'First Name';
-    $('#id_last_name')[0].labels[0].innerHTML = 'Last Name';
       
 });

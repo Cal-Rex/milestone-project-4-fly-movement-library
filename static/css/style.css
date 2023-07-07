@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap');
 
-* {
-    background-color: #000000;
-    color: #fff;
-}
-
-/* layout */
 body {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
     background-image: radial-gradient(farthest-corner at -1000% -700%, #2EF74F, black) !important;
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+* {
+    background-color: #00000000;
+    color: #fff;
+}
+
+/* layout */
+
 
 .body-container {
     
@@ -31,6 +36,7 @@ body {
 
 .book-button {
     font-weight: 700;
+    color: #000;
 }
 
 /* footer */
