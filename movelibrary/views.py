@@ -17,12 +17,15 @@ class Landing(LoginRequiredMixin, generic.ListView):
     context_object_name = 'movement'
 
     def get(self, request, *args, **kwargs):
+        user = get_object_or_404(User, id=request.user.id)
+        user_name = user.first_name
         movement_library_list = Movement.objects.filter()
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
         return render(
             request,
             'index.html',
             {
+                "user_name": user_name,
                 "bookmarks": bookmarks,
                 "movement_library_list": movement_library_list,
             }
