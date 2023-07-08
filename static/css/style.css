@@ -203,6 +203,8 @@ nav>.offcanvas.offcanvas-end {
 .dropdown-item {
     --bs-dropdown-item-padding-x: 0px;
     padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
 }
 
 .dropdown-item:active {
@@ -210,12 +212,16 @@ nav>.offcanvas.offcanvas-end {
     --bs-dropdown-bg: #000;
     color: fff;
     border-left: 1px solid #2EF74F !important;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
 }
 
 .dropdown-item:focus {
     --bs-dropdown-bg: #000;
     --bs-dropdown-link-color: #fff;
     border-bottom: 0px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
 }
 
 .dropdown-item:hover {
