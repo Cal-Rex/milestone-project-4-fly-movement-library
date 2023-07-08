@@ -49,8 +49,13 @@
 
           <!-- 1-RM display -->
           <div class="col-6 one-rm-feats">
-            <p>1-RM: <strong>{{ one_rm_records.0.one_rep_max }} KG</strong></p>
+            {% for top_record in one_rm_records|slice:":1" %}
+            <p>1-RM: <strong>{{ top_record.one_rep_max }} KG</strong></p>
+            {% empty %}
+            <p>Add a 1-RM <i class="fa-solid fa-arrow-right fa-fade"></i></p>
+            {% endfor %}
           </div>
+          
 
           <!-- add 1-RM -->
           <div class="col-2 add-one-rm-btn one-rm-feats">
@@ -60,16 +65,17 @@
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="oc-orm-a"
               aria-labelledby="offcanvasWithBothOptionsLabel">
               <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+                <h5 class="offcanvas-title one-rm-oc-label" id="offcanvasWithBothOptionsLabel">Add new 1-Rep Max for {{ library_movement.movement_name }}:</h5>
+                <button type="button" class="btn-close btn-r-oc" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-x"></i></button>
               </div>
               <div class="offcanvas-body">
-                <form method="POST" action="{% url 'movement_detail' library_movement.slug %}">
+                <form id="add-record-form" class="record-form" method="POST" action="{% url 'movement_detail' library_movement.slug %}">
                   {{ one_rm_form }}
+                  <span>KG</span>
                   {% csrf_token %}
-                  <div>
+                  <div style="margin-top: 20px;">
                     <p>
-                      <button type="submit"><strong>add</strong></button>
+                      <button class="btn btn-outline-success" type="submit"><strong>add</strong></button>
                     </p>
                   </div>
                 </form>
@@ -81,25 +87,30 @@
           <!-- 1-RM Records -->
           <div class="col-2 one-rm-feats">
             <!-- 1rm records -->
+            {% if one_rm_records|length < 1 %}
+            <button class="btn" type="button"><i class="empty-record fa-brands fa-square-font-awesome-stroke"></i></button>
+            {% else %}
             <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-hof"
               aria-controls="offcanvasWithBothOptions"><i class="fa-brands fa-square-font-awesome-stroke"></i></button>
+            {% endif %}
             <!-- offcanvas for records -->
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="oc-orm-hof"
               aria-labelledby="offcanvasWithBothOptionsLabel">
               <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">1-Rep Max History for
+                <h5 class="offcanvas-title one-rm-oc-label" id="offcanvasWithBothOptionsLabel">1-Rep Max History for
                   {{ library_movement.movement_name }}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+                <button type="button" class="btn-close btn-r-oc" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-x"></i></button>
               </div>
               <div class="offcanvas-body list-of-one-rms">
                 <div class="container-fluid">
                   {% for record in one_rm_records %}
                   <div class="row justify-content-between" style="line-height: 2rem;">
-                    <hr style="color: ffffff;">
-                    <div class="col-9">
-                      {{ record.date_recorded }}: {{ record.one_rep_max }} KG
+                    <hr class="oc-hr">
+                    <div class="col-8 one-rm-record-box">
+                    <p class="one-rm-record">{{ record.one_rep_max }} KG</p>
+                    <p class="{{record.id}} one-rm-record-date">{{ record.date_recorded }}</p>
                     </div>
-                    <div class="col-3" style="text-align: right; padding: 0px 0px 10px 0px;">
+                    <div class="col-4 record-button-box" style="text-align: right; padding: 0px 0px 10px 0px;">
                       <!-- edit -->
                       <!-- get the id of the 1rm record from the button, clarified as the "data" tag -->
                       <button class="btn record-edit" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-e" id="{{ record.id }}"
@@ -112,7 +123,7 @@
                     </div>
                   </div>
                   {% endfor %}
-                  <hr style="color: ffffff;">
+                  <hr class="oc-hr">
                 </div>
 
               </div>
@@ -121,16 +132,17 @@
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="oc-orm-e"
               aria-labelledby="offcanvasWithBothOptionsLabel">
               <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Edit Form</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+                <h5 class="offcanvas-title one-rm-oc-label edit-rm-oc-label" id="offcanvasWithBothOptionsLabel">Edit 1-RM</h5>
+                <button type="button" class="btn-close btn-r-oc" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-x"></i></button>
               </div>
               <div class="offcanvas-body">
-                <form id="edit-record-form" method="POST" action="/edit_one_rm/{{ library_movement.slug }}/{{ record.id }}/">
+                <form id="edit-record-form" class="record-form" method="POST" action="/edit_one_rm/{{ library_movement.slug }}/{{ record.id }}/">
                   {{ one_rm_form }}
+                  <span>KG</span>
                   {% csrf_token %}
-                  <div>
+                  <div style="margin-top: 20px;">
                     <p>
-                      <button type="submit"><strong>add</strong></button>
+                      <button class="btn btn-outline-success" type="submit"><strong>add</strong></button>
                     </p>
                   </div>
                 </form>
@@ -143,7 +155,7 @@
       </div>
 
       <!-- explanation -->
-      <div class="col-12 col-lg-5 order-lg-2 col-xl-5">
+      <div class="col-12 col-lg-5 order-lg-2 col-xl-5 explanation">
         <h2>{{ library_movement.movement_name }}</h2>
         {{ library_movement.directions | safe }}
       </div>

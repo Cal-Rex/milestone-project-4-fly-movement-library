@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap');
-* {
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1px;
-    font-weight: 100;
+
+.sign-out {
+    margin-top: 10%;
 }
 
 label {
@@ -42,20 +41,7 @@ label {
     padding: 10px 25px;
 }
 
-.btn-primary {
-    --bs-btn-color: #000000;
-    --bs-btn-bg: #2EF74F;
-    --bs-btn-border-color: #2EF74F;
-    --bs-btn-hover-color: #000000;
-    --bs-btn-hover-bg: #2ae549;
-    --bs-btn-hover-border-color: #2ae549;
-    --bs-btn-active-color: #000000;
-    --bs-btn-active-bg: #2EF74F;
-    --bs-btn-active-border-color: #2EF74F;
-    --bs-btn-disabled-color: #000000;
-    --bs-btn-disabled-bg: #24d041;
-    --bs-btn-disabled-border-color: #24d041;
-}
+
 
 /* links/anchors */
 a {

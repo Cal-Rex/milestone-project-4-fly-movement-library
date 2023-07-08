@@ -2,18 +2,19 @@
 
 {% block content %}
 <head><link href="../../static/css/login-signup.css" rel="stylesheet" type="text/css"></head>
-<script src="../../static/js/auth_styling.js"></script>
 <div class="conatiner-fluid edit-name-form">
     <div class="row">
         <div class="col-12 edit-name-form">
             {{ name_edit_form.as_p }}
             {% csrf_token %}
             <p class="button-box">
-              <button type="submit" class="btn btn-primary book-button">Update</button>
+              <button type="submit" class="btn btn-primary fly-button">Update</button>
             </p>
         </div>
     </div>
 </div>
+<script src="../static/js/edit_profile.js"></script>
+<script src="../static/js/auth_styling.js"></script>
 
 
 {% endblock %}

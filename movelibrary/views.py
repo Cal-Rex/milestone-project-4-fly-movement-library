@@ -34,6 +34,7 @@ class MovementDetail(LoginRequiredMixin, View):
 
     def get(self, request, slug, *args, **kwargs):
         movement_from_library = get_object_or_404(Movement, slug=slug)
+        bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
         one_rm_records = movement_from_library.one_rm_list.filter(
             user_id=request.user.id
         ).order_by("-date_recorded")
@@ -49,6 +50,7 @@ class MovementDetail(LoginRequiredMixin, View):
             {
                 "library_movement": movement_from_library,
                 "one_rm_records": one_rm_records,
+                "bookmarks": bookmarks,
                 "bookmarked": bookmarked,
                 "one_rm_form": OneRmForm()
             }
@@ -90,11 +92,19 @@ class MovementSearch(LoginRequiredMixin, generic.ListView):
     login_url = '/accounts/login/'
 
     def get(self, request):
+        bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
         query = request.GET.get('query').title()
         queries = query.split()
         results = Movement.objects.filter(movement_name__contains=query)
         print(results)
-        return render(request, 'search_results.html', {'results': results})
+        return render(
+            request,
+            'search_results.html',
+            {
+                'results': results,
+                "bookmarks": bookmarks,
+            }
+        )
 
 
 class MovementBookmark(LoginRequiredMixin, View):
@@ -201,7 +211,7 @@ class EditProfile(LoginRequiredMixin, View):
         user_last_name = user.last_name
 
         name_edit_form = NameEditForm(data=request.POST, instance=user)
-        
+
         if name_edit_form.is_valid():
             new_name = name_edit_form.save(commit=False)
             new_name.user_id = request.user
