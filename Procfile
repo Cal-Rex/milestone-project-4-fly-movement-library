@@ -1,1 +1,1 @@
-web: gunicorn appname.wsgi
+web: gunicorn FlyMovementLibrary.wsgi
