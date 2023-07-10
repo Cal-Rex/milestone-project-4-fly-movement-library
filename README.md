@@ -459,6 +459,33 @@ The database contains the following tables:
 
 ## 404 / 500 Features
 
+## Agile Development Plan
+
+First Iteration testing and feedback:
+
+To simulate Agile principles, this project took an incremental review approach to project development, where the project was released in a beta version to the same group over 2 iterations. This allowed to get feedback on functions and basic developed elements and allowed for the project to adapt to the client's needs
+
+New user stories:
+- _"As a user, i would like to log out from the profile view page, as i would find this more intuitive."_
+- _"As a user, i would like to have my personal settings be more visibly accessible so i can navigate the app more intuitively"_
+- _"As a user, i would like to access the full list of movements in the library in addition to searching for them"_
+- _"As a user, i would like to have a timer on the movement page, so i can track workout time, or rest periods when conducting a movement"_
+- _"As a user, i would like to have a playlist of videos that iterates through my bookmarked movements for a streamlined workout"_
+- _"As a user, i would like to access some of the partner app features on this app for a more seamless experience"_
+- _"As a user, i would like to view the last movement i logged a 1-rep max on from the dashboard"_
+- _"As a user, i would like to view my most viewed movement on the dashboard, as i keep searching for it"_
+
+additional feedback:
+- _"Users found the app to look quite empty"_
+    - As the app's first iteration was to focus on Assessment criteria, second stage development will aim to pad out the user experience
+- _"too many clicks to access a specific movement"_
+    - aim to reduce number of clicks it takes a user to access a movement
+- _"the green background does not sit well behind the objects"_
+    - will remove for next iteration
+- _"site elements seem a bit static and flat"_
+    - objects will be assigned some javascript/css animation to give the objects more context
+
+
 ## Future Development
 
 The following features were not implemented in this iteration of the project due to time constraints. But will be reviewed with the next iteration of the Project after this Project has been assessed:
@@ -519,6 +546,7 @@ ___
         - https://stackoverflow.com/questions/19410789/youtube-player-api-with-loop
     - client has alternative hosting service already set up. Will use this instead.
 - connection refused (error: 111) when trying to reset password.
+- use of brackets in search terms will yield no result.
 
 ___
 
@@ -570,6 +598,13 @@ ___
 
 ___
 
+# T E S T I N G
+
+Full Manual Testing of elements can be found in the appended document:
+
+First Iteration testing and feedback:
+
+To simulate Agile principles, this project took an incremental review approach to project development, where the project was released in a beta version to the same group over 2 iterations. This allowed to get feedback on functions and basic developed elements and allowed for the project to adapt to the client's needs
 
 # C R E D I T S
 

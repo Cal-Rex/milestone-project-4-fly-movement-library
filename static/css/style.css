@@ -4,7 +4,7 @@ body {
     min-height: 100vh;
     height: 100%;
     width: 100%;
-    background-image: radial-gradient(farthest-corner at 1000% 700%, #2EF74F, black) !important;
+    background-color: #000000;
     background-size: cover;
     background-repeat: no-repeat;
 }
