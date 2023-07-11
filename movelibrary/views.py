@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.db.models import Q
-from .models import Movement, Tag, UserNonAuthField, UserOneRepMax, User
+from .models import Movement, Tag, UserOneRepMax, User, UserNonAuthField
 from .forms import OneRmForm, NameEditForm
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -52,10 +52,29 @@ class MovementDetail(LoginRequiredMixin, View):
 
     def get(self, request, slug, *args, **kwargs):
         movement_from_library = get_object_or_404(Movement, slug=slug)
+        user = get_object_or_404(User, id=request.user.id)
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
+        user_last_movement = UserNonAuthField()
+        user_lm_check = UserNonAuthField.objects.filter(
+            user_id__id=request.user.id
+        )
+        print(len(user_lm_check))
+        if len(user_lm_check) == 0:
+            user_last_movement.user_id = user
+            user_last_movement.last_movement = movement_from_library.slug
+            user_last_movement.save()
+        else:
+            user_lm_check = get_object_or_404(
+                UserNonAuthField,
+                user_id__id=request.user.id
+            )
+            user_lm_check.last_movement = movement_from_library.slug
+            user_lm_check.save()
+
         one_rm_records = movement_from_library.one_rm_list.filter(
             user_id=request.user.id
         ).order_by("-date_recorded")
+
         bookmarked = False
         if movement_from_library.bookmarks.filter(
             id=self.request.user.id
@@ -172,9 +191,6 @@ class OneRepMaxRecords(LoginRequiredMixin, generic.ListView):
                 "one_rm_records": one_rm_records
             }
         )
-
-    # def post(self, request, UserOneRepMax_id):
-    #     one_rm_record = get_object_or_404(UserOneRepMax,)
 
 
 def edit_one_rm(request, slug, record_id):

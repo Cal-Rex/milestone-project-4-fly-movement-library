@@ -11,6 +11,8 @@
                 {% for result in results %}
                   <li><a class="dropdown-item" href="{% url 'movement_detail' result.slug %}">{{ result }}</a></li>
                   <li><hr class="dropdown-divider"></li>
+
+                  
                 {% empty %}
                   <li>No results found.</li>
                 {% endfor %}

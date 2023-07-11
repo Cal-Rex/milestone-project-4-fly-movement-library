@@ -38,7 +38,7 @@ class Tag(models.Model):
 class UserNonAuthField(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.PROTECT)
     terms = models.BooleanField(default=False)
-    last_movement = models.ForeignKey(Movement, on_delete=models.PROTECT)
+    last_movement = models.SlugField(max_length=200, unique=True)
 
 
 class UserMovementNotes(models.Model):

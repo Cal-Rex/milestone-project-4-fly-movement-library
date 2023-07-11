@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Movement, Tag, UserNonAuthField, UserMovementNotes, UserOneRepMax  # noqa
+from .models import Movement, Tag, UserMovementNotes, UserOneRepMax, UserNonAuthField  # noqa
 from django_summernote.admin import SummernoteModelAdmin
 
 
