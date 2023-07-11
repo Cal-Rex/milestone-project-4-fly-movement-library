@@ -4,9 +4,18 @@ from django.http import HttpResponseRedirect
 from django.db.models import Q
 from .models import Movement, Tag, UserNonAuthField, UserOneRepMax, User
 from .forms import OneRmForm, NameEditForm
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-# Create your views here.
+
+"""
+Message Variables:
+"""
+DEBUG = 10
+INFO = 20
+SUCCESS = 25
+WARNING = 30
+ERROR = 40
 
 
 class Landing(LoginRequiredMixin, generic.ListView):
@@ -83,6 +92,7 @@ class MovementDetail(LoginRequiredMixin, View):
             one_rm.user_id = request.user
             one_rm.movement = movement_from_library
             one_rm.save()
+            messages.add_message(request, SUCCESS, f"new {one_rm.one_rep_max} KG 1-Rep Max recorded!")
             return redirect('movement_detail', slug=slug)
 
         return render(
@@ -163,8 +173,8 @@ class OneRepMaxRecords(LoginRequiredMixin, generic.ListView):
             }
         )
 
-    def post(self, request, UserOneRepMax_id):
-        one_rm_record = get_object_or_404(UserOneRepMax,)
+    # def post(self, request, UserOneRepMax_id):
+    #     one_rm_record = get_object_or_404(UserOneRepMax,)
 
 
 def edit_one_rm(request, slug, record_id):
@@ -177,6 +187,7 @@ def edit_one_rm(request, slug, record_id):
             one_rm.user_id = request.user
             one_rm.movement = movement_from_library
             one_rm.save()
+            messages.add_message(request, SUCCESS, f'1-RM from {one_rm.date_recorded.strftime("%m/%j/%y at %H:%M")} amended.')
             return redirect('movement_detail', slug=slug)
     form = OneRmForm(instance=record)
     context = {
@@ -224,7 +235,8 @@ class EditProfile(LoginRequiredMixin, View):
             new_name = name_edit_form.save(commit=False)
             new_name.user_id = request.user
             new_name.save()
-            return redirect('profile',)
+            messages.add_message(request, SUCCESS, 'Profile Successfully updated')
+            return redirect('edit_profile',)
 
         return render(
             request,
