@@ -5,6 +5,13 @@
 // _____________________________________________________________
 $(function () {
 
+    // function to timeout system messages
+    setTimeout(function() {
+        let messages = document.getElementById("msg");
+        let alert = new bootstrap.Alert(messages);
+        alert.close();
+    }, 3000);
+
     // 1 Rep Max Related functions
     // Function to apply relevant post "action" to Edit 1RM form
     $('.record-edit').on('click', function () {
