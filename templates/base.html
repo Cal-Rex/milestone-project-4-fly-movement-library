@@ -46,6 +46,7 @@
                 {% load static %}
                 <form class="d-flex mt-3 align-content-sm-center" method="GET" action="{% url 'search_results' %}"
                     role="search">
+                    {% csrf_token %}
                     <input id="search-field" list="library-movements" autocomplete="off" class="form-control me-2"
                         type="search" placeholder="search..." default="search" name="query" aria-label="Search">
                     <datalist id="library-movements">
@@ -58,6 +59,19 @@
             </div>
         </nav>
 
+        <!-- messages -->
+        <div class="container" id="user-alerts">
+            <div class="row">
+                <div style="width: 100%;">
+                    {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
         <!-- offcanvas menu -->
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel">

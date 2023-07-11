@@ -18,15 +18,12 @@ class Landing(LoginRequiredMixin, generic.ListView):
 
     def get(self, request, *args, **kwargs):
         user = get_object_or_404(User, id=request.user.id)
+        user_name = user.first_name
         date_joined = user.date_joined.strftime("%m/%j/%y %H:%M")
         last_login = user.last_login.strftime("%m/%j/%y %H:%M")
-        print(date_joined)
-        print(last_login)
         user_new = False
         if last_login == date_joined:
             user_new = True
-        print(user_new)
-        user_name = user.first_name
         movement_library_list = Movement.objects.filter()
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
         return render(
@@ -108,7 +105,6 @@ class MovementSearch(LoginRequiredMixin, generic.ListView):
         query = request.GET.get('query').title()
         queries = query.split()
         results = Movement.objects.filter(movement_name__contains=query)
-        print(results)
         return render(
             request,
             'search_results.html',

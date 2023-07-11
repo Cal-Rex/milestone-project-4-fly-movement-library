@@ -1,5 +1,5 @@
 # imports the Item class from the local models.py file
-from .models import UserOneRepMax, User
+from .models import UserOneRepMax, User, UserNonAuthField
 # imports the forms library from django
 from django import forms
 from allauth.account.forms import SignupForm

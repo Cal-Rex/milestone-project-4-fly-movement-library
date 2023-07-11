@@ -85,6 +85,10 @@ body {
 
 /* layout */
 
+#user-alerts {
+    position: absolute !important;
+}
+
 
 .body-container {
     
