@@ -35,12 +35,18 @@ class Landing(LoginRequiredMixin, generic.ListView):
             user_new = True
         movement_library_list = Movement.objects.filter()
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
+        one_rm_records = UserOneRepMax.objects.filter(
+            user_id=request.user.id
+        ).order_by(
+            "-date_recorded"
+        )
         return render(
             request,
             'index.html',
             {
                 "user_name": user_name,
                 "user_new": user_new,
+                "one_rm_records": one_rm_records,
                 "bookmarks": bookmarks,
                 "movement_library_list": movement_library_list,
             }
