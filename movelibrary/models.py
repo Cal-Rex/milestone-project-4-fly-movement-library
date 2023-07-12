@@ -18,6 +18,12 @@ class Movement(models.Model):
         return f"{self.movement_name}"
 
 
+class PromoVideo(models.Model):
+    promo_name = models.CharField(max_length=200, unique=True)
+    vid_link = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+
+
 class Tag(models.Model):
     movement = models.ForeignKey(Movement, on_delete=models.CASCADE,)
     upper_body = models.BooleanField(default=False)

@@ -2,10 +2,11 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.db.models import Q
-from .models import Movement, Tag, UserOneRepMax, User, UserNonAuthField
+from .models import Movement, Tag, UserOneRepMax, User, UserNonAuthField, PromoVideo
 from .forms import OneRmForm, NameEditForm
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+import random
 
 
 """
@@ -34,6 +35,14 @@ class Landing(LoginRequiredMixin, generic.ListView):
         if last_login == date_joined:
             user_new = True
         movement_library_list = Movement.objects.filter()
+        promo_list = PromoVideo.objects.filter()
+        promo_list_length = len(promo_list) - 1
+        print(promo_list)
+        print(promo_list_length)
+        promo_pick = random.randint(0, promo_list_length)
+        print(promo_pick)
+        promo_video = promo_list[promo_pick]
+        print(promo_video)
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
         one_rm_records = UserOneRepMax.objects.filter(
             user_id=request.user.id
@@ -46,6 +55,7 @@ class Landing(LoginRequiredMixin, generic.ListView):
             {
                 "user_name": user_name,
                 "user_new": user_new,
+                "promo_video": promo_video,
                 "one_rm_records": one_rm_records,
                 "bookmarks": bookmarks,
                 "movement_library_list": movement_library_list,

@@ -2,21 +2,35 @@
 
 {% block content %}
 <!-- welcome message -->
-<section class="row welcome align-items-center">
-    <div class="col-12">
-        {% if user_new %}
-        <h1>Welcome to the Movement Library, {{ user_name }}.</h1>
-        {% else %}
-        <h1>Welcome Back, {{ user_name }}.</h1>
-        {% endif %}
+<section class="container-fluid index">
+    <div class="row welcome align-items-center">
+        <div class="welcome col-12">
+            {% if user_new %}
+            <h1>Welcome to the Movement Library, {{ user_name }}.</h1>
+            {% else %}
+            <h1>Welcome Back, {{ user_name }}.</h1>
+            {% endif %}
+        </div>
     </div>
+
+    <!-- "what's on" video -->
+    <div class="row">
+        <div class="col-12">
+            <iframe id="{{ promo_video.slug }}" style="width: 100%; aspect-ratio: 16 / 9;"
+          src="https://player.vimeo.com/video/{{ promo_video.vid_link }}&muted=1&autoplay=1&loop=1&background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+          frameborder="0" allow="autoplay;" loop="1" autoplay="1"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Nordic Curls ML3"></iframe>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+    </div>
+
 </section>
 
 <!-- video content -->
-<div class="row main-body">
+<!-- <div class="row main-body"> -->
     <!-- video -->
 
-    <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 dash-vid">
+    <!-- <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 dash-vid">
         <iframe class="video-iframe" style="aspect-ratio: 16 / 9;"
             src="https://www.youtube.com/embed/cj-netkLgL8?rel=0&autoplay=1&loop=1&mute=1&controls=0&&playlist=cj-netkLgL8">
         </iframe>
@@ -27,6 +41,6 @@
     <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-4 offset-lg-4 col-xl-2 offset-xl-5 team-up-link">
         <a href="https://goteamup.com/p/5379028-the-fly-project/" target="_blank" rel="noopener"><button class="btn btn-primary fly-button">Book a class</button></a>
     </div>
-</div>
+</div> -->
 
 {% endblock %}
