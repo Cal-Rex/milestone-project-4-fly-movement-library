@@ -50,3 +50,13 @@ nav {
 .index > .row > .welcome {
     padding-top: 10px;
 }
+
+/* _______________________ */
+/* footer */
+footer {
+    height: 7vh;
+}
+
+footer > .row > div {
+    text-align: center;
+}
