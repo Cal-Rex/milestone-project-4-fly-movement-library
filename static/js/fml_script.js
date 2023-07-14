@@ -12,6 +12,17 @@ $(function () {
         alert.close();
     }, 3000);
 
+    // search icon hover toggle
+    $('.search-button').on('mouseenter', function() {
+        $('.search-icon').addClass('search-icon-hover');
+        $('.large-search').css('color', '#fff');
+    });
+    $('.search-button').on('mouseleave', function() {
+        $('.search-icon').removeClass('search-icon-hover');
+        $('.large-search').css('color', '#000');
+    });
+
+
     // book a class panel hover response
     $('#book-a-class').on('mouseenter', function() {
         $('#book-a-class-btn').addClass('js-psuedo-hover');

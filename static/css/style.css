@@ -74,6 +74,37 @@ svg {
     letter-spacing: 3px;
 }
 
+.search-button {
+    background-color: #2df64e;
+    height: 3.5rem;
+    text-align: center;
+    border-radius: 0px;
+}
+
+.search-icon {
+    font-size: 1.5rem;
+    position: relative;
+    top: 0.1rem;
+    color: #000;
+}
+
+.search-icon-hover {
+    color: #fff;
+}
+
+.large-search {
+    display: none;
+    color: #000;
+}
+
+
+@media screen and (min-width: 992px) {
+    .large-search {
+        display: inline;
+    }
+
+}
+
 
 /* fonts/text */
 .base-title {
