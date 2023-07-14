@@ -12,6 +12,14 @@ $(function () {
         alert.close();
     }, 3000);
 
+    // book a class panel hover response
+    $('#book-a-class').on('mouseenter', function() {
+        $('#book-a-class-btn').addClass('js-psuedo-hover');
+    });
+    $('#book-a-class').on('mouseleave', function() {
+        $('#book-a-class-btn').removeClass('js-psuedo-hover');
+    });
+
     // 1 Rep Max Related functions
     // Function to apply relevant post "action" to Edit 1RM form
     $('.record-edit').on('click', function () {
