@@ -101,6 +101,24 @@ class Landing(LoginRequiredMixin, generic.ListView):
         )
 
 
+class Library(LoginRequiredMixin, generic.ListView):
+    login_url = '/accounts/login/'
+
+    model = Movement
+    template_name = 'index.html'
+    context_object_name = 'movement'
+
+    def get(self, request, *args, **kwargs):
+        movement_library_list = Movement.objects.filter()
+        return render(
+            request,
+            'library.html',
+            {
+                "movement_library_list": movement_library_list,
+            }
+        )
+
+
 class MovementDetail(LoginRequiredMixin, View):
     login_url = '/accounts/login/'
 

@@ -133,8 +133,82 @@ svg {
 /* offcanvas elements */
 /* background */
 .text-bg-dark {
-    background-color: #00000050 !important;
+    background-color: #0000006f !important;
     backdrop-filter: blur(10px) !important;
+}
+
+.offcanvas-body > ul {
+    padding-left: 0;
+}
+
+
+.offcanvas-body > ul > li {
+    list-style-type: none;
+    padding-left: 0px;
+    line-height: 2rem;
+}
+
+.offcanvas-body > ul > li > hr {
+    border-top: 1px solid #ffffff45;
+}
+
+.dropdown-item {
+    line-height: 2rem;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.dropdown-item:active {
+    background-color: #00000000;
+    --bs-dropdown-bg: #000;
+    color: fff;
+    border-left: 1px solid #2EF74F !important;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.dropdown-item:focus {
+    --bs-dropdown-bg: #000;
+    --bs-dropdown-link-color: #fff;
+    border-bottom: 0px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.dropdown-item:hover {
+    background-color: #00000000;
+    --bs-dropdown-bg: #000;
+    color: fff;
+    border-left: 1px solid #fff;
+    padding-left: 10px;
+}
+
+.dropdown-item:focus-visible {
+    outline: none;
+}
+
+.dropdown-divider {
+    border-top: 1px solid #ffffff45;
+    margin: 0.5rem 0px;
+}
+
+/* ________________________ */
+/* Search form */
+#library-search {
+    background-color: #00000000;
+    border-radius: 0px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+#library-search:focus {
+    color: #fff;
+    background-color: #00000000;
+    border-color: none;
+    outline: 0;
+    box-shadow: none;
+    border-color: #fff;;
 }
 
 /* ________________________ */
@@ -175,21 +249,6 @@ nav > div > a > h1 {
 }
 .navbar-toggler-icon {
     background-image: none;
-}
-
-.offcanvas-body > ul {
-    padding-left: 0;
-}
-
-
-.offcanvas-body > ul > li {
-    list-style-type: none;
-    padding-left: 0px;
-    line-height: 2rem;
-}
-
-.offcanvas-body > ul > li > hr {
-    border-top: 1px solid #ffffff45;
 }
 
 /* _______________________ */
