@@ -27,6 +27,18 @@ nav {
     height: 7vh;
 }
 
+.bg-dark {
+    background-color: #000000 !important;
+}
+
+#nav-logo {
+    background-image: url(../media/flyfly.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: auto;
+}
+
 .offcanvas-body > ul {
     padding-left: 0;
 }
@@ -45,6 +57,10 @@ nav {
 /* _______________________ */
 /* index */
 /* welcome message */
+.index-panel {
+    border-radius: 15px;
+}
+
 .index {
     height: 86vh;
     overflow-y: scroll;
@@ -90,10 +106,19 @@ nav {
 
 /* _______________________ */
 /* footer */
+footer * {
+    background-color: #00000000;
+}
+
 footer {
     height: 7vh;
     background-color: #0000002f;
+    
     /* backdrop-filter: blur(5px); */
+}
+
+footer > .row {
+    --bs-gutter-y: 0rem;
 }
 
 footer > .row > div {

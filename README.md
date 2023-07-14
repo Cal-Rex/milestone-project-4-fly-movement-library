@@ -547,6 +547,7 @@ ___
     - client has alternative hosting service already set up. Will use this instead.
 - connection refused (error: 111) when trying to reset password.
 - use of brackets in search terms will yield no result.
+- background of footer cant be made transparent
 
 ___
 
