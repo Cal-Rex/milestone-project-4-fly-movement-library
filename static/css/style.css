@@ -180,7 +180,7 @@ nav > div > a > h1 {
 
 /* last movement card */
 .last-movement-card {
-    width: 100%;
+    /* width: 100%; */
     height: 23vh;
 }
 
@@ -193,6 +193,20 @@ nav > div > a > h1 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
+}
+
+/* library panel */
+#library-panel-filler {
+    display: none;
+}
+@media screen and (min-width: 992px) {
+    #library-panel-filler {
+        display: block;
+    }
+}
+
+.library-panel {
+    height: 100%;
 }
 
 /* mini cards */

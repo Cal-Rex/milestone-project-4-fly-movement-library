@@ -5,7 +5,7 @@
 <!-- welcome message -->
 <section class="container-fluid index">
     <div class="row welcome align-items-center">
-        <div class="welcome col-12">
+        <div class="welcome col-12 order-lg-first">
             {% if user_new %}
             <h2>Welcome to the Movement Library, {{ user_name }}.</h2>
             {% else %}
@@ -18,7 +18,7 @@
     <div class="row">
 
         <!-- "what's on" video -->
-        <div class="col-12">
+        <div class="col-12 col-lg-6 order-lg-2">
             <iframe class="index-panel" id="{{ promo_video.slug }}" style="width: 100%; aspect-ratio: 16 / 9;"
                 src="https://player.vimeo.com/video/{{ promo_video.vid_link }}&muted=1&autoplay=1&loop=1&background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                 frameborder="0" allow="autoplay;" loop="1" autoplay="1"
@@ -26,9 +26,26 @@
             <script src="https://player.vimeo.com/api/player.js"></script>
         </div>
 
+        <div id="library-panel-filler" class="col-lg-6 order-lg-3">
+            <a href="{% url 'movement_detail' last_movement.slug %}">
+                <div class="library-panel index-panel card-bg" style="background-image: url({{ last_movement.thumbnail }});">
+                <p>
+                    <!-- <span class="outlined-title">Last Viewed</span> -->
+                    <svg>
+                        <text x="5%" y="40%" class="outlined-title">
+                            Full List of
+                        </text>
+                        <text x="10%" y="60%" class="white-title">
+                            Movements
+                        </text>
+                    </svg>
+                </p>
+                </div>
+            </a>
+        </div>
 
         <!-- Last viewed movement card -->
-        <div class="last-movement-card col-12">
+        <div class="last-movement-card col-12 col-lg-6 order-lg-4">
             <a href="{% url 'movement_detail' last_movement.slug %}">
                 <div class="index-panel lm-link card-bg" style="background-image: url({{ last_movement.thumbnail }});">
                 <p>
@@ -47,7 +64,7 @@
         </div>
 
         <!-- last user 1-rm card -->
-        <div class="mini-card col-6">
+        <div class="mini-card col-6 col-lg-3 order-lg-5">
             <a href="{% url 'movement_detail' last_orm.slug %}">
                 <div class="card-bg index-panel" style="background-image: url({{ last_orm.thumbnail }});">
                     <svg>
@@ -63,7 +80,7 @@
         </div>
 
         <!-- booking card card -->
-        <div class="mini-card col-6">
+        <div class="mini-card col-6 col-lg-3 order-lg-last">
             <a id="book-a-class" href="">
                 <div class="card-bg index-panel" style="background-image: url({{ insta_card.thumbnail }});">
                     <button id="book-a-class-btn" class="btn btn-success">Book a Class</button>
