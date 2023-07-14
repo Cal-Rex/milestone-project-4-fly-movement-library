@@ -35,10 +35,29 @@ class Landing(LoginRequiredMixin, generic.ListView):
         if last_login == date_joined:
             user_new = True
         movement_library_list = Movement.objects.filter()
-        last_movement = get_object_or_404(
-            UserNonAuthField, user_id=request.user.id
-        ).last_movement
-        print("last movement", last_movement)
+
+        # last movement view
+        movement_viewed = False
+        last_movement_check = len(
+            Movement.objects.filter(
+                slug=UserNonAuthField.last_movement
+            )
+        )
+        if last_movement_check < 1:
+            library_count = len(movement_library_list) - 1
+            move_pick = random.randint(0, library_count)
+            last_movement = movement_library_list[move_pick]
+        else:
+            movement_viewed = True
+            user_lm_record = get_object_or_404(
+                UserNonAuthField,
+                user_id=request.user.id
+            ).last_movement
+            last_movement = get_object_or_404(Movement, slug=user_lm_record)
+        print("WE PICKED:", last_movement)
+        print("also, have we viewed a movement yet?:", movement_viewed)
+
+        # promo video view
         promo_list = PromoVideo.objects.filter()
         promo_list_length = len(promo_list) - 1
         print(promo_list)
@@ -47,12 +66,27 @@ class Landing(LoginRequiredMixin, generic.ListView):
         print(promo_pick)
         promo_video = promo_list[promo_pick]
         print(promo_video)
+
+        # bookmarks view
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
+
+        # 1-rm records view
+        orm_recorded = False
         one_rm_records = UserOneRepMax.objects.filter(
             user_id=request.user.id
         ).order_by(
             "-date_recorded"
         )
+        if len(one_rm_records) < 1:
+            library_count = len(movement_library_list) - 1
+            move_pick = random.randint(0, library_count)
+            last_orm = movement_library_list[move_pick]
+        else:
+            orm_recorded = True
+            last_record = one_rm_records[0]
+            last_orm = get_object_or_404(Movement, id=last_record.id)
+            print("THE LAST ONE REP MAX IS", last_orm)
+
         return render(
             request,
             'index.html',
@@ -61,7 +95,8 @@ class Landing(LoginRequiredMixin, generic.ListView):
                 "user_new": user_new,
                 "promo_video": promo_video,
                 "last_movement": last_movement,
-                "one_rm_records": one_rm_records,
+                "movment_viewed": movement_viewed,
+                "last_orm": last_orm,
                 "bookmarks": bookmarks,
                 "movement_library_list": movement_library_list,
             }

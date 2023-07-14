@@ -29,21 +29,21 @@
 
         <!-- Last viewed movement card -->
         <div class="last-movement-card col-12">
-            <a href="{% url 'movement_detail' last_movement %}">
-                <div id="{{ last_movement }}" class="lm-link"></div>
+            <a href="{% url 'movement_detail' last_movement.slug %}">
+                <div class="lm-link card-bg" style="background-image: url({{ last_movement.thumbnail }});"></div>
             </a>
         </div>
 
         <!-- last user 1-rm card -->
         <div class="mini-card col-6">
-            <a href="{% url 'movement_detail' last_movement %}">
-                <div class=""></div>
+            <a href="{% url 'movement_detail' last_orm.slug %}">
+                <div class="card-bg" style="background-image: url({{ last_orm.thumbnail }});"></div>
             </a>
         </div>
 
         <!-- Instagram card -->
         <div class="mini-card col-6">
-            <a href="{% url 'movement_detail' last_movement %}">
+            <a href="">
                 <div class=""></div>
             </a>
         </div>
