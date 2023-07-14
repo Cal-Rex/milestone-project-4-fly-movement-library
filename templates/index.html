@@ -30,21 +30,44 @@
         <!-- Last viewed movement card -->
         <div class="last-movement-card col-12">
             <a href="{% url 'movement_detail' last_movement.slug %}">
-                <div class="index-panel lm-link card-bg" style="background-image: url({{ last_movement.thumbnail }});"></div>
+                <div class="index-panel lm-link card-bg" style="background-image: url({{ last_movement.thumbnail }});">
+                <p>
+                    <!-- <span class="outlined-title">Last Viewed</span> -->
+                    <svg>
+                        <text x="5%" y="40%" class="outlined-title">
+                            Last viewed
+                        </text>
+                        <text x="10%" y="60%" class="white-title">
+                            movement
+                        </text>
+                    </svg>
+                </p>
+                </div>
             </a>
         </div>
 
         <!-- last user 1-rm card -->
         <div class="mini-card col-6">
             <a href="{% url 'movement_detail' last_orm.slug %}">
-                <div class="card-bg index-panel" style="background-image: url({{ last_orm.thumbnail }});"></div>
+                <div class="card-bg index-panel" style="background-image: url({{ last_orm.thumbnail }});">
+                    <svg>
+                        <text x="5%" y="30%" class="outlined-title">
+                            Last
+                        </text>
+                        <text x="10%" y="42.5%" class="white-title">
+                            1-RM
+                        </text>
+                    </svg>
+                </div>
             </a>
         </div>
 
         <!-- Instagram card -->
         <div class="mini-card col-6">
             <a href="">
-                <div class="card-bg index-panel" style="background-image: url({{ insta_card.thumbnail }});"></div>
+                <div class="card-bg index-panel" style="background-image: url({{ insta_card.thumbnail }});">
+                    <p>Book a Class</p>
+                </div>
             </a>
         </div>
 
