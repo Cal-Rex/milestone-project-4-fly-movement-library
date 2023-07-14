@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.db.models import Q
-from .models import Movement, Tag, UserOneRepMax, User, UserNonAuthField, PromoVideo
+from .models import Movement, Tag, UserOneRepMax, User, UserNonAuthField, PromoVideo, SocialMediaCard
 from .forms import OneRmForm, NameEditForm
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -87,6 +87,11 @@ class Landing(LoginRequiredMixin, generic.ListView):
             last_orm = get_object_or_404(Movement, id=last_record.id)
             print("THE LAST ONE REP MAX IS", last_orm)
 
+        # social media panel view
+        sm_cards = SocialMediaCard.objects.filter()
+        choice = random.randint(0, len(sm_cards) - 1)
+        insta_card = sm_cards[choice]
+
         return render(
             request,
             'index.html',
@@ -99,6 +104,7 @@ class Landing(LoginRequiredMixin, generic.ListView):
                 "last_orm": last_orm,
                 "bookmarks": bookmarks,
                 "movement_library_list": movement_library_list,
+                "insta_card": insta_card,
             }
         )
 

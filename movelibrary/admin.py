@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Movement, Tag, UserMovementNotes, UserOneRepMax, UserNonAuthField, PromoVideo  # noqa
+from .models import Movement, Tag, UserMovementNotes, UserOneRepMax, UserNonAuthField, PromoVideo, SocialMediaCard  # noqa
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -42,6 +42,11 @@ class UserOneRepMaxAdmin(SummernoteModelAdmin):
 
     list_display = ('user_id', 'movement', 'one_rep_max', 'date_recorded',)
 
+
+@admin.register(SocialMediaCard)
+class SocialMediaCard(SummernoteModelAdmin):
+    
+    list_display = ('name', "thumbnail",)
 
 # Alternative method for if multiple arguments or packages
 # needed to be added to tables:

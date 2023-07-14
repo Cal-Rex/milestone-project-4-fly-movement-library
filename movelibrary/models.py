@@ -65,3 +65,8 @@ class UserOneRepMax(models.Model):
 
         def __str__(self):
             return f"{self.one_rep_max}KG | recorded on {self.date_recorded}"
+
+
+class SocialMediaCard(models.Model):
+    name = models.CharField(max_length=200, unique=True)
+    thumbnail = models.CharField(max_length=200, unique=True)
