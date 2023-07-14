@@ -13,6 +13,7 @@ class Movement(models.Model):
     bookmarks = models.ManyToManyField(
         User, related_name='bookmarks', blank=True
         )
+    thumbnail = models.CharField(max_length=200, null=True)
 
     def __str__(self):
         return f"{self.movement_name}"

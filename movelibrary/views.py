@@ -35,6 +35,10 @@ class Landing(LoginRequiredMixin, generic.ListView):
         if last_login == date_joined:
             user_new = True
         movement_library_list = Movement.objects.filter()
+        last_movement = get_object_or_404(
+            UserNonAuthField, user_id=request.user.id
+        ).last_movement
+        print("last movement", last_movement)
         promo_list = PromoVideo.objects.filter()
         promo_list_length = len(promo_list) - 1
         print(promo_list)
@@ -56,6 +60,7 @@ class Landing(LoginRequiredMixin, generic.ListView):
                 "user_name": user_name,
                 "user_new": user_new,
                 "promo_video": promo_video,
+                "last_movement": last_movement,
                 "one_rm_records": one_rm_records,
                 "bookmarks": bookmarks,
                 "movement_library_list": movement_library_list,

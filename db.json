@@ -1,0 +1,1934 @@
+[
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2023-06-10T13:04:37.043Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "MovementLibrary object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2023-06-10T13:41:35.784Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Floor Press",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Directions\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2023-06-10T13:41:44.966Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Floor Press",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2023-06-10T14:32:50.694Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "Tag object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2023-06-18T11:51:53.900Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Floor Press",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2023-06-19T07:36:59.011Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "Front Squat",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2023-06-19T07:42:48.046Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "Hang Power Snatch",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2023-06-19T07:44:36.502Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Floor Press",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Directions\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2023-06-19T07:46:29.049Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "Front Squat",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Directions\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2023-06-19T07:50:36.011Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "Back Squat",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2023-06-19T07:53:46.742Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "5",
+        "object_repr": "Landmine Cossack Squat",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2023-06-19T07:57:13.195Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "Back Squat",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Directions\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2023-06-19T07:57:24.552Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "Back Squat",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2023-06-19T07:57:45.604Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "5",
+        "object_repr": "Landmine Cossack Squat",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Directions\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2023-06-19T07:59:08.661Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "5",
+        "object_repr": "Landmine Cossack Squat",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2023-06-19T08:03:37.633Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "6",
+        "object_repr": "Pendlay Row",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2023-06-19T08:08:07.868Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "7",
+        "object_repr": "Split Stance Romanian Deadflift (RDL)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2023-06-19T08:13:04.965Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "8",
+        "object_repr": "Barbell thrusters",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2023-06-19T08:16:34.533Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "9",
+        "object_repr": "Hang Power Clean",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2023-06-19T08:17:14.874Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "Hang Power Snatch",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Directions\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2023-06-19T08:22:14.905Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "10",
+        "object_repr": "Nordic Curls",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2023-06-19T08:25:57.918Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "11",
+        "object_repr": "Ab Roll Outs",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2023-06-19T08:30:58.477Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "12",
+        "object_repr": "Banded Activation (overhead)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2023-06-19T08:36:39.830Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "13",
+        "object_repr": "Barbell Hip Thrusts",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2023-06-19T08:36:56.665Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "13",
+        "object_repr": "Barbell Hip Thrusts",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2023-06-19T08:40:20.493Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "14",
+        "object_repr": "Landmine Clean and Press",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2023-06-19T08:44:06.020Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "15",
+        "object_repr": "Med Ball Rotations",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2023-06-19T08:48:28.612Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "16",
+        "object_repr": "Press Up Squat Thrusts",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2023-06-19T08:53:31.702Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "17",
+        "object_repr": "Barbell Push Press",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2023-06-19T08:56:30.263Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "18",
+        "object_repr": "Roll back into V sit",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2023-06-19T08:59:46.054Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "19",
+        "object_repr": "Scapula Pull Ups",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2023-06-19T09:03:54.523Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "20",
+        "object_repr": "Side Lunges",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2023-06-19T17:53:52.328Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "10",
+        "object_repr": "Nordic Curls",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2023-06-19T17:58:36.327Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Floor Press",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2023-06-19T17:59:18.822Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "Front Squat",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2023-06-19T17:59:49.922Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "Hang Power Snatch",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2023-06-19T18:00:20.570Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "Back Squat",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2023-06-19T18:00:57.882Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "5",
+        "object_repr": "Landmine Cossack Squat",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2023-06-19T18:01:32.542Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "6",
+        "object_repr": "Pendlay Row",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+        "action_time": "2023-06-19T18:02:05.043Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "7",
+        "object_repr": "Split Stance Romanian Deadflift (RDL)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+        "action_time": "2023-06-19T18:02:57.502Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "8",
+        "object_repr": "Barbell thrusters",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+        "action_time": "2023-06-19T18:03:29.615Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "9",
+        "object_repr": "Hang Power Clean",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+        "action_time": "2023-06-28T12:20:33.558Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "1",
+        "object_repr": "UserOneRepMax object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+        "action_time": "2023-06-29T09:19:37.155Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Floor Press",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Bookmarks\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2023-07-01T23:34:41.476Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "3",
+        "object_repr": "Calrex",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2023-07-06T16:27:55.697Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "2",
+        "object_repr": "test-user",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2023-07-10T12:13:20.707Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "11",
+        "object_repr": "test-user2",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2023-07-10T12:22:11.509Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "11",
+        "object_repr": "test-user2",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2023-07-10T12:22:28.672Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "12",
+        "object_repr": "test-user2",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+        "action_time": "2023-07-10T12:23:36.682Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "12",
+        "object_repr": "test-user2",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+        "action_time": "2023-07-10T12:25:04.146Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "12",
+        "object_repr": "test-user2",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Last login\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+        "action_time": "2023-07-10T12:27:12.701Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "12",
+        "object_repr": "test-user2",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Last login\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+        "action_time": "2023-07-10T12:28:26.392Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "12",
+        "object_repr": "test-user2",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Last login\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+        "action_time": "2023-07-10T12:30:08.048Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "12",
+        "object_repr": "test-user2",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+        "action_time": "2023-07-10T12:30:26.272Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "13",
+        "object_repr": "test-user2",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+        "action_time": "2023-07-10T12:30:55.424Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "13",
+        "object_repr": "test-user2",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"First name\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+        "action_time": "2023-07-10T12:44:41.864Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "13",
+        "object_repr": "test-user2",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+        "action_time": "2023-07-10T13:06:39.336Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "14",
+        "object_repr": "test-user2",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Last login\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+        "action_time": "2023-07-10T13:09:25.009Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "14",
+        "object_repr": "test-user2",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+        "action_time": "2023-07-12T23:35:01.649Z",
+        "user": 1,
+        "content_type": 18,
+        "object_id": "1",
+        "object_repr": "PromoVideo object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+        "action_time": "2023-07-12T23:36:32.086Z",
+        "user": 1,
+        "content_type": 18,
+        "object_id": "2",
+        "object_repr": "PromoVideo object (2)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+        "action_time": "2023-07-13T00:40:13.975Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "20",
+        "object_repr": "Side Lunges",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+        "action_time": "2023-07-13T00:41:40.847Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "21",
+        "object_repr": "Side Plank Clamshell",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+        "action_time": "2023-07-13T00:44:33.648Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "21",
+        "object_repr": "Side Plank Clamshell",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Directions\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+        "action_time": "2023-07-13T00:45:33.119Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "19",
+        "object_repr": "Scapula Pull Ups",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+        "action_time": "2023-07-13T00:46:09.462Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "18",
+        "object_repr": "Roll back into V sit",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+        "action_time": "2023-07-13T00:46:50.597Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "17",
+        "object_repr": "Barbell Push Press",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+        "action_time": "2023-07-13T00:47:18.732Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "16",
+        "object_repr": "Press Up Squat Thrusts",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+        "action_time": "2023-07-13T00:47:47.312Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "15",
+        "object_repr": "Med Ball Rotations",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+        "action_time": "2023-07-13T00:48:21.229Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "14",
+        "object_repr": "Landmine Clean and Press",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+        "action_time": "2023-07-13T00:50:05.093Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "22",
+        "object_repr": "Incline Dumbbell Press",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+        "action_time": "2023-07-13T00:52:15.953Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "22",
+        "object_repr": "Incline Dumbbell Press",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Directions\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+        "action_time": "2023-07-13T00:54:37.749Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "23",
+        "object_repr": "Hang High Pull",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+        "action_time": "2023-07-13T00:58:16.723Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "24",
+        "object_repr": "Front Rack Barbell Step-Ups",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+        "action_time": "2023-07-13T01:03:31.587Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "25",
+        "object_repr": "Deadball to Shoulder",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+        "action_time": "2023-07-13T01:07:25.008Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "26",
+        "object_repr": "Burpee Pull Ups",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+        "action_time": "2023-07-13T01:08:04.516Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "13",
+        "object_repr": "Barbell Hip Thrusts",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+        "action_time": "2023-07-13T01:11:04.004Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "27",
+        "object_repr": "Bench Leg Raises",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+        "action_time": "2023-07-13T01:12:16.786Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "28",
+        "object_repr": "Banded Glute Activation",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+        "action_time": "2023-07-13T01:14:46.465Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "28",
+        "object_repr": "Banded Glute Activation",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Directions\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+        "action_time": "2023-07-13T01:17:24.302Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "29",
+        "object_repr": "American Kettlebell Swing",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+        "action_time": "2023-07-13T01:18:19.429Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "11",
+        "object_repr": "Ab Roll Outs",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 83,
+    "fields": {
+        "action_time": "2023-07-13T01:25:16.790Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "12",
+        "object_repr": "Banded Activation (overhead)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Vid link\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 84,
+    "fields": {
+        "action_time": "2023-07-13T01:33:22.265Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "30",
+        "object_repr": "Pike Press Up",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$jr0J5qS0OK7HrdbZz02Y17$5TWqagMEK5VlnktWeoe1Z8RI8y1GQiWtVe6CYEdbcVQ=",
+        "last_login": "2023-07-11T15:44:53.113Z",
+        "is_superuser": true,
+        "username": "FMLAdminCIMP",
+        "first_name": "Admin",
+        "last_name": "McLegDay",
+        "email": "calamitous.rex@outlook.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-06-10T10:43:10.577Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$VteqgcBiJUKGzIBNHbCZm5$cSFjOEH6N6AU9IBx01CAcFHTshd7srT3o3npOX4lHsA=",
+        "last_login": "2023-07-11T14:54:47.949Z",
+        "is_superuser": false,
+        "username": "test-user",
+        "first_name": "test",
+        "last_name": "User",
+        "email": "andy.gibb@healthcareskills.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-06-13T09:19:06Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$X7NzNe4gGEQFFWOz3s0QvP$vf3soSnwZiUgYtBlgruCMgpVxK+c5U12ciV6GywJ3kQ=",
+        "last_login": "2023-07-09T10:39:49.180Z",
+        "is_superuser": false,
+        "username": "LilithTheSly",
+        "first_name": "Lily",
+        "last_name": "McLaughlin",
+        "email": "lmclaughlin048accs@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-07-09T10:39:48.915Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$4FbCRAngkEdlm0rSEtZjGD$RC7mQB4LJORgF6C/Scgf0j8fvitcbZQrlHVHKjB0WGg=",
+        "last_login": "2023-07-09T10:41:49.607Z",
+        "is_superuser": false,
+        "username": "Omersmash",
+        "first_name": "Omercan",
+        "last_name": "Cirit",
+        "email": "mercancirit@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-07-09T10:41:49.339Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$lpGLCcArAdAIJwERqi9AKQ$olRX+Q4vXyXETwEd4erjIQCGSWvVD4oAs1y91D+Vp64=",
+        "last_login": "2023-07-09T12:27:39.804Z",
+        "is_superuser": false,
+        "username": "CMyrvold",
+        "first_name": "Christina",
+        "last_name": "Myrvold",
+        "email": "christina@myrvold.org",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-07-09T11:04:50.122Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$6TvwoY7D6YWHghlWcKM1bg$Qy3lCG5RajhbqgGt87E65FAoj7/KjkuVSDL+eRBi/8M=",
+        "last_login": "2023-07-09T11:31:37.099Z",
+        "is_superuser": false,
+        "username": "Amanda.b.currie",
+        "first_name": "Amanda",
+        "last_name": "Currie",
+        "email": "amanda_currie@hotmail.co.uk",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-07-09T11:31:36.871Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$iiV7x5cJu0oaIq5ZKClOdy$NT45feVljeESw3ZUWd22QRF/6PFgdEyrG/OTfNJ3Fk8=",
+        "last_login": "2023-07-09T11:56:26.376Z",
+        "is_superuser": false,
+        "username": "DanC",
+        "first_name": "Dan",
+        "last_name": "Cahill",
+        "email": "danielcahill360@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-07-09T11:56:26.173Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$wf9ilZg2EjX4hbDMrK0clq$FFB1lkcXvMSJtnkKF8+D85cVzOjWsmWylzKA/X2ePrc=",
+        "last_login": "2023-07-09T13:15:00.517Z",
+        "is_superuser": false,
+        "username": "Alexd9617",
+        "first_name": "Alex",
+        "last_name": "Danks",
+        "email": "alexdanks@googlemail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-07-09T13:14:37.906Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$ZvMa6XUEIaRc5vFctbvNYw$IfBHAPpPbpDDkd0SharDDkHA3j3GjGIJd0IsJqB4XL0=",
+        "last_login": "2023-07-09T18:05:10.637Z",
+        "is_superuser": false,
+        "username": "Penagon",
+        "first_name": "Jonny",
+        "last_name": "Walker",
+        "email": "penagon99@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-07-09T18:05:10.379Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 15,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$sVqSuwJWXzlzYClcVuV8Wz$88TO3U/3p5lskULqbLKSUoO5kfeN7Uqg8YTlFSUY2/4=",
+        "last_login": "2023-07-10T13:10:52.239Z",
+        "is_superuser": false,
+        "username": "test-user2",
+        "first_name": "Andy",
+        "last_name": "Gibb",
+        "email": "andy-irvine@outlook.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-07-10T13:10:51.827Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "0wroivo4g9790yb2ztrhzqrbq5lel7ct",
+    "fields": {
+        "session_data": ".eJxVjMEOwiAQBf-FsyEUKC09evcbyLIsFkVI2uLF-O_apJde38y8DwPE2srm3rSkmCg4ekHKbCot5wtz0LbZtZUWlwKbmGGnzQM-qewgPKDcK8datiV5viv8oCu_1UD5eringxnW-V-DUnEIvh-8IJLG6hFV56OlEKiT0moUg5BW-BiVNtiPSupegujIYwzasO8PQ-5DYw:1qISDi:MTX-bTCfwyViL1D3pIG9O2_ZAkqzcnNYr5yMzo5TXKc",
+        "expire_date": "2023-07-23T11:04:50.336Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "18ngllxz4746l0nzog5kr6zo4kylnfeh",
+    "fields": {
+        "session_data": ".eJxVjs0OwiAQhN-FsyGwKf07evcZyAK7FjVgoE1qjO-uNT3obTLzzWSewuIyT3apVGwMYhQgDr-eQ3-ltAXhgumcpc9pLtHJDZF7WuUpB7odd_ZvYMI6bW1gxYYRe00mKOW8ZggOSDdtUEOPHZgGQHfqo1ij92wGMC13rXMevq8q1RpzsrTeY3mIUb3eo2c_Ug:1qI5NV:LEwDQFDCFDGGQSQIAYZmKLsemPdlKKzZwqQSFdGbiyY",
+        "expire_date": "2023-07-22T10:41:25.266Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "51x88d5mqgt3ugyefr49ehsqqlir5sz8",
+    "fields": {
+        "session_data": ".eJxVjs0OwiAQhN-FsyGwKf07evcZyAK7FjVgoE1qjO-uNT3obTLzzWSewuIyT3apVGwMYhQgDr-eQ3-ltAXhgumcpc9pLtHJDZF7WuUpB7odd_ZvYMI6bW1gxYYRe00mKOW8ZggOSDdtUEOPHZgGQHfqo1ij92wGMC13rXMevq8q1RpzsrTeY3mIUb3eo2c_Ug:1qI7pj:aSzaQrMwLZUoCR8skBopobb62U6GymEA_BpLA4bFW-E",
+        "expire_date": "2023-07-22T13:18:43.072Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "58tjsd4ctcm7vj3hx0lw066atc0hzfva",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEU6VC6dO83kBkeFjVgoE00xn-3TbrQ7T3nnjezuMyTXVqoNnk2MsMOvxuhu4W8AX_FfCnclTzXRHxT-E4bPxcf7qfd_QtM2Kb1fUQpdQSKogclIkToOikUOQIC77TQHUpUDokGqYLoNfWIXhMOYAy5LdpCa6lkG56PVF9sXAMGhPh8ARSzQLw:1qIUFg:HsX_oQIIDy7PNyk_C7wJ_4OYoPhq-hC2dJySkX-I2-M",
+        "expire_date": "2023-07-23T13:15:00.521Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "7m5adwh8d26sz9ak0d1kcwm4ohqjukge",
+    "fields": {
+        "session_data": ".eJxVjs0OwiAQhN-FsyGwKf07evcZyAK7FjVgoE1qjO-uNT3obTLzzWSewuIyT3apVGwMYhQgDr-eQ3-ltAXhgumcpc9pLtHJDZF7WuUpB7odd_ZvYMI6bW1gxYYRe00mKOW8ZggOSDdtUEOPHZgGQHfqo1ij92wGMC13rXMevq8q1RpzsrTeY3mIUb3eo2c_Ug:1qHQ5E:79NwBySguGyVoqow-xWKp6Zx_O_JNiHYHwMVOiiDF0U",
+        "expire_date": "2023-07-20T14:35:48.699Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "8nzpg64lnof1eokull7e94cutvg5ziqj",
+    "fields": {
+        "session_data": ".eJxVjs0OwiAQhN-FsyGwKf07evcZyAK7FjVgoE1qjO-uNT3obTLzzWSewuIyT3apVGwMYhQgDr-eQ3-ltAXhgumcpc9pLtHJDZF7WuUpB7odd_ZvYMI6bW1gxYYRe00mKOW8ZggOSDdtUEOPHZgGQHfqo1ij92wGMC13rXMevq8q1RpzsrTeY3mIUb3eo2c_Ug:1qI5Kk:0KnsdestRMnWNbMprmk83pPFL6Oo3tj-a1MaPg9axO4",
+        "expire_date": "2023-07-22T10:38:34.093Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "a6t3rbr9nrpezozyuvahzwlhl57z89dj",
+    "fields": {
+        "session_data": ".eJxVjMEOwiAQBf-FsyFYKC09evcbyLIsFkVIaPFi_HfbpJdeZ-a9LwPE0vJqP1RjiOQtvSEmNuWW0oVZaOts20LVRs8mNrATc4AvyrvwT8iPwrHktUbH94QfduH34indjvZ0MMMyb2tAZ0ajUYGQqkPUSmkYtYZAJALCGGS4GoO9lKEzQjuh-t4NA27ESBfY7w9IbkN7:1qISdd:_9PjcPPcZYFvu3I2T9kkZk0BYZYphRMTiuICQJizWnA",
+        "expire_date": "2023-07-23T11:31:37.103Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "b8p0y9kidjppixhywj7ll95yl1g5nd9u",
+    "fields": {
+        "session_data": ".eJxVjs0OwiAQhN-FsyGwKf07evcZyAK7FjVgoE1qjO-uNT3obTLzzWSewuIyT3apVGwMYhQgDr-eQ3-ltAXhgumcpc9pLtHJDZF7WuUpB7odd_ZvYMI6bW1gxYYRe00mKOW8ZggOSDdtUEOPHZgGQHfqo1ij92wGMC13rXMevq8q1RpzsrTeY3mIUb3eo2c_Ug:1qIRfB:zB00I8NMfwqx9SmIwfMHj4eLYyVI5DHo5ojV-44HRIE",
+        "expire_date": "2023-07-23T10:29:09.224Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "bcdp04z0ynuy8q33rx63z8mxmft1y89u",
+    "fields": {
+        "session_data": ".eJxVjs0OwiAQhN-FsyGwKf07evcZyAK7FjVgoE1qjO-uNT3obTLzzWSewuIyT3apVGwMYhQgDr-eQ3-ltAXhgumcpc9pLtHJDZF7WuUpB7odd_ZvYMI6bW1gxYYRe00mKOW8ZggOSDdtUEOPHZgGQHfqo1ij92wGMC13rXMevq8q1RpzsrTeY3mIUb3eo2c_Ug:1qByNg:9CGiXwBISMAb2WkCBdr5D7HfWIfHG59V2lHY3lnysiM",
+        "expire_date": "2023-07-05T14:00:20.488Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "bmguc7ach1rbpxdr0qagoikh58h39tfy",
+    "fields": {
+        "session_data": ".eJxVjs0OwiAQhN-FsyGwKf07evcZyAK7FjVgoE1qjO-uNT3obTLzzWSewuIyT3apVGwMYhQgDr-eQ3-ltAXhgumcpc9pLtHJDZF7WuUpB7odd_ZvYMI6bW1gxYYRe00mKOW8ZggOSDdtUEOPHZgGQHfqo1ij92wGMC13rXMevq8q1RpzsrTeY3mIUb3eo2c_Ug:1qCJwM:Y1Kn0AyGjz1Fmd6QGLv0P6BqDWmWkgrxBBAVwAOiueE",
+        "expire_date": "2023-07-06T13:01:34.684Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "cvib2tngwepjid1uhdh27tlebet4ys6y",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe8ya0MoUmi7dO8ZyMwAFkVI2uLGeHc16abb_977b0Dm2srmXmFJMQXvwhNThqm0nE_gsG2za2tYXPIwwQiHjZAfofyBv2O5VcG1bEsi8VfETldxrT7ky-4eDmZc5199RqVsNBRlb7SMJpquU1ITkyHj2UrboULNSDQoHWRvqUf0lnAw40gMny847EOz:1qIUFK:jfQAwSWJipvLZL1k1kpitm3ZP4D_e08fTf_neoCk4ZE",
+        "expire_date": "2023-07-23T13:14:38.131Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "er8t3rfov5ibh7nf9deon6a087zee7tj",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGlm7dvyjpM8ZovXa4ACypTipEHeHSCmgfTPzXmKibS3T1vMyzUmcBYrT7xaJH7nuIN2p3prkVtdljnJX5EG7HFvKz8vh_h0U6uVba1bGXSkAaaUzGCaPFjAZO-iQLOhA2QOGMKBhsN4q9gjA0SUXMxnx_gC3mDbR:1qEVhU:wOn_qZSpM7xwV7O2UHDwyUMx4QQMVS9tYE6XU5GuN8E",
+        "expire_date": "2023-07-12T13:59:16.667Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "fct2g2aj9m9me0h3mxpt7jmza7sbcbw3",
+    "fields": {
+        "session_data": ".eJxVjs0OwiAQhN-FsyGwKf07evcZyAK7FjVgoE1qjO-uNT3obTLzzWSewuIyT3apVGwMYhQgDr-eQ3-ltAXhgumcpc9pLtHJDZF7WuUpB7odd_ZvYMI6bW1gxYYRe00mKOW8ZggOSDdtUEOPHZgGQHfqo1ij92wGMC13rXMevq8q1RpzsrTeY3mIUb3eo2c_Ug:1qEEwN:Pjk79hUC3kPNmv1rSq-mq9KzyHLOniF_giYJJqw_7RY",
+        "expire_date": "2023-07-11T20:05:31.590Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "fmxwl011jm9q6gnb5p55qe1m5wac5d6q",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2pChFAou3XsGMgyjRQ2Y0iYa4921SRe6_e_99xIBl3kMS-Mp5CT2Qond7xaRrlxWkC5YzlVSLfOUo1wVudEmjzXx7bC5f4ER2_h9a-rMcEIPqDvNYAidsqCSsb32yYL2yA6U970yBNbZjpwCoDikITKaNdq4tVxL4Mc9T0-xh_cHSkI-Dg:1qEWsv:7XiY9VY_URC31zmdDjlkZPmcbUsu-3Q91ynh4H12IY8",
+        "expire_date": "2023-07-12T15:15:09.710Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "kbaawg03uufzh2y1938e9jzthau888c0",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQAP_C2RCgpYBH776BLMtiUYSkLV6MfzdNeul1ZjJfBoit181_aMkpU_T0hlzYtfZSLsxD32bfV1p8juzKpGAnGABfVHcTn1AfjWOr25ID3xN-2JXfW6RyO9rTYIZ13r82YRyEQmUQnUYtnFIoB63QUnKTABGMi5RicDJMkMxkJGpLI9qRzMB-f2kJQ6M:1qIYmU:LrCtTTFvNOors054YgGsGQ3hUNgsBoqAoXZ6P4qgkH4",
+        "expire_date": "2023-07-23T18:05:10.641Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "mbw5b4wy8rfq79utmjc2hrfccuzqjlfg",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hDaMha6dO8ZyDBDLYqQ0OLGeHfTpJtu_3vvfwUSlZY39wk1zjGwC2-MSUy5pXQRDtu2uLaG6iKLSRhx2jzSK-Qd8BPzo0gqeavRy12RB13lvXBIt8M9HSy4LntN4MlYjUrbq-VxBO8Z2ONgAUwPaKxSvVY90sgdDtoCAaqOCOZgOhC_PznyQws:1qIT1e:aXUw5Q6mVTvXaBnbsm10s0RW2hxDmgbncUweNVtmjQE",
+        "expire_date": "2023-07-23T11:56:26.379Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "nsg8loo2fq4xjxetcja5ko2gb32yt8yz",
+    "fields": {
+        "session_data": ".eJxVjs0OwiAQhN-FsyGwKf07evcZyAK7FjVgoE1qjO-uNT3obTLzzWSewuIyT3apVGwMYhQgDr-eQ3-ltAXhgumcpc9pLtHJDZF7WuUpB7odd_ZvYMI6bW1gxYYRe00mKOW8ZggOSDdtUEOPHZgGQHfqo1ij92wGMC13rXMevq8q1RpzsrTeY3mIUb3eo2c_Ug:1qEVcO:wMdn8B9FqBVelZcvSXtvovusp_kBwRJMjq8GFa--pU0",
+        "expire_date": "2023-07-12T13:54:00.098Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "plznn8e6cg7t4hhmajmtdz3h1pmq96ae",
+    "fields": {
+        "session_data": ".eJxVjssOwiAURP-FtSGXR2lx6d5vIMC9WNSAKW2iMf671nSh2zlnJvNkzi_z6JZGk8vI9syw3W8WfLxQWQGefTlVHmuZpxz4qvCNNn6sSNfD5v4NjL6Nn7ZXKvUYuj4AkTRWD1GJkCwhkpDS6gg9SAshJaVN7AYldSc9CAoxof6-atRarsXR_ZanB9sLCdYAvN4XlUBs:1qITVr:OiHj9fc0NiSvMQEtZlqYUxxIuIh50ucIhfwMi5E_oiM",
+        "expire_date": "2023-07-23T12:27:39.809Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "qxsogum2cumbd68uoaszaxrnh2y8bv6k",
+    "fields": {
+        "session_data": ".eJxVjMEOgyAQRP-Fc2MEV5Eee-83kGUXKi2FRKWXpv9eTbx4mcO8N_MVSFRqXu3HzzFEz9a_MSZxzTWli7BY18nWxc82srgKEKfOIb183gE_MT9KQyWvc3TNrjQHXZp7YZ9uh3s6mHCZtrUxqkPpYFASdAt9a0YDMvQSAnsgdjgExzBiIMWdC0YSkVZ61G5L34nfHyCZQ0M:1qIRpV:z01afW-0ucm1e6YwD4GFaW50G7Z6VBaJtAqWHpPJlJY",
+        "expire_date": "2023-07-23T10:39:49.184Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "rc05ovyubwh3xkjzxz74448kleagar3x",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGlm7dvyjpM8ZovXa4ACypTipEHeHSCmgfTPzXmKibS3T1vMyzUmcBYrT7xaJH7nuIN2p3prkVtdljnJX5EG7HFvKz8vh_h0U6uVba1bGXSkAaaUzGCaPFjAZO-iQLOhA2QOGMKBhsN4q9gjA0SUXMxnx_gC3mDbR:1qJFXp:gBD4dV1VAwnaeFkGBQYzcJA0utdPz7qznFHEF8yI_zM",
+        "expire_date": "2023-07-25T15:44:53.158Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "tc675wzpxay1ddgskwid7xod37ujdiif",
+    "fields": {
+        "session_data": ".eJxVjs0OwiAQhN-FsyGwKf07evcZyAK7FjVgoE1qjO-uNT3obTLzzWSewuIyT3apVGwMYhQgDr-eQ3-ltAXhgumcpc9pLtHJDZF7WuUpB7odd_ZvYMI6bW1gxYYRe00mKOW8ZggOSDdtUEOPHZgGQHfqo1ij92wGMC13rXMevq8q1RpzsrTeY3mIUb3eo2c_Ug:1qIQxK:pKzu0mzzBZqucIu4o-V83lmiEacLSISVw89dhdaWEoQ",
+        "expire_date": "2023-07-23T09:43:50.034Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "uw6dq1tdqkakcsljqcwgmrn25zrih539",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2pBWhJYu3XsGMswMFkVIaHFjvLs26abb_977HwGIpeXVvbnGEJkcvyAmMeWW0kk4aOvs2sLVRRKT0OKwecAn5w3QA_K9SCx5rdHLTZE7XeStEKfr7h4OZljmf20BLhzGnjx6OoMZzThwF0CRtmi8Iq86YyyqTtuABAyk0Q4WrWY1qF58f2qKRD0:1qIRrR:M5XqdCxsjM5KBhKme4AsoKxs92qPqIEdfxkYMqeHaWI",
+        "expire_date": "2023-07-23T10:41:49.612Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ye0dcl59ynmpr0j2uvkon7q84lb45lek",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGlm7dvyjpM8ZovXa4ACypTipEHeHSCmgfTPzXmKibS3T1vMyzUmcBYrT7xaJH7nuIN2p3prkVtdljnJX5EG7HFvKz8vh_h0U6uVba1bGXSkAaaUzGCaPFjAZO-iQLOhA2QOGMKBhsN4q9gjA0SUXMxnx_gC3mDbR:1qA7An:CQX5pp-8Vix0yHsE-JGJoAY-VAnMIDef6ffGRSuljHc",
+        "expire_date": "2023-06-30T10:59:21.602Z"
+    }
+},
+{
+    "model": "account.emailaddress",
+    "pk": 1,
+    "fields": {
+        "user": 2,
+        "email": "andy.gibb@healthcareskills.com",
+        "verified": false,
+        "primary": true
+    }
+},
+{
+    "model": "account.emailaddress",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "email": "calamitous.rex@outlook.com",
+        "verified": false,
+        "primary": false
+    }
+},
+{
+    "model": "account.emailaddress",
+    "pk": 4,
+    "fields": {
+        "user": 4,
+        "email": "lmclaughlin048accs@gmail.com",
+        "verified": false,
+        "primary": true
+    }
+},
+{
+    "model": "account.emailaddress",
+    "pk": 5,
+    "fields": {
+        "user": 5,
+        "email": "mercancirit@gmail.com",
+        "verified": false,
+        "primary": true
+    }
+},
+{
+    "model": "account.emailaddress",
+    "pk": 6,
+    "fields": {
+        "user": 6,
+        "email": "christina@myrvold.org",
+        "verified": false,
+        "primary": true
+    }
+},
+{
+    "model": "account.emailaddress",
+    "pk": 7,
+    "fields": {
+        "user": 7,
+        "email": "amanda_currie@hotmail.co.uk",
+        "verified": false,
+        "primary": true
+    }
+},
+{
+    "model": "account.emailaddress",
+    "pk": 8,
+    "fields": {
+        "user": 8,
+        "email": "danielcahill360@gmail.com",
+        "verified": false,
+        "primary": true
+    }
+},
+{
+    "model": "account.emailaddress",
+    "pk": 9,
+    "fields": {
+        "user": 9,
+        "email": "alexdanks@googlemail.com",
+        "verified": false,
+        "primary": true
+    }
+},
+{
+    "model": "account.emailaddress",
+    "pk": 10,
+    "fields": {
+        "user": 10,
+        "email": "penagon99@gmail.com",
+        "verified": false,
+        "primary": true
+    }
+},
+{
+    "model": "account.emailaddress",
+    "pk": 12,
+    "fields": {
+        "user": 15,
+        "email": "andy-irvine@outlook.com",
+        "verified": false,
+        "primary": true
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 1,
+    "fields": {
+        "movement_name": "Floor Press",
+        "vid_link": "825160498?h=0a7365faa1",
+        "slug": "floor-press",
+        "directions": "<div>The Setup:</div><ul><li>Start with eyes directly under the bar</li><li>Grip the bar with a full grip (thumb over fingers)</li><li>Build a platform by creating an arch in the upper back</li></ul><div>The Rep:</div><ul><li>Bar moves towards sternum, pause then drive</li></ul>",
+        "bookmarks": [
+            2,
+            1
+        ]
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 2,
+    "fields": {
+        "movement_name": "Front Squat",
+        "vid_link": "825159151?h=c2d3f7c445",
+        "slug": "front-squat",
+        "directions": "<div>The Setup:</div><ul><li>Front rack position with bar across shoulders</li><li>Elbows pointing forward</li><li>Full grip on bar</li><li>Feet shoulder width apart, even pressure throughout</li><li>Breathe in from the abdomen and brace before beginning rep</li></ul><div>The Rep</div><ul><li>Descend backwards then down</li></ul>",
+        "bookmarks": [
+            2,
+            4,
+            8,
+            9
+        ]
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 3,
+    "fields": {
+        "movement_name": "Hang Power Snatch",
+        "vid_link": "824414690?h=09059cb68d",
+        "slug": "hang-power-snatch",
+        "directions": "<div>The Setup:</div>\r\n<ul>\r\n<li>Grip the bar with a hook grip (thumb under the fingers)</li>\r\n<li>Looking straight ahead</li>\r\n<li>Bar Starts above the knee</li>\r\n<li>Shoulders over the bar</li>\r\n</ul>\r\n<div>The Rep:<div><ol><li>Jump down under the bar by moving the feet</li><li>High elbow, fast turn-over with strong lock out</li><li>Strong leg drive into a fully extended position</li>\r\n</ol></div></div>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 4,
+    "fields": {
+        "movement_name": "Back Squat",
+        "vid_link": "824361488?h=5cba28413b",
+        "slug": "back-squat",
+        "directions": "<div>The Setup:</div><ul><li>High bar position across the shoulders</li><li>Full Grip (thumb over fingers) with elbows pointing back</li><li>Feet shoulder width apart with even pressure throughout</li><li>Breathe in from the abdomen and brace</li></ul><div>The Rep:</div><ul><li>Descend backwards then down</li><li>Lower until the hips pass the knees</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 5,
+    "fields": {
+        "movement_name": "Landmine Cossack Squat",
+        "vid_link": "824362677?h=63dfd2a5a1",
+        "slug": "landmine-cossack-squat",
+        "directions": "<div>The Setup:</div><ul><li>Sumo Stance, upright position</li><li>Barbell set in the landmine position</li><li>Breathe in from the abdomen and brace</li></ul><div>The Rep:</div><ul><li>Lateral Shift</li><li>Ensure the knee comes over the toe at the bottom of the rep</li></ul>",
+        "bookmarks": [
+            2,
+            4
+        ]
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 6,
+    "fields": {
+        "movement_name": "Pendlay Row",
+        "vid_link": "824397610?h=51c001d04c",
+        "slug": "pendlay-row",
+        "directions": "<div>The Setup:</div><ul><li>Position Ball of the foot directly under the barbell</li><li>Grip the bar just outside of Shoulder width</li><li>Neutral spine position</li><li>Externally rotate shoulders to create tension</li></ul><div>The Rep:</div><ul><li>Pull bar towards the stomach without any change in spinal position</li><li>Ensure the bar touches the floor between each rep</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 7,
+    "fields": {
+        "movement_name": "Split Stance Romanian Deadflift (RDL)",
+        "vid_link": "824414546?h=ec3f658abf",
+        "slug": "split-stance-romanian-deadflift-rdl",
+        "directions": "<div>The Setup:</div><ul><li>Extend the knee and hip to the starting point</li><li>External rotation of the shoulders to maintain tension</li></ul><div>The Rep:</div><ul><li>Hip-dominant movement pattern</li><li>Descend by sending hips back, maintaining a strong spinal position</li></ul>",
+        "bookmarks": [
+            9
+        ]
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 8,
+    "fields": {
+        "movement_name": "Barbell thrusters",
+        "vid_link": "824480957?h=9ee7610c9c",
+        "slug": "barbell-thrusters",
+        "directions": "<div>The Setup:</div><ul><li>Front rack position, bar across shoulders</li><li>Elbows pointing forward</li><li>Breathe and brace</li></ul><div>The Rep:</div><ul><li>Descend down until the hip goes past the knee</li><li>Strong drive out of the bottom of the rep, then accelerate through the last third of the movement</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 9,
+    "fields": {
+        "movement_name": "Hang Power Clean",
+        "vid_link": "825159894?h=823e76e758",
+        "slug": "hang-power-clean",
+        "directions": "<div>The Setup:</div><ul><li>Hook Grip (Thumb under fingers)</li><li>Bar starts just above knee</li><li>Look straight ahead</li><li>Sit back into the position</li></ul><div>The Rep:</div><ol><li>Jump down under the bar by moving the feet</li><li>Catch in the front rack position</li><li>Strong drive into the fully extended position</li></ol>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 10,
+    "fields": {
+        "movement_name": "Nordic Curls",
+        "vid_link": "825179834?h=4e10a76136",
+        "slug": "nordic-curls",
+        "directions": "<div>Equipment:</div><ul><li>Resistance band</li><li>Barbell</li><li>Ab mat</li></ul><div>The Setup:</div><ul><li>Place both arms inside the band</li><li>Both ankles between ab mat and barbell</li><li>Breathe and brace</li></ul><div>The Rep:</div><ul><li>Maintain braced position coming forward</li><li>Use hamstrings to return to starting position</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 11,
+    "fields": {
+        "movement_name": "Ab Roll Outs",
+        "vid_link": "838066096?h=426a0b8691",
+        "slug": "ab-roll-outs",
+        "directions": "<div>The Setup:</div><ul><li>Slight round in the upper back</li><li>Full weight on the roller</li></ul><div>The Rep:</div><ul><li>Roll to full extension</li><li>Maintain body position and core engagement throughout</li></ul><p><br></p>",
+        "bookmarks": [
+            4,
+            8
+        ]
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 12,
+    "fields": {
+        "movement_name": "Banded Activation (overhead)",
+        "vid_link": "844784285?h=98e40a81dd",
+        "slug": "banded-activation-overhead",
+        "directions": "<div>The Setup:</div><ul><li>Place one side of band under feet</li><li>stand in neutral position, other side of band held in each hand at side</li></ul><div>The Rep:</div><ul><li>Engage midline</li><li>Reach up to the sky to fully extend the shoulder. Challenge it but stay in control</li><li>Maintain a straight arm throughout</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 13,
+    "fields": {
+        "movement_name": "Barbell Hip Thrusts",
+        "vid_link": "838070537?h=b9d0bedace",
+        "slug": "barbell-hip-thrusts",
+        "directions": "<div>The Setup:</div><ul><li>Barbell rests across hips</li><li>Feet in narrow stance</li><li>Shoulders above bench&nbsp;</li></ul><div>The Rep:</div><ul><li>Squeeze glutes and push hips through</li><li>Maintain engagement and do not over-extend at the top of the movement</li><li>Think about keeping your ribs down and make sure you drive to a full extension</li></ul>",
+        "bookmarks": [
+            4
+        ]
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 14,
+    "fields": {
+        "movement_name": "Landmine Clean and Press",
+        "vid_link": "838082044?h=4e7ca0ef1c",
+        "slug": "landmine-clean-and-press",
+        "directions": "<div>The setup:</div><ul><li>Barbell in the landmine position</li><li>Set a neutral spine angle</li></ul><div>The Rep:</div><ol><li>Leg drive to the chest&nbsp;</li><li>Dip an drive overhead</li></ol>",
+        "bookmarks": [
+            2
+        ]
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 15,
+    "fields": {
+        "movement_name": "Med Ball Rotations",
+        "vid_link": "838084043?h=6aba082731",
+        "slug": "med-ball-rotations",
+        "directions": "<div>The Setup:</div><ul><li>Feet shoulder width apart</li></ul><div>The Rep:</div><ul><li>Rotate ball around the head</li><li>Use torque across the torso to accelerate into the slam</li><li>Let the hips and ankles move freely in an active stance</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 16,
+    "fields": {
+        "movement_name": "Press Up Squat Thrusts",
+        "vid_link": "838087610?h=fec25ebaa6",
+        "slug": "press-up-squat-thrusts",
+        "directions": "<div>The Setup:</div><ul><li>Externally rotate the shoulders</li><li>Hands just wide of the shoulders</li></ul><div>The Rep:</div><ul><li>Chest to floor</li><li>perform squat thrust just before locking out at the top of the press up</li><li>Remember to maintain this solid position throughout the movement!</li></ul>",
+        "bookmarks": [
+            2,
+            6
+        ]
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 17,
+    "fields": {
+        "movement_name": "Barbell Push Press",
+        "vid_link": "838088992?h=92c65d849a",
+        "slug": "barbell-push-press",
+        "directions": "<div>The Setup:</div><ul><li>Bar Across Shoulders</li><li>Elbows pointing forwards</li></ul><div>The Rep:</div><ul><li>Hips down, knees track forward</li><li>push knuckles to the ceiling when driving up through the legs</li><li>Use strong leg extension to drive the hip through into a full lockout!</li></ul>",
+        "bookmarks": [
+            2,
+            5
+        ]
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 18,
+    "fields": {
+        "movement_name": "Roll back into V sit",
+        "vid_link": "838090627?h=079e084f57",
+        "slug": "roll-back-into-v-sit",
+        "directions": "<div>The Setup:</div><ul><li>Sit on the floor</li><li>legs out in front</li><li>hands by your sides</li></ul>\r\n<div>The Rep:</div><ul><li>Fully mobilise the spine</li><li>Hands wide for support</li><li>Legs fall out wide</li><li>Reach hands past the heels</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 19,
+    "fields": {
+        "movement_name": "Scapula Pull Ups",
+        "vid_link": "838093572?h=8508199378",
+        "slug": "scapula-pull-ups",
+        "directions": "<div>The Setup:</div><ul><li>Full grip on the bar</li><li>Hang from the bar in a relaxed/dead hang</li></ul>\r\n<div>The Rep:</div><ul><li>Fully contract shoulder blades</li><li>Then, relax in to a dead hang</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 20,
+    "fields": {
+        "movement_name": "Side Lunges",
+        "vid_link": "838098570?h=4f6ba2a55e",
+        "slug": "side-lunges",
+        "directions": "<div>The Setup:</div><ul><li>Feet positioned in a narrow stance</li></ul><div>The Rep:</div><ul><li>Knee tracks forward</li><li>Foot maintains full contact with the floor</li><li>Upright torso</li><li>Return to starting position between each rep</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 21,
+    "fields": {
+        "movement_name": "Side Plank Clamshell",
+        "vid_link": "838094389?h=910ffed1e1",
+        "slug": "side-plank-clamshell",
+        "directions": "<div>The Setup:</div><ul><li>Push support knee into the ground to create tension</li></ul><div>The Rep:</div><ul><li>\"Fix a short band around both knees to increase the resistance of the movement. Keep that core tight!\"</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 22,
+    "fields": {
+        "movement_name": "Incline Dumbbell Press",
+        "vid_link": "838080657?h=c2615f00b3",
+        "slug": "incline-dumbbell-press",
+        "directions": "<div>The Setup:</div><ul><li>\"Kick\" DB's into lockout position</li></ul><div>The Rep:</div><ul><li>\"Keep a solid neutral spine position throughout and remember to keep that core braced!\"</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 23,
+    "fields": {
+        "movement_name": "Hang High Pull",
+        "vid_link": "838078836?h=11dc9a602b",
+        "slug": "hang-high-pull",
+        "directions": "<div>The Setup:</div><ul><li>bar starts just above the knee</li></ul><div>The Rep:</div><ul><li>\"Use and aggressive hip and knee extension, while keeping the bar close to the body to drive into that final high pull position!\"</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 24,
+    "fields": {
+        "movement_name": "Front Rack Barbell Step-Ups",
+        "vid_link": "838077272?h=30279eee06",
+        "slug": "front-rack-barbell-step-ups",
+        "directions": "<div>The setup:</div><ul><li>Barbell placed high on shoulders</li><li>Initiate breathing sequence</li></ul><div>The Rep:</div><ul><li>Remember to drive through the heel of the extending leg into your full lockout position</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 25,
+    "fields": {
+        "movement_name": "Deadball to Shoulder",
+        "vid_link": "838075742?h=70faa90ff3",
+        "slug": "deadball-to-shoulder",
+        "directions": "<div>The setup:</div><ul><li>Feet placed either side of the ball</li></ul><div>The Rep:</div><ol><li>First Section:<ul><li>Strong spinal position</li><li>Lift the ball to the cradle position</li></ul></li><li>Second Section:<ul><li>\"Use a strong knee extension and hip drive to send the ball to the shoulder. Keep the ball close to your body at all times!\"</li></ul></li></ol><p><ul></ul></p><p><br></p>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 26,
+    "fields": {
+        "movement_name": "Burpee Pull Ups",
+        "vid_link": "838074106?h=0126a52fb1",
+        "slug": "burpee-pull-ups",
+        "directions": "<div>The Rep:<br></div><ul><li>The Key is in the rhythm! Chain each part of the movement together, make sure you get your chest to the floor and remember to see the bar before you jump into the pullup\"</li></ul><p></p><ul></ul><p></p><p><br></p>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 27,
+    "fields": {
+        "movement_name": "Bench Leg Raises",
+        "vid_link": "838072506?h=d9acddb86c",
+        "slug": "bench-leg-raises",
+        "directions": "<div>The Setup:</div><ul><li>When lying back, secure hands to the bench above head</li><li>maintain a hollow position</li></ul><div>The Rep:</div><ul><li>\"Think about pulling your legs backwards and then up to help get that full extension!\"</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 28,
+    "fields": {
+        "movement_name": "Banded Glute Activation",
+        "vid_link": "838069440?h=74968d006f",
+        "slug": "banded-glute-activation",
+        "directions": "<div>The Setup:</div><ul><li>have the band running under both feet and resting in the hands around rib height.</li></ul><div>The Rep:</div><ul><li>\"Keep an active stance throughout the movement. Remember to send the leg out diagonally and keep the hips square!\"</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 29,
+    "fields": {
+        "movement_name": "American Kettlebell Swing",
+        "vid_link": "838066791?h=9d0183df3f",
+        "slug": "american-kettlebell-swing",
+        "directions": "<div>The Setup:</div><ul><li>Step into position</li></ul><div>The Rep:</div><ul><li>\"Begin with a backwards pull, keeping a strong spinal position. Extend both the hip and knee with force to drive into a full lockout!\"</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.movement",
+    "pk": 30,
+    "fields": {
+        "movement_name": "Pike Press Up",
+        "vid_link": "838085789?h=3888e279b5",
+        "slug": "pike-press-up",
+        "directions": "<div>The Setup:</div><ul><li>Active hands</li></ul><div>The Rep:</div><ul><li>\"Focus on the head traveling forwards, in front of the hands. Remember to breathe!\"</li></ul>",
+        "bookmarks": []
+    }
+},
+{
+    "model": "movelibrary.tag",
+    "pk": 1,
+    "fields": {
+        "movement": 1,
+        "upper_body": true,
+        "lower_body": false,
+        "barbell": true,
+        "dumbbell": false,
+        "kettlebell": false,
+        "olympic": false,
+        "power": true,
+        "strength": true,
+        "arms": true,
+        "chest": true,
+        "shoulders": false,
+        "back": false,
+        "one_rm": false
+    }
+}
+]
