@@ -21,22 +21,39 @@ body {
     --bs-gutter-y: 1.5rem;
 }
 
+.fa-solid {
+    font-size: 1.3rem;
+}
+
+/* offcanvas elements */
+/* background */
+.text-bg-dark {
+    background-color: #00000050 !important;
+    backdrop-filter: blur(10px) !important;
+}
+
 /* ________________________ */
 /* navbar */
 nav {
-    height: 7vh;
+    height: 10vh;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
 }
 
 .bg-dark {
     background-color: #000000 !important;
 }
 
-#nav-logo {
-    background-image: url(../media/flyfly.webp);
+#nav-container {
+    background-image: url(https://res.cloudinary.com/deth0ifla/image/upload/v1689336988/static/media/flyfly.7cbf8301f811.webp);
     background-repeat: no-repeat;
-    background-size: contain;
-    height: 100%;
-    width: auto;
+    background-size: auto 90%;
+    background-position: top left;
+    
+}
+
+.navbar-toggler-icon {
+    background-image: none;
 }
 
 .offcanvas-body > ul {
@@ -119,8 +136,29 @@ footer {
 
 footer > .row {
     --bs-gutter-y: 0rem;
+    height: 100%;
+    background-color: #00000000;
 }
 
 footer > .row > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
+    background-color: #00000000;
+}
+
+.flycon {
+    background-image: url(https://res.cloudinary.com/deth0ifla/image/upload/v1688891848/static/media/fly-f-i.ee435a06d74e.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* one-rep-max records offcanvas */
+.orm-record {
+    overflow-wrap: break-word;
+}
+.orm-record > p {
+    margin-bottom: 0px;
+    overflow-wrap: break-word;
 }

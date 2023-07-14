@@ -38,12 +38,8 @@ class Landing(LoginRequiredMixin, generic.ListView):
 
         # last movement view
         movement_viewed = False
-        last_movement_check = len(
-            Movement.objects.filter(
-                slug=UserNonAuthField.last_movement
-            )
-        )
-        if last_movement_check < 1:
+        last_movement_check = UserNonAuthField.objects.filter(user_id=request.user.id)
+        if len(last_movement_check[0].last_movement) < 1:
             library_count = len(movement_library_list) - 1
             move_pick = random.randint(0, library_count)
             last_movement = movement_library_list[move_pick]
@@ -54,18 +50,12 @@ class Landing(LoginRequiredMixin, generic.ListView):
                 user_id=request.user.id
             ).last_movement
             last_movement = get_object_or_404(Movement, slug=user_lm_record)
-        print("WE PICKED:", last_movement)
-        print("also, have we viewed a movement yet?:", movement_viewed)
 
         # promo video view
         promo_list = PromoVideo.objects.filter()
         promo_list_length = len(promo_list) - 1
-        print(promo_list)
-        print(promo_list_length)
         promo_pick = random.randint(0, promo_list_length)
-        print(promo_pick)
         promo_video = promo_list[promo_pick]
-        print(promo_video)
 
         # bookmarks view
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
@@ -77,15 +67,16 @@ class Landing(LoginRequiredMixin, generic.ListView):
         ).order_by(
             "-date_recorded"
         )
+        print(len(one_rm_records))
         if len(one_rm_records) < 1:
             library_count = len(movement_library_list) - 1
             move_pick = random.randint(0, library_count)
             last_orm = movement_library_list[move_pick]
         else:
             orm_recorded = True
-            last_record = one_rm_records[0]
+            print("THE RECORD THAT SHOULD BE PICKED IS:", one_rm_records[0].movement)
+            last_record = one_rm_records[0].movement
             last_orm = get_object_or_404(Movement, id=last_record.id)
-            print("THE LAST ONE REP MAX IS", last_orm)
 
         # social media panel view
         sm_cards = SocialMediaCard.objects.filter()
@@ -101,6 +92,7 @@ class Landing(LoginRequiredMixin, generic.ListView):
                 "promo_video": promo_video,
                 "last_movement": last_movement,
                 "movment_viewed": movement_viewed,
+                "one_rm_records": one_rm_records,
                 "last_orm": last_orm,
                 "bookmarks": bookmarks,
                 "movement_library_list": movement_library_list,

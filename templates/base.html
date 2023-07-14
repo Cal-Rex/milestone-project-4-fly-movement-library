@@ -40,13 +40,15 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-dark bg-dark sticky-top">
+    <nav id="nav-container" class="navbar navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><div id="nav-logo"></div> Movement Library</a>
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <h1>Movement Library</h1>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"><i class="fa-solid fa-magnifying-glass fa-flip-horizontal"></i></span>
             </button>
             <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
                 aria-labelledby="offcanvasDarkNavbarLabel">
@@ -81,20 +83,112 @@
     {% block content %}
 
     {% endblock content %}
+    <!-- offcanvas 1 -->
+    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="account-offcanvas"
+        aria-labelledby="offcanvas">
+        <div class="offcanvas-header">
+            <!-- header -->
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Account</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body search-offcanvas">
+            <!-- body -->
+            <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                <li><a class="dropdown-item" href="{% url 'home' %}">Dashboard</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="{% url 'edit_profile' %}">Edit Profile</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- offcanvas 2 -->
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="bookmarks-offcanvas"
+        aria-labelledby="offcanvas">
+        <div class="offcanvas-header">
+            <!-- header -->
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Bookmarked Movements</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body search-offcanvas">
+            <!-- body -->
+            <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+            {% for bookmark in bookmarks %}
+                        <li><a class="dropdown-item"
+                                href="{% url 'movement_detail' bookmark.slug %}">{{ bookmark.movement_name }}</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- offcanvas 3 -->
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="library-offcanvas" aria-labelledby="offcanvas">
+        <div class="offcanvas-header">
+            <!-- header -->
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">1-Rep Max Records</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body search-offcanvas">
+            <!-- body -->
+            <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                {% for record in one_rm_records %}
+                            <li>
+                                <a class="dropdown-item"
+                                    href="{% url 'movement_detail' record.movement.slug %}">
+                                <div class="orm-record">
+                                    <p>{{ record.movement }}</p>
+                                    <p>{{ record.date_recorded }}</p>
+                                </div>
+                                <div class="orm-value">{{ record.one_rep_max }}</div>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            {% endfor %}
+                </ul>
+
+            </ul>
+        </div>
+    </div>
 
     <footer class="container-fluid sticky-bottom">
         <div class="row">
 
             <div class="col-4">
-                <p>1</p>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#account-offcanvas" aria-controls="offcanvasDarkNavbar"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fa-solid fa-clipboard-user"></i></span>
+                </button>
             </div>
-            
+
             <div class="col-4">
-                <p>2</p>
+                <a href="https://www.fly.fit/" target="_blank"><button class="navbar-toggler" type="button" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon flycon"></span>
+                </button></a>
+
             </div>
-            
+
             <div class="col-4">
-                <p>3</p>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#bookmarks-offcanvas" aria-controls="offcanvasDarkNavbar"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><i class="fa-solid fa-book-bookmark"></i></span>
+                </button>
+
             </div>
 
         </div>
