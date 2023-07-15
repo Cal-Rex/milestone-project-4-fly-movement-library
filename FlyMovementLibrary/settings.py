@@ -30,9 +30,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEBUG' in os.environ
+DEBUG = True
 
-ALLOWED_HOSTS = ['fly-movement-library.herokuapp.com', '8000-calrex-milestoneproject-lidipx0e4o6.ws-eu101.gitpod.io', 'localhost']
+ALLOWED_HOSTS = ['https://fly-movement-library.herokuapp.com/', '8000-calrex-milestoneproject-lidipx0e4o6.ws-eu101.gitpod.io', 'localhost']
 
 # Application definition
 
