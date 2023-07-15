@@ -7,6 +7,35 @@
 
 {% block content %}
 
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+      <div class="account-container">
+
+        <div class="login-options"><a href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+        
+          <a href="{% url 'account_signup' %}">Sign up</a></div>
+        
+
+
+        
+
+
+        <form class="login" method="POST" action="{% url 'account_login' %}">
+          {% csrf_token %}
+          {{ form.as_p }}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+
+          <div class="login-options"><button class="search-button btn btn-success" type="submit">{% trans "Sign In" %} &raquo;</button></div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- <h1>{% trans "Sign In" %}</h1>
 
 {% get_providers as socialaccount_providers %}
@@ -54,31 +83,6 @@
     </div>
   </div>
 </div> -->
-<div class="container-fluid">
-  <div class="row">
-    <div class="row">
-      <div class="col-12 login-spacer"></div>
-    </div>
-    <div class="col-5 offset-1 col-sm-3 offset-sm-3 col-lg-2 offset-lg-4 fly-auth-container">
-      <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-    </div>
-    <div class="col-4 offset-1 col-sm-4 offset-sm-0 col-lg-2 fly-auth-container">
-      <a class="button secondaryAction" href="{% url 'account_signup' %}">Sign up</a>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-8 offset-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 fly-auth-container">
-      <form class="login" method="POST" action="{% url 'account_login' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-        
-        <button class="primaryAction btn btn-primary fly-auth-btn" type="submit">{% trans "Sign In" %}</button>
-      </form>
-    </div>
-  </div>
-</div>
+
 
 {% endblock %}

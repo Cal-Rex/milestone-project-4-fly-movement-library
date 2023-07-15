@@ -10,6 +10,16 @@
     align-content: center;
 }
 
+.login-options {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+
+}
+
 .change-mind {
     margin-top: 20px;
 }
