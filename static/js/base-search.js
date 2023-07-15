@@ -25,8 +25,4 @@ $(function () {
             }
         }
     }
-
-    function runSearch() {
-        console.log($('#library-search').val();)
-    }
 });
