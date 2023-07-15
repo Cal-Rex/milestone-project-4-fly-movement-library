@@ -36,13 +36,13 @@
                 <form class="d-inline" action="{% url 'movement_bookmark' library_movement.slug %}" method="POST">
                   {% csrf_token %}
                   {% if bookmarked %}
-                  <button class="btn bookmark-btn" type="submit" name="bookmark_button"
+                  <button class="btn bookmark-btn uf-btn" type="submit" name="bookmark_button"
                     value="{{ library_movement.slug }}">
                     <i class="fa-solid fa-bookmark"></i>
                   </button>
                 </form>
                 {% else %}
-                <button class="btn bookmark-btn" type="submit" name="bookmark_button"
+                <button class="btn bookmark-btn uf-btn" type="submit" name="bookmark_button"
                   value="{{ library_movement.slug }}">
                   <i class="fa-regular fa-bookmark"></i>
                 </button>
@@ -64,7 +64,7 @@
 
               <!-- add 1-rm button -->
               <div id="add-record">
-                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-a"
+                <button class="btn uf-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-a"
                   aria-controls="offcanvasWithBothOptions"><i class="fa-regular fa-square-plus"></i></button>
               </div>
 
@@ -75,7 +75,7 @@
                 <button class="btn" type="button"><i
                     class="empty-record fa-brands fa-square-font-awesome-stroke"></i></button>
                 {% else %}
-                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-hof"
+                <button class="btn uf-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-hof"
                   aria-controls="offcanvasWithBothOptions"><i
                     class="fa-brands fa-square-font-awesome-stroke"></i></button>
                 {% endif %}

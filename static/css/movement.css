@@ -23,6 +23,16 @@ header > h2 {
 /* ___________________ */
 /* user features */
 
+/* buttons */
+.uf-btn > i {
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.uf-btn > i:hover {
+    color: #33ff54;
+}
+
 /* bookmark feature */
 .bookmark-feature > form > strong > .btn {
     line-height: 1rem;

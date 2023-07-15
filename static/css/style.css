@@ -132,6 +132,10 @@ svg {
 
 /* offcanvas elements */
 /* background */
+.offcanvas {
+    z-index: 9999 !important;
+}
+
 .text-bg-dark {
     background-color: #0000006f !important;
     backdrop-filter: blur(10px) !important;
@@ -374,7 +378,9 @@ footer {
 footer > .row {
     --bs-gutter-y: 0rem;
     height: 100%;
-    background-color: #00000000;
+    background-color: #0000005b;
+    backdrop-filter: blur(5px) !important;
+
 }
 
 footer > .row > div {
