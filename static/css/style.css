@@ -223,6 +223,15 @@ input::placeholder {
 
 /* ________________________ */
 /* Search form */
+.d-flex {
+    justify-content: flex-end;
+}
+
+.form-control {
+    width: auto;
+}
+
+
 #library-search {
     background-color: #00000000;
     border-radius: 0px;
