@@ -35,6 +35,11 @@ class Landing(LoginRequiredMixin, generic.ListView):
         if last_login == date_joined:
             user_new = True
         movement_library_list = Movement.objects.filter()
+        alphabetized = sorted(
+            movement_library_list,
+            key=lambda item: item.movement_name
+        )
+        movement_library_list = alphabetized
 
         # last movement view
         movement_viewed = False
@@ -110,11 +115,20 @@ class Library(LoginRequiredMixin, generic.ListView):
 
     def get(self, request, *args, **kwargs):
         movement_library_list = Movement.objects.filter()
+        alphabetized = sorted(
+            movement_library_list,
+            key=lambda item: item.movement_name
+        )
+        movement_library_list = alphabetized
+
+        # bookmarks view
+        bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
         return render(
             request,
             'library.html',
             {
                 "movement_library_list": movement_library_list,
+                "bookmarks": bookmarks,
             }
         )
 

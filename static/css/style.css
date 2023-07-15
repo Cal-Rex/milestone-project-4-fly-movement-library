@@ -235,7 +235,7 @@ nav {
     background-repeat: no-repeat;
     background-size: auto 90%;
     background-position: top left;
-    
+    height: fit-content;
 }
 
 nav > div > a {
