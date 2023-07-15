@@ -8,6 +8,17 @@ body {
     background-repeat: no-repeat;
 }
 
+body::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+
+*::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+
+
 * {
     background-color: #00000000;
     color: #fff;
@@ -292,6 +303,7 @@ nav > div > a > h1 {
 
 .index {
     height: 83vh;
+    overflow-y: auto;
 }
 
 .index > .row > .welcome {
