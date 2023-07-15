@@ -324,14 +324,14 @@ nav > div > a > h1 {
 }
 
 /* library panel */
-#library-panel-filler {
+/* #library-panel-filler {
     display: none;
 }
 @media screen and (min-width: 992px) {
     #library-panel-filler {
         display: block;
     }
-}
+} */
 
 .library-panel {
     height: 100%;

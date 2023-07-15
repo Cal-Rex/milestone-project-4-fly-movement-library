@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&family=Montserrat:wght@100;300;400&family=Oswald:wght@700&family=Roboto:wght@100;300;400&display=swap');
+
+/* generic */
+
+.remove-top-margin {
+    margin-top: 0px;
+}
+
+/* title */
+header > h2 {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+    padding-left: 15px;
+}
+
+/* video panel */
+
+#movement-video {
+    border-radius: 15px;
+}
+
+/* ___________________ */
+/* user features */
+
+/* bookmark feature */
+.bookmark-feature > form > strong > .btn {
+    line-height: 1rem;
+}
+
+.bookmark-btn > i {
+    font-size: 1.4rem;
+}
+
+/* add and edit 1-rm records */
+.user-interactions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+
+.user-interactions > div > .btn {
+    line-height: 1rem;
+}
+
+#orm-latest-record {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.user-interactions > div > button > i {
+    font-size: 1.5rem;
+}
+
+.user-interactions .btn {
+    line-height: 1rem;
+}
+
+/* movement directions */
+#movement-directions {
+    padding-left: 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    border-radius: 15px;
+    background: #0d0d0d;
+    background: linear-gradient(331deg, #292929 0%, #000000 95%);
+}
+
+.directions-heading {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
+    font-size: 1.25rem;
+}
+
+.directions-list-items {
+    font-family: 'roboto', sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 2rem;
+    font-size: 1.1rem;
+}
+
+#movement-directions > ul {
+    padding: 15px;
+}
+
+/* movement page-specific offcanvases */
+.oc-right > form > div > p {
+    text-align: right;
+}
+
+.one-rm-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn-outline-success {
+    --bs-btn-color: #2df64e;
+    --bs-btn-border-color: #95fdad;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #2df64e;
+    --bs-btn-hover-border-color: #2df64e;
+    --bs-btn-focus-shadow-rgb: 25,135,84;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #95fdad;
+    --bs-btn-active-border-color: #95fdad;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #787878;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #787878;
+    --bs-gradient: none;
+}

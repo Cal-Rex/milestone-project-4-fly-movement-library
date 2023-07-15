@@ -525,6 +525,25 @@ ___
     - error caused by cloudinary having insufficient capacity to run size of static files on free subscription plan. uninstalled package and now pulling script from CDN
 - when a 1rm is entered, movement becomes un-bookmarked:
     - closing tag for the edit 1rm form was placed incorrectly inside a for loop on the template. replaced outside of loop and resolved issue
+- Youtube API for embeds fails to load on first attempt:
+    - Known issue with the youtube player API since 2021. Advised client to switch to different provider. In the event of needing to add youtube videos in the future, the following procedure code can be used:
+    ``` html
+    <!-- Temp if statement being used while library being transferred to different provider -->
+      {% if library_movement.vid_link|length >= 12 %}
+      <!-- Vimeo player -->
+      <iframe id="{{ library_movement.slug}}" style="width: 100%; aspect-ratio: 16 / 9;"
+        src="https://player.vimeo.com/video/{{ library_movement.vid_link }}&muted=1&autoplay=1&loop=1&background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+        frameborder="0" allow="autoplay;" loop="1" autoplay="1"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Nordic Curls ML3">
+      </iframe>
+      <script src="https://player.vimeo.com/api/player.js"></script>
+      {% else %}
+      <!-- Youtube player -->
+      <iframe id="{{ library_movement.slug}}" style="width: 100%; aspect-ratio: 16 / 9;"
+        src="https://www.youtube.com/embed/{{ library_movement.vid_link }}?rel=0&autoplay=1&loop=1&mute=1&controls=0&playlist={{ library_movement.vid_link }}">
+      </iframe>
+      {% endif %}
+    ```
 
 ## Un-resolved bugs
 - iframe in index will not respond to style rules set in style.css
