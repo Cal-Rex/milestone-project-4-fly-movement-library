@@ -44,7 +44,7 @@ class Landing(LoginRequiredMixin, generic.ListView):
         # last movement view
         movement_viewed = False
         last_movement_check = UserNonAuthField.objects.filter(user_id=request.user.id)
-        if len(last_movement_check.first().last_movement) < 1:
+        if len(last_movement_check) < 1:
             library_count = len(movement_library_list) - 1
             move_pick = random.randint(0, library_count)
             last_movement = movement_library_list[move_pick]
@@ -72,14 +72,12 @@ class Landing(LoginRequiredMixin, generic.ListView):
         ).order_by(
             "-date_recorded"
         )
-        print(len(one_rm_records))
         if len(one_rm_records) < 1:
             library_count = len(movement_library_list) - 1
             move_pick = random.randint(0, library_count)
             last_orm = movement_library_list[move_pick]
         else:
             orm_recorded = True
-            print("THE RECORD THAT SHOULD BE PICKED IS:", one_rm_records[0].movement)
             last_record = one_rm_records[0].movement
             last_orm = get_object_or_404(Movement, id=last_record.id)
 
@@ -150,7 +148,6 @@ class MovementDetail(LoginRequiredMixin, View):
         user_lm_check = UserNonAuthField.objects.filter(
             user_id__id=request.user.id
         )
-        print(len(user_lm_check))
         if len(user_lm_check) == 0:
             user_last_movement.user_id = user
             user_last_movement.last_movement = movement_from_library.slug
