@@ -7,9 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'css/account-style.css' %}" rel="stylesheet" type="text/css">
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'css/account-style.css' %}" rel="stylesheet" type="text/css">
   <title>{% block head_title %}{% endblock %}</title>
   {% block extra_head %}
   {% endblock %}
@@ -17,16 +17,31 @@
 
 <body>
   {% block body %}
-  <div class="container-fluid">
+
+  <section class="container-fluid">
+
+    <!-- hero image -->
     <div class="row">
-      <div class="col-8 offset-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 fly-hero"></div>
+      <div class="col-12 fly-hero"></div>
     </div>
+
+    <!-- subtitle -->
     <div class="row">
-      <div class="col-8 offset-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 fly-hero-title">
-        Movement Library
+      <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+        <div class="account-container">
+          <svg id="account-subtitle">
+            <text x="40px" y="70px" class="outlined-title">
+              Movement
+            </text>
+            <text x="112px" y="90px" class="white-title">
+              Library
+            </text>
+          </svg>
+        </div>
       </div>
     </div>
-  </div>
+
+  </section>
 
   <!-- {% if messages %}
     <div>
@@ -51,9 +66,6 @@
         {% endif %}
       </ul>
     </div> -->
-    <script src="https://code.jquery.com/jquery-3.7.0.js"
-        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-    <script src="{% static 'js/auth_styling.js' %}"></script>
   {% block content %}
   {% endblock %}
   {% endblock %}

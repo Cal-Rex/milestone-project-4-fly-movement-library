@@ -5,24 +5,28 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<div class="container-fluid sign-out">
-  <div class="row">
-    <div class="col-8 offset-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 fly-hero-title">
-      <h1>{% trans "Sign Out" %}</h1>
 
-      <p>{% trans 'Are you sure you want to sign out?' %}</p>
-      
-      <form method="post" action="{% url 'account_logout' %}">
-        {% csrf_token %}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-        <button class="btn btn-primary fly-button" type="submit">{% trans 'Sign Out' %}</button>
-      </form>
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+      <div class="account-container">
+
+        <h1>{% trans "Sign Out" %}</h1>
+
+        <p>{% trans 'Are you sure you want to sign out?' %}</p>
+
+        <form method="post" action="{% url 'account_logout' %}">
+          {% csrf_token %}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <button class="search-button btn btn-success" type="submit">{% trans 'Sign Out' %}</button>
+        </form>
+        <a href="{% url 'home' %}"><button class="search-button btn btn-success change-mind">Back to Dashboard</button></a>
+
+      </div>
     </div>
   </div>
-</div>
-
-
+</section>
 
 {% endblock %}

@@ -2,18 +2,19 @@
 {% load static %}
 
 {% block content %}
-<head><link href="{% static 'css/account-style.css' %}" rel="stylesheet" type="text/css"></head>
-<div class="conatiner-fluid edit-name-form">
-    <div class="row">
-        <div class="col-12 ">
-            <form class="edit-name-form" method="POST" action="{% url 'edit_profile' %}">
+
+<head>
+    
+</head>
+<div class="conatiner-fluid edit-name-form index">
+    <div class="account-panel">
+        <form class="edit-name-form" method="POST" action="{% url 'edit_profile' %}">
             {{ name_edit_form.as_p }}
             {% csrf_token %}
             <p class="button-box">
-              <button type="submit" class="btn btn-primary fly-button">Update</button>
+                <button type="submit" class="search-button btn btn-success">Update</button>
             </p>
         </form>
-        </div>
     </div>
 </div>
 <script src="{% static 'js/edit_profile.js' %}"></script>
