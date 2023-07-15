@@ -2,9 +2,6 @@ $(function () {
 
     $(`.query`).css('display', 'none');
 
-    $('#library-search').on('keyup', runSearch);
-    $('#library-search').val().on('change', runSearch);
-
     function runSearch() {
         $(`.query`).css('display', 'none');
         var search = $('#library-search').val();
@@ -25,4 +22,12 @@ $(function () {
             }
         }
     }
+
+    function runSearch() {
+        console.log($('#library-search').val();)
+    }
+
+    $('#library-search').on('keyup', runSearch);
+    $('#library-search').val().on('change', runSearch);
+    $('#library-search').val().on('change', printVal);
 });
