@@ -6,84 +6,107 @@
   <div class="row">
 
     <!-- header -->
-    <header class="col-12">
+    <header class="col-12 order-lg-first">
       <h2>{{ library_movement.movement_name }}</h2>
     </header>
 
-    <!-- video column -->
-    <div class="col-12 remove-top-margin">
-      <iframe id="{{ library_movement.slug }}" class="movement-video" style="width: 100%; aspect-ratio: 16 / 9;"
-        src="https://player.vimeo.com/video/{{ library_movement.vid_link }}&muted=1&autoplay=1&loop=1&background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-        frameborder="0" allow="autoplay;" loop="1" autoplay="1"
-        style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Nordic Curls ML3">
-      </iframe>
-      <script src="https://player.vimeo.com/api/player.js"></script>
-    </div>
-
-    <!-- user features -->
-    <div class="col-12">
-      <!-- sub-grid -->
+    <!-- video and user features -->
+    <div class="col-12 col-lg-6 order-lg-2 remove-top-margin">
       <div class="row">
 
-        <!-- bookmarks button -->
-        <div class="col-2 remove-top-margin bookmark-feature">
-          <strong>
-            {% if user.is_authenticated %}
-            <form class="d-inline" action="{% url 'movement_bookmark' library_movement.slug %}" method="POST">
-              {% csrf_token %}
-              {% if bookmarked %}
-              <button class="btn bookmark-btn" type="submit" name="bookmark_button" value="{{ library_movement.slug }}">
-                <i class="fa-solid fa-bookmark"></i>
-              </button>
-            </form>
-            {% else %}
-            <button class="btn bookmark-btn" type="submit" name="bookmark_button" value="{{ library_movement.slug }}">
-              <i class="fa-regular fa-bookmark"></i>
-            </button>
-            {% endif %}
-            {% else %}
-            {% endif %}
-          </strong>
+        <!-- video -->
+        <div class="col-12">
+          <iframe id="{{ library_movement.slug }}" class="movement-video" style="width: 100%; aspect-ratio: 16 / 9;"
+            src="https://player.vimeo.com/video/{{ library_movement.vid_link }}&muted=1&autoplay=1&loop=1&background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            frameborder="0" allow="autoplay;" loop="1" autoplay="1"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Nordic Curls ML3">
+          </iframe>
+          <script src="https://player.vimeo.com/api/player.js"></script>
         </div>
 
-        <div class="col-10 remove-top-margin user-interactions">
-          <!-- latest 1rm record -->
-          <div id="orm-latest-record">
-            {% for top_record in one_rm_records|slice:":1" %}
-            1-RM: <strong> {{ top_record.one_rep_max }} KG</strong>
-            {% empty %}
-            Add a 1-RM <i class="fa-solid fa-arrow-right fa-fade"></i>
-            {% endfor %}
+        <!-- user features -->
+        <div class="col-12">
+          <!-- sub-grid -->
+          <div class="row">
+
+            <!-- bookmarks button -->
+            <div class="col-2 remove-top-margin bookmark-feature">
+              <strong>
+                {% if user.is_authenticated %}
+                <form class="d-inline" action="{% url 'movement_bookmark' library_movement.slug %}" method="POST">
+                  {% csrf_token %}
+                  {% if bookmarked %}
+                  <button class="btn bookmark-btn" type="submit" name="bookmark_button"
+                    value="{{ library_movement.slug }}">
+                    <i class="fa-solid fa-bookmark"></i>
+                  </button>
+                </form>
+                {% else %}
+                <button class="btn bookmark-btn" type="submit" name="bookmark_button"
+                  value="{{ library_movement.slug }}">
+                  <i class="fa-regular fa-bookmark"></i>
+                </button>
+                {% endif %}
+                {% else %}
+                {% endif %}
+              </strong>
+            </div>
+
+            <div class="col-10 remove-top-margin user-interactions">
+              <!-- latest 1rm record -->
+              <div id="orm-latest-record">
+                {% for top_record in one_rm_records|slice:":1" %}
+                1-RM: <strong> {{ top_record.one_rep_max }} KG</strong>
+                {% empty %}
+                Add a 1-RM <i class="fa-solid fa-arrow-right fa-fade"></i>
+                {% endfor %}
+              </div>
+
+              <!-- add 1-rm button -->
+              <div id="add-record">
+                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-a"
+                  aria-controls="offcanvasWithBothOptions"><i class="fa-regular fa-square-plus"></i></button>
+              </div>
+
+              <!-- view all 1-rm records button -->
+              <div>
+                <!-- 1rm records -->
+                {% if one_rm_records|length < 1 %}
+                <button class="btn" type="button"><i
+                    class="empty-record fa-brands fa-square-font-awesome-stroke"></i></button>
+                {% else %}
+                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-hof"
+                  aria-controls="offcanvasWithBothOptions"><i
+                    class="fa-brands fa-square-font-awesome-stroke"></i></button>
+                {% endif %}
+              </div>
+
+            </div>
+
+
+
           </div>
 
-          <!-- add 1-rm button -->
-          <div id="add-record">
-            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-a"
-              aria-controls="offcanvasWithBothOptions"><i class="fa-regular fa-square-plus"></i></button>
-          </div>
-
-          <!-- view all 1-rm records button -->
-          <div>
-            <!-- 1rm records -->
-            {% if one_rm_records|length < 1 %}
-            <button class="btn" type="button"><i
-                class="empty-record fa-brands fa-square-font-awesome-stroke"></i></button>
-            {% else %}
-            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-hof"
-              aria-controls="offcanvasWithBothOptions"><i class="fa-brands fa-square-font-awesome-stroke"></i></button>
-            {% endif %}
-          </div>
 
         </div>
+
+      </div>
+
+    </div>
+
+    <!-- movement directions and library panel -->
+    <div class="col-12 col-lg-6 order-lg-3 movement-directions-container">
+      <div class="row">
 
         <!-- movement directions -->
-        <div class="col-12 col-lg-5 order-lg-2 col-xl-5">
+        <div class="col-12">
           <div id="movement-directions">
             {{ library_movement.directions | safe }}
           </div>
         </div>
 
-        <div id="library-panel-filler" class="col-12">
+        <!-- full movement library panel -->
+        <div id="library-panel-filler" class="col-12 order-lg-last">
           <a href="{% url 'library' %}">
             <div class="library-panel index-panel card-bg"
               style="background-image: url({{ library_movement.thumbnail }});">
@@ -184,7 +207,7 @@
   <div class="offcanvas-body search-offcanvas oc-right">
     <!-- body -->
     <form id="edit-record-form" class="record-form" method="POST"
-                action="/edit_one_rm/{{ library_movement.slug }}/{{ record.id }}/">
+      action="/edit_one_rm/{{ library_movement.slug }}/{{ record.id }}/">
       <div class="one-rm-form">
         {{ one_rm_form }}
         <span>KG</span>
@@ -201,4 +224,3 @@
 
 
 {% endblock %}
-

@@ -61,6 +61,12 @@ header > h2 {
 }
 
 /* movement directions */
+@media screen and (min-width: 992px) {
+    .movement-directions-container {
+        margin-top: 0px;
+    }
+}
+
 #movement-directions {
     padding-left: 15px;
     background-size: cover;
