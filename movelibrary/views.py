@@ -44,7 +44,7 @@ class Landing(LoginRequiredMixin, generic.ListView):
         # last movement view
         movement_viewed = False
         last_movement_check = UserNonAuthField.objects.filter(user_id=request.user.id)
-        if len(last_movement_check[0].last_movement) < 1:
+        if len(last_movement_check.first().last_movement) < 1:
             library_count = len(movement_library_list) - 1
             move_pick = random.randint(0, library_count)
             last_movement = movement_library_list[move_pick]
