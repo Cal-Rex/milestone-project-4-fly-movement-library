@@ -275,6 +275,30 @@ nav > div > a > h1 {
     padding-top: 10px;
 }
 
+/* what's on panel */
+.whats-on-panel {
+    position: relative;
+}
+
+.whats-on-panel > div {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+}
+
+.whats-on-panel > div > h1 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 0rem;
+    line-height: 1;
+    text-align: right;
+}
+
+.whats-on-panel > div > .title-subhead {
+    text-align: left !important;
+}
+
 
 /* last movement card */
 .last-movement-card {
@@ -379,8 +403,6 @@ footer > .row > .col-4 > button > span > .fa-solid {
 footer > .row > .col-4 > button > span > .fa-solid:hover {
     color: #2EF74F;
 }
-
-
 
 
 /* one-rep-max records offcanvas */
