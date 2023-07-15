@@ -596,6 +596,7 @@ ___
 - [Chat GPT](https://openai.com/blog/chatgpt)
 - [Zoom](https://zoom.us/)
 - [Cloud Convert](https://cloudconvert.com/)
+- [Google Fonts](https://fonts.google.com/)
 
 ___
 
@@ -636,4 +637,9 @@ To simulate Agile principles, this project took an incremental review approach t
 - https://stackoverflow.com/questions/29573163/django-admin-login-suddenly-demanding-csrf-token
 - https://docs.djangoproject.com/en/4.0/ref/settings/#csrf-trusted-origins
 - https://stackoverflow.com/questions/1479206/django-templating-how-to-access-properties-of-the-first-item-in-a-list
+- https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text
+- https://www.w3schools.com/js/js_htmldom_css.asp
+- https://www.w3schools.com/jsref/jsref_includes.asp
+- https://www.geeksforgeeks.org/jquery-set-the-value-of-an-input-text-field/
+- https://stackoverflow.com/questions/30050556/how-to-make-a-text-stroke-with-transparent-text
 

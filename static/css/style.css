@@ -357,9 +357,31 @@ footer > .row > div {
 
 .flycon {
     background-image: url(https://res.cloudinary.com/deth0ifla/image/upload/v1688891848/static/media/fly-f-i.ee435a06d74e.webp);
+    -webkit-filter: grayscale(100%) brightness(100%);
+    filter: grayscale(100%);
     background-size: contain;
     background-repeat: no-repeat;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
 }
+
+.flycon:hover {
+    filter: grayscale(0%);
+
+}
+
+footer > .row > .col-4 > button > span > .fa-solid {
+    color: #bebebe;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+footer > .row > .col-4 > button > span > .fa-solid:hover {
+    color: #2EF74F;
+}
+
+
+
 
 /* one-rep-max records offcanvas */
 .orm-record {
