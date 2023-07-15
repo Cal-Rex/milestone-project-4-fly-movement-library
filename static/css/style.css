@@ -25,7 +25,7 @@ body::-webkit-scrollbar {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
     font-weight: 300;
-    overflow: hidden;
+    overflow: auto;
 }
 
 a {
