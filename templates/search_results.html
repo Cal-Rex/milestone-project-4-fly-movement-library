@@ -1,21 +1,44 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container-fluid">
-    <!-- maybe use this row as a "welcome back [NAME]" -->
-    <div class="row">
-        <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-          <h5>Here's what we've got:</h5>
-            <ul class="search-results">
-              <li><hr class="dropdown-divider"></li>
-                {% for result in results %}
-                  <li><a class="dropdown-item" href="{% url 'movement_detail' result.slug %}">{{ result }}</a></li>
-                  <li><hr class="dropdown-divider"></li>
-
-                  
-                {% empty %}
-                  <li>No results found.</li>
-                {% endfor %}
-              </ul>
-        </div>
+        <section class="container-fluid index">
+          <!-- maybe use this row as a "welcome back [NAME]" -->
+          <div class="row">
+            <div
+              class="library-title-container col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+              <!-- <h5>Here's what we've got:</h5> -->
+              <svg>
+                <text x="40px" y="70px" class="outlined-title">
+                  Search
+                </text>
+                <text x="50px" y="100px" class="white-title">
+                  Results
+                </text>
+                
+              </svg>
+            </div>
+        
+            <div class="row library-list">
+              <div class="col-xs-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+                <ul>
+                  <li>
+                    <hr class="">
+                  </li>
+                  {% for result in results %}
+                  <a href="{% url 'movement_detail' result.slug %}">
+                    <li>{{ result }}</li>
+                  </a>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+        
+        
+                  {% empty %}
+                  <li>No movements matching that search criteria, champ.</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
 {% endblock %}

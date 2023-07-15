@@ -223,6 +223,12 @@ class MovementSearch(LoginRequiredMixin, generic.ListView):
     login_url = '/accounts/login/'
 
     def get(self, request):
+        movement_library_list = Movement.objects.filter()
+        alphabetized = sorted(
+            movement_library_list,
+            key=lambda item: item.movement_name
+        )
+        movement_library_list = alphabetized
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
         query = request.GET.get('query').title()
         queries = query.split()
@@ -231,8 +237,10 @@ class MovementSearch(LoginRequiredMixin, generic.ListView):
             request,
             'search_results.html',
             {
+                'movement_library_list': movement_library_list,
                 'results': results,
                 "bookmarks": bookmarks,
+
             }
         )
 
