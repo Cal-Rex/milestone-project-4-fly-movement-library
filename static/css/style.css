@@ -253,7 +253,7 @@ nav {
     background-repeat: no-repeat;
     background-size: auto 90%;
     background-position: top left;
-    height: fit-content;
+    height: 12vh;
 }
 
 nav > div > a {
@@ -291,8 +291,7 @@ nav > div > a > h1 {
 }
 
 .index {
-    height: 86vh;
-    overflow-y: scroll;
+    height: 83vh;
 }
 
 .index > .row > .welcome {
@@ -383,7 +382,7 @@ footer * {
 }
 
 footer {
-    height: 7vh;
+    height: 5vh;
     background-color: #0000002f;
     
     /* backdrop-filter: blur(5px); */
