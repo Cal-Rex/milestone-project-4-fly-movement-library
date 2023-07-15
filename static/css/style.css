@@ -211,6 +211,14 @@ svg {
     border-color: #fff;;
 }
 
+.false-query {
+    display: none;
+}
+
+.true-query {
+    display: inline;
+}
+
 /* ________________________ */
 /* navbar */
 nav {
