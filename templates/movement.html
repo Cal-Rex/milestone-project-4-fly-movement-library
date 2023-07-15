@@ -12,7 +12,7 @@
 
     <!-- video column -->
     <div class="col-12 remove-top-margin">
-      <iframe id="movement-video" style="width: 100%; aspect-ratio: 16 / 9;"
+      <iframe id="{{ library_movement.slug }}" class="movement-video" style="width: 100%; aspect-ratio: 16 / 9;"
         src="https://player.vimeo.com/video/{{ library_movement.vid_link }}&muted=1&autoplay=1&loop=1&background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
         frameborder="0" allow="autoplay;" loop="1" autoplay="1"
         style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Nordic Curls ML3">
@@ -50,7 +50,7 @@
           <!-- latest 1rm record -->
           <div id="orm-latest-record">
             {% for top_record in one_rm_records|slice:":1" %}
-            1-RM: <strong>{{ top_record.one_rep_max }} KG</strong>
+            1-RM: <strong> {{ top_record.one_rep_max }} KG</strong>
             {% empty %}
             Add a 1-RM <i class="fa-solid fa-arrow-right fa-fade"></i>
             {% endfor %}
@@ -85,21 +85,22 @@
 
         <div id="library-panel-filler" class="col-12">
           <a href="{% url 'library' %}">
-              <div class="library-panel index-panel card-bg" style="background-image: url({{ library_movement.thumbnail }});">
+            <div class="library-panel index-panel card-bg"
+              style="background-image: url({{ library_movement.thumbnail }});">
               <p>
-                  <!-- <span class="outlined-title">Last Viewed</span> -->
-                  <svg>
-                      <text x="5%" y="40%" class="outlined-title">
-                          Full List of
-                      </text>
-                      <text x="10%" y="60%" class="white-title">
-                          Movements
-                      </text>
-                  </svg>
+                <!-- <span class="outlined-title">Last Viewed</span> -->
+                <svg>
+                  <text x="5%" y="40%" class="outlined-title">
+                    Full List of
+                  </text>
+                  <text x="10%" y="60%" class="white-title">
+                    Movements
+                  </text>
+                </svg>
               </p>
-              </div>
+            </div>
           </a>
-      </div>
+        </div>
 
       </div>
     </div>
@@ -107,32 +108,97 @@
   </div>
 </section>
 
-<!-- offcanvas 1 -->
-    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="oc-orm-a"
-        aria-labelledby="offcanvas">
-        <div class="offcanvas-header">
-            <!-- header -->
-            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Add new 1-Rep Max for <br>
-              {{ library_movement.movement_name }}:</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                aria-label="Close"></button>
+<!-- add-1rm offcanvas -->
+<div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="oc-orm-a" aria-labelledby="offcanvas">
+  <div class="offcanvas-header">
+    <!-- header -->
+    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Add new 1-Rep Max for <br>
+      {{ library_movement.movement_name }}:</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body search-offcanvas oc-right">
+    <!-- body -->
+    <form id="add-record-form" class="record-form" method="POST"
+      action="{% url 'movement_detail' library_movement.slug %}">
+      <div class="one-rm-form">
+        {{ one_rm_form }}
+        <span>KG</span>
+      </div>
+      {% csrf_token %}
+      <div style="margin-top: 20px;">
+        <p>
+          <button class="btn btn-outline-success" type="submit"><strong>add</strong></button>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 1rm-records offcanvas -->
+<div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="oc-orm-hof" aria-labelledby="offcanvas">
+  <div class="offcanvas-header">
+    <!-- header -->
+    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">1-Rep Max History for <br>
+      {{ library_movement.movement_name }}</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body search-offcanvas oc-right">
+    <!-- body -->
+    <div class="offcanvas-body list-of-one-rms">
+      <div class="container-fluid">
+        {% for record in one_rm_records %}
+        <div class="row justify-content-between" style="line-height: 2rem;">
+          <hr class="oc-hr">
+          <div class="col-8 one-rm-record-box">
+            <p class="one-rm-record">{{ record.one_rep_max }} KG</p>
+            <p class="{{record.id}} one-rm-record-date">{{ record.date_recorded }}</p>
+          </div>
+          <div class="col-4 record-button-box" style="text-align: right; padding: 0px 0px 10px 0px;">
+            <!-- edit -->
+            <!-- get the id of the 1rm record from the button, clarified as the "data" tag -->
+            <button class="btn record-edit" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-e"
+              id="{{ record.id }}" aria-controls="offcanvasWithBothOptions"><i
+                class="fa-solid fa-square-pen one-rm-rbtn"></i></button>
+
+            <!-- delete -->
+            <a href="/delete_one_rm/{{ library_movement.slug }}/{{ record.id }}"><button class="btn"><i
+                  class="fa-solid fa-square-xmark one-rm-rbtn"></i></button></a>
+          </div>
         </div>
-        <div class="offcanvas-body search-offcanvas oc-right">
-            <!-- body -->
-            <form id="add-record-form" class="record-form" method="POST"
-                action="{% url 'movement_detail' library_movement.slug %}">
-                <div class="one-rm-form">
-                {{ one_rm_form }}
-                <span>KG</span>
-                </div>
-                {% csrf_token %}
-                <div style="margin-top: 20px;">
-                  <p>
-                    <button class="btn btn-outline-success" type="submit"><strong>add</strong></button>
-                  </p>
-                </div>
-              </form>
-        </div>
+        {% endfor %}
+        <hr class="oc-hr">
+      </div>
+
     </div>
+  </div>
+</div>
+
+<!-- Edit 1rm record offcanvas -->
+<div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="oc-orm-e" aria-labelledby="offcanvas">
+  <div class="offcanvas-header">
+    <!-- header -->
+    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Edit 1-Rep Max for <br>
+      {{ library_movement.movement_name }}:</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body search-offcanvas oc-right">
+    <!-- body -->
+    <form id="edit-record-form" class="record-form" method="POST"
+                action="/edit_one_rm/{{ library_movement.slug }}/{{ record.id }}/">
+      <div class="one-rm-form">
+        {{ one_rm_form }}
+        <span>KG</span>
+      </div>
+      {% csrf_token %}
+      <div style="margin-top: 20px;">
+        <p>
+          <button class="btn btn-outline-success" type="submit"><strong>add</strong></button>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+
 
 {% endblock %}
+

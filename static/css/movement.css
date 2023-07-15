@@ -16,7 +16,7 @@ header > h2 {
 
 /* video panel */
 
-#movement-video {
+.movement-video {
     border-radius: 15px;
 }
 
@@ -118,4 +118,30 @@ header > h2 {
     --bs-btn-disabled-bg: transparent;
     --bs-btn-disabled-border-color: #787878;
     --bs-gradient: none;
+}
+
+.one-rm-record-date {
+    color: #e4e1e0;
+    font-size: 0.7rem;
+}
+
+.one-rm-record-box {
+    vertical-align: middle;
+}
+
+.one-rm-record {
+    margin-bottom: 0px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.record-button-box {
+    margin: auto;
+}
+
+.one-rm-record-date {
+    color: #e4e1e0;
+    font-size: 0.7rem;
 }
