@@ -137,6 +137,12 @@ class MovementDetail(LoginRequiredMixin, View):
     login_url = '/accounts/login/'
 
     def get(self, request, slug, *args, **kwargs):
+        movement_library_list = Movement.objects.filter()
+        alphabetized = sorted(
+            movement_library_list,
+            key=lambda item: item.movement_name
+        )
+        movement_library_list = alphabetized
         movement_from_library = get_object_or_404(Movement, slug=slug)
         user = get_object_or_404(User, id=request.user.id)
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
@@ -171,6 +177,7 @@ class MovementDetail(LoginRequiredMixin, View):
             request,
             "movement.html",
             {
+                "movement_library_list": movement_library_list,
                 "library_movement": movement_from_library,
                 "one_rm_records": one_rm_records,
                 "bookmarks": bookmarks,
