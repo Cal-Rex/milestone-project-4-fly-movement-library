@@ -299,6 +299,7 @@ nav > div > a > h1 {
 /* welcome message */
 .index-panel {
     border-radius: 15px;
+    overflow: hidden;
 }
 
 .index {
