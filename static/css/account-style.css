@@ -138,6 +138,10 @@ input::placeholder {
     text-align: center;
 }
 
+.alter-placeholder::placeholder {
+    color: #fafafabe;
+}
+
 label {
     display: block;
     text-align: center;

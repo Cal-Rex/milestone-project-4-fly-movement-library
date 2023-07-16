@@ -3,7 +3,7 @@ $(function () {
     $(`.query`).css('display', 'none');
     $('#library-search').on('keyup', runSearch);
     $('#library-search').on('change', runSearch);
-    $('#library-search').on('change', printVal);
+    $('#library-search').val().on('change', printVal);
 
     function runSearch() {
         $(`.query`).css('display', 'none');
