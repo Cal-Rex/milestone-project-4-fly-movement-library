@@ -438,7 +438,14 @@ footer > .row > div {
 
 .flycon:hover {
     filter: grayscale(0%);
+}
 
+.flycon-link:hover {
+    border-bottom: 0px solid #00000000 !important;
+}
+
+.flycon-link:hover {
+    border-bottom: 0px solid #00000000 !important;
 }
 
 footer > .row > .col-4 > button > span > .fa-solid {
