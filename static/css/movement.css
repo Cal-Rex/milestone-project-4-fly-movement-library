@@ -108,11 +108,11 @@ header > h2 {
     letter-spacing: 2px;
     line-height: 2rem;
     font-size: 1.1rem;
+    list-style-type: square !important;
+    overflow: revert;
 }
 
-#movement-directions > ul {
-    padding: 15px;
-}
+
 
 /* movement page-specific offcanvases */
 .oc-right > form > div > p {
