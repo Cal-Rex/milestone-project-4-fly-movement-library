@@ -468,11 +468,29 @@ footer > .row > .col-4 > button > span > .fa-solid:hover {
 .four-o-five-hundred {
     height: 83vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+}
+
+.four-o-five-hundred > .row {
+    width: 100%;
+}
+
+.four-o-five-hundred > .row > div {
+    width: 100%;
 }
 
 .hero-404-500 {
-    background-image: url(../media/404-500-img.webp);
+    background-image: url(https://res.cloudinary.com/deth0ifla/image/upload/v1689612811/static/media/404-500-img.3c3379367aca.webp);
     background-size: contain;
     background-position: bottom;
     background-repeat: no-repeat;
+}
+
+.fail-text {
+    text-align: center;
 }
