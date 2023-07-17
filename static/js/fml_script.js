@@ -62,9 +62,5 @@ $(function () {
     $('.fly-icon:first').on('mouseleave', function () {
         $('.fly-icon:first').removeClass('fa-beat');
     });
-    
-    // footer animation responsiveness on touchscreen devices
-    // $('footer')[0].on('click', function (e) {
-    //     $('footer')[0].addClass('.footer-touch');
-    // });
+
 });

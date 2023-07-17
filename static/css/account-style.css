@@ -81,13 +81,6 @@ label {
 /* ______________________ */
 /* buttons */
 
-/* .fly-auth-btn {
-    border-radius: 40px 40px 40px 40px;
-    font-weight: 500;
-    font-size: 1.2rem;
-    padding: 10px 25px;
-} */
-
 .change-mind {
     margin-top: 20px;
 }
@@ -98,9 +91,6 @@ a {
 }
 
 /* forms */
-/* .login-spacer {
-    margin-bottom: 10vh;
-} */
 
 .fly-auth-signup-text {
     text-align: center;

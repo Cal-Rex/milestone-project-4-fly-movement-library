@@ -119,6 +119,12 @@ The First version of this Project is to be submitted as an assessment piece as p
 | 7.1 |	Design a custom data model that fits the purpose of the project | see models.py |
 
 
+## Agile Principles
+
+When undertaking this project, meetings were scheduled with the owner or the IP at benchmark points in the production. This was to simulate the input of an agile team, where non-technical "team members" were able to give valuable feedback during the design and production phases. This dramatically changed the landscape and quality of the app when compared to the original version.
+
+To portray the process, development planes sections will house information for 2 phases. The first from the initial build, then with new criteria created during the first feedback session.
+
 ## UX
 
 ### Research
@@ -140,6 +146,8 @@ Training apps are absolutely not a new thing in the App market and economy, and 
 ### **Strategy Plane**
 
 #### __User Stories__
+
+### __Phase 1__
 1. Product Users
     - _"as a User i want to be able to edit any 1-rep max records i have entered in the event that i was bad at math at the time of recording"_
     - _"As a user, i want to be able to log in so that i can view specific workout/movement tutorials"_
@@ -162,7 +170,6 @@ Training apps are absolutely not a new thing in the App market and economy, and 
     - _"As an Admin, I want to be able to Add new movements to the app, so that I don't have to ask the developer to do it every time we add a new movement"_
     - _"As an Admin, I want to be able to update movement video links, so that if/when they are re-filmed, i can update the app to show the newest content"_
     - _"As an Admin, I want to be able to Delete movements, so that if they become obsolete, or if i need to take them down, i can do so"_
-
 
 #### __Project Goals__
 
@@ -188,6 +195,8 @@ Based on user stories, user goals are defined as - _"create an app that..."_:
 - Create a web app that could potentially grow into a viable business opportunity in the future 
 - fulfill all assessment and portfolio criteria
 
+
+### __Phase 2__
 
 ### **Scope Plane**
 
