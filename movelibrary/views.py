@@ -304,7 +304,7 @@ class MovementSearch(LoginRequiredMixin, generic.ListView):
 
 class MovementBookmark(LoginRequiredMixin, View):
     """
-    handles the fucntion of bookmarking a movement
+    handles the function of bookmarking a movement
     """
     login_url = '/accounts/login/'
 
@@ -317,27 +317,11 @@ class MovementBookmark(LoginRequiredMixin, View):
         return HttpResponseRedirect(reverse('movement_detail', args=[slug]))
 
 
-# class BookmarksList(LoginRequiredMixin, generic.ListView):
-#     login_url = '/accounts/login/'
-
-#     model = Movement
-
-#     def get(self, request, *args, **kwargs):
-#         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
-#         return render(
-#             request,
-#             'bookmarks_list.html',
-#             {
-#                 "bookmarks": bookmarks
-#             }
-#         )
-
-#     template_name = 'bookmarks_list.html'
-#     context_object_name = 'bookmarked_movement'
-#     paginate_by = 8
-
-
 class OneRepMaxRecords(LoginRequiredMixin, generic.ListView):
+    """
+    handles the viewing of the users list of one-rep maxes
+    for a specific movement when viewing that movement
+    """
     login_url = '/accounts/login/'
 
     def get(self, request, slug, *args, **kwargs):
@@ -355,6 +339,10 @@ class OneRepMaxRecords(LoginRequiredMixin, generic.ListView):
 
 
 def edit_one_rm(request, slug, record_id):
+    """
+    function that handles the editing form for
+    1-rep maxes.
+    """
     record = get_object_or_404(UserOneRepMax, id=record_id)
     movement_from_library = get_object_or_404(Movement, slug=slug)
     if request.method == 'POST':
@@ -364,8 +352,14 @@ def edit_one_rm(request, slug, record_id):
             one_rm.user_id = request.user
             one_rm.movement = movement_from_library
             one_rm.save()
-            messages.add_message(request, SUCCESS, f'1-RM from {one_rm.date_recorded.strftime("%m/%j/%y at %H:%M")} amended.')
+            one_rm_date = one_rm.date_recorded.strftime("%m/%j/%y at %H:%M")
+            messages.add_message(
+                request,
+                SUCCESS,
+                f'1-RM from {one_rm_date} amended.'
+            )
             return redirect('movement_detail', slug=slug)
+
     form = OneRmForm(instance=record)
     context = {
         'form': form
@@ -374,15 +368,28 @@ def edit_one_rm(request, slug, record_id):
 
 
 def delete_one_rm(request, slug, record_id):
+    """
+    function that handles the deletion of 1-rep maxes
+    """
     record = get_object_or_404(UserOneRepMax, id=record_id)
     record.delete()
     return redirect('movement_detail', slug=slug)
 
 
 class EditProfile(LoginRequiredMixin, View):
+    """
+    class that handles the viewing and updating of
+    a user's profile information.
+    currently, for safety and assessment, this class
+    only fcuses on the editing of a user's name.
+    """
     login_url = '/accounts/login/'
 
     def get(self, request):
+        """
+        get request which handles retrival of profile data
+        in addition to standard base functions on the view
+        """
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
         user = get_object_or_404(User, id=request.user.id)
         user_first_name = user.first_name
@@ -401,6 +408,9 @@ class EditProfile(LoginRequiredMixin, View):
         )
 
     def post(self, request):
+        """
+        handles the post data of the edit form
+        """
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
         user = get_object_or_404(User, id=request.user.id)
         user_first_name = user.first_name
@@ -412,7 +422,11 @@ class EditProfile(LoginRequiredMixin, View):
             new_name = name_edit_form.save(commit=False)
             new_name.user_id = request.user
             new_name.save()
-            messages.add_message(request, SUCCESS, 'Profile Successfully updated')
+            messages.add_message(
+                request,
+                SUCCESS,
+                'Profile Successfully updated'
+            )
             return redirect('edit_profile',)
 
         return render(
