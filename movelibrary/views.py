@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.db.models import Q
-from .models import Movement, Tag, UserOneRepMax, User, UserNonAuthField, PromoVideo, SocialMediaCard
+from .models import Movement, Tag, UserOneRepMax, User
+from .models import UserNonAuthField, PromoVideo, SocialMediaCard
 from .forms import OneRmForm, NameEditForm
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -20,6 +21,20 @@ ERROR = 40
 
 
 class Landing(LoginRequiredMixin, generic.ListView):
+    """
+    View for ths index template.
+    contains view-code for the following features
+    (in order of code blocks):
+    - Check to see if a user is a new user, generates appropriate
+      welcome message depending on outcome
+    - full list of movements (to be used by search feature)
+    - Show the last movement a user has/had viewed
+    - Show a promotional video as hero content
+    - Show list of the user's bookmarked movements
+    - Show the last 1-Rep-Max a user recorded
+    - Social media panel view, which has been repurposed
+      to being a class-booking view
+    """
     login_url = '/accounts/login/'
 
     model = Movement
@@ -34,6 +49,7 @@ class Landing(LoginRequiredMixin, generic.ListView):
         user_new = False
         if last_login == date_joined:
             user_new = True
+
         movement_library_list = Movement.objects.filter()
         alphabetized = sorted(
             movement_library_list,
@@ -41,9 +57,10 @@ class Landing(LoginRequiredMixin, generic.ListView):
         )
         movement_library_list = alphabetized
 
-        # last movement view
         movement_viewed = False
-        last_movement_check = UserNonAuthField.objects.filter(user_id=request.user.id)
+        last_movement_check = UserNonAuthField.objects.filter(
+            user_id=request.user.id
+        )
         if len(last_movement_check) < 1:
             library_count = len(movement_library_list) - 1
             move_pick = random.randint(0, library_count)
@@ -56,16 +73,13 @@ class Landing(LoginRequiredMixin, generic.ListView):
             ).last_movement
             last_movement = get_object_or_404(Movement, slug=user_lm_record)
 
-        # promo video view
         promo_list = PromoVideo.objects.filter()
         promo_list_length = len(promo_list) - 1
         promo_pick = random.randint(0, promo_list_length)
         promo_video = promo_list[promo_pick]
 
-        # bookmarks view
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
 
-        # 1-rm records view
         orm_recorded = False
         one_rm_records = UserOneRepMax.objects.filter(
             user_id=request.user.id
@@ -81,7 +95,6 @@ class Landing(LoginRequiredMixin, generic.ListView):
             last_record = one_rm_records[0].movement
             last_orm = get_object_or_404(Movement, id=last_record.id)
 
-        # social media panel view
         sm_cards = SocialMediaCard.objects.filter()
         choice = random.randint(0, len(sm_cards) - 1)
         insta_card = sm_cards[choice]
@@ -105,6 +118,13 @@ class Landing(LoginRequiredMixin, generic.ListView):
 
 
 class Library(LoginRequiredMixin, generic.ListView):
+    """
+    Views for the library page
+    contains:
+        - Bookmarks list for footer menu
+        - full list of movements,
+          alphabetised to be shown as a list on the page
+    """
     login_url = '/accounts/login/'
 
     model = Movement
@@ -119,7 +139,6 @@ class Library(LoginRequiredMixin, generic.ListView):
         )
         movement_library_list = alphabetized
 
-        # bookmarks view
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
         return render(
             request,
@@ -132,18 +151,37 @@ class Library(LoginRequiredMixin, generic.ListView):
 
 
 class MovementDetail(LoginRequiredMixin, View):
+    """
+    View for the movement.html template for when
+    someone is viewing a specific movement.
+    contains both GET and POST handlers.
+    """
     login_url = '/accounts/login/'
 
     def get(self, request, slug, *args, **kwargs):
+        """
+        GET contains the following:
+        - full list of movements (for search)
+        - the specific movement the user requested to view
+        - bookmarked movements of the user (for footer menu)
+        - checks the last movement of a user, if none exists
+        a record is created, else, the recorded is updated
+        record the selected movement
+        - the 1-rm records of the requested movement
+        - conditional check to see if movement is bookmarked
+        """
         movement_library_list = Movement.objects.filter()
         alphabetized = sorted(
             movement_library_list,
             key=lambda item: item.movement_name
         )
         movement_library_list = alphabetized
+
         movement_from_library = get_object_or_404(Movement, slug=slug)
         user = get_object_or_404(User, id=request.user.id)
+
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
+
         user_last_movement = UserNonAuthField()
         user_lm_check = UserNonAuthField.objects.filter(
             user_id__id=request.user.id
@@ -184,15 +222,23 @@ class MovementDetail(LoginRequiredMixin, View):
         )
 
     def post(self, request, slug, *args, **kwargs):
+        """
+        POST contains the following:
+        - bookmark check/uncheck function
+        - handling of the add 1-rm form
+        - adding of a new 1-rep max record
+        """
         movement_from_library = get_object_or_404(Movement, slug=slug)
-        one_rm_records = movement_from_library.one_rm_list.filter(
-            user_id=request.user.id
-        ).order_by("-date_recorded")
+
         bookmarked = False
         if movement_from_library.bookmarks.filter(
             id=self.request.user.id
         ).exists():
             bookmarked = True
+
+        one_rm_records = movement_from_library.one_rm_list.filter(
+            user_id=request.user.id
+        ).order_by("-date_recorded")
 
         one_rm_form = OneRmForm(data=request.POST)
 
@@ -201,7 +247,11 @@ class MovementDetail(LoginRequiredMixin, View):
             one_rm.user_id = request.user
             one_rm.movement = movement_from_library
             one_rm.save()
-            messages.add_message(request, SUCCESS, f"new {one_rm.one_rep_max} KG 1-Rep Max recorded!")
+            messages.add_message(
+                request,
+                SUCCESS,
+                f"new {one_rm.one_rep_max} KG 1-Rep Max recorded!"
+            )
             return redirect('movement_detail', slug=slug)
 
         return render(
@@ -217,6 +267,15 @@ class MovementDetail(LoginRequiredMixin, View):
 
 
 class MovementSearch(LoginRequiredMixin, generic.ListView):
+    """
+    view for the search results template
+    conatins:
+    - full lst of movements
+    - User bookmarks
+    - handler for entered query in search field
+    - results gnerated based on the filtered list
+      of movements
+    """
     login_url = '/accounts/login/'
 
     def get(self, request):
@@ -226,6 +285,7 @@ class MovementSearch(LoginRequiredMixin, generic.ListView):
             key=lambda item: item.movement_name
         )
         movement_library_list = alphabetized
+
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
         query = request.GET.get('query').title()
         queries = query.split()
@@ -243,6 +303,9 @@ class MovementSearch(LoginRequiredMixin, generic.ListView):
 
 
 class MovementBookmark(LoginRequiredMixin, View):
+    """
+    handles the fucntion of bookmarking a movement
+    """
     login_url = '/accounts/login/'
 
     def post(self, request, slug):
@@ -254,24 +317,24 @@ class MovementBookmark(LoginRequiredMixin, View):
         return HttpResponseRedirect(reverse('movement_detail', args=[slug]))
 
 
-class BookmarksList(LoginRequiredMixin, generic.ListView):
-    login_url = '/accounts/login/'
+# class BookmarksList(LoginRequiredMixin, generic.ListView):
+#     login_url = '/accounts/login/'
 
-    model = Movement
+#     model = Movement
 
-    def get(self, request, *args, **kwargs):
-        bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
-        return render(
-            request,
-            'bookmarks_list.html',
-            {
-                "bookmarks": bookmarks
-            }
-        )
+#     def get(self, request, *args, **kwargs):
+#         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
+#         return render(
+#             request,
+#             'bookmarks_list.html',
+#             {
+#                 "bookmarks": bookmarks
+#             }
+#         )
 
-    template_name = 'bookmarks_list.html'
-    context_object_name = 'bookmarked_movement'
-    paginate_by = 8
+#     template_name = 'bookmarks_list.html'
+#     context_object_name = 'bookmarked_movement'
+#     paginate_by = 8
 
 
 class OneRepMaxRecords(LoginRequiredMixin, generic.ListView):
