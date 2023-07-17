@@ -145,16 +145,17 @@ Training apps are absolutely not a new thing in the App market and economy, and 
 
 ### **Strategy Plane**
 
+### __Phase 1__
+
 #### __User Stories__
 
-### __Phase 1__
 1. Product Users
     - _"as a User i want to be able to edit any 1-rep max records i have entered in the event that i was bad at math at the time of recording"_
     - _"As a user, i want to be able to log in so that i can view specific workout/movement tutorials"_
     - _"As a user, I want to be able to search for specific workouts, so that I can easily find the movement I am looking for"_
     - _"As a User, I want to be able to Bookmark movements, so that I can refer to them easily at a later date"_
     - _"As a User, I want to be able to know what other exercises compliment the ones i have bookmarked, so that I can expand my training"_
-    - _"As a User, I want to be able to create my own flow of movements, so that ** i can keep me right during my own training**"_
+    - _"As a User, I want to be able to create my own flow of movements, so that i can keep myself right during my own training"_
     - _"As a User, i want to be able to search for movements even if i am unsure of their names so that I can find my moevements easily without having to know all the correct terminology"_
     - _"As a user, I want to be able to have recommendations from my searches, so that if I cant find the movement I am looking for, I have alternatives to try"_
     - _"As a User i want to be able to add my own personal notes to a movement, for my own reference so that i can keep track of different aspects of my workout and training"_
@@ -198,7 +199,23 @@ Based on user stories, user goals are defined as - _"create an app that..."_:
 
 ### __Phase 2__
 
+#### __New user stories:__
+- _"As a user, i would like to log out from the profile view page, as i would find this more intuitive."_
+- _"As a user, i would like to have my personal settings be more visibly accessible so i can navigate the app more intuitively"_
+- _"As a user, i would like to access the full list of movements in the library in addition to searching for them"_
+- _"As a user, i would like to have a timer on the movement page, so i can track workout time, or rest periods when conducting a movement"_
+- _"As a user, i would like to have a playlist of videos that iterates through my bookmarked movements for a streamlined workout"_
+- _"As a user, i would like to access some of the partner app features on this app for a more seamless experience"_
+- _"As a user, i would like to view the last movement i logged a 1-rep max on from the dashboard"_
+- _"As a user, i would like to view my most viewed movement on the dashboard, as i keep searching for it"_
+
+#### __Additional User Goals based on new criteria__
+- _allows users to use the app as a guide through their workout_
+
+
 ### **Scope Plane**
+
+### __Phase 1__
 
 Based on the results of the strategy plane the following features have been focused on to develop:
 
@@ -222,7 +239,7 @@ Based on the results of the strategy plane the following features have been focu
     - there will be buttons that will allow a user to add a new movement, or a button that will open an off-canvas element to edit or delete any of the recorded data.
 
 6. **prompts**
-    -  whenever a user performs any CRUD functionality on any dataset elements in the UI, the UI will generate a toast message to confirm the user has successfully carried out a function
+    -  whenever a user performs any CRUD functionality on any dataset elements in the UI, the UI will generate a message to confirm the user has successfully carried out a function
 
 7. **Bookmarking**
     - directly under the video, their will be a button that allows a user to bookmark a movement, which will then show up in their off-canvas menu.
@@ -231,8 +248,15 @@ Based on the results of the strategy plane the following features have been focu
     - the footer will contain links to socials, in addition to links to the Client's social media
     - the offcanvas menu will have a button that opens a new browser window where users can book classes
 
+### __Phase 2__
+
+Nothing new to add in Phase 2 for scope.
+
 
 ### **Structure Plane**
+
+#### __Phase 1__
+
 The App will use the Django web app framework to  extend specific HTML pages into a base template, then datasets from a hosted database will be rendered on html templates based on specific user and user interaction:
 
 [ADD EDIT PROFILE FUNCTIONALITY THEN AMEND SITEMAP DIAGRAM AND THEN IMPLEMENT]
@@ -240,48 +264,48 @@ The App will use the Django web app framework to  extend specific HTML pages int
 
 #### __Dataset Models | Database Tables__
 
-User Details table model:
-|     id     | first_name | last_name | username    | password  |   email    | T_and_Cs |
-| ---------- | ---------- | --------- | ----------- | --------- | ---------- | -------- |
-| PrimaryKey | CharField  | CharField | CharField   | TextField |    email   | Boolean  |
-|     1      | Andy       | Roux      | exampleUser | Guest+1   | e@mail.com | True     |
-
 MovementLibrary Table:
-|     id     | movement_name |   vid_link    |   Slug    |       bookmarks       |
-| ---------- | ------------- | ------------- | --------- | --------------------- |
-| PrimaryKey |   TextField   |   TextField   | SlugField | ManyToManyField(User) |
-|     1      |  Split Squat  | x.youtube.com |           |
+|     id     | movement_name |     vid_link      |    Slug     | Directions |       bookmarks       |      thumbnail     |
+| ---------- | ------------- | ----------------- | ----------- | ---------- | --------------------- | ------------------ |
+| PrimaryKey |   TextField   |   CharField       | SlugField   |  TextField | ManyToManyField(User) | CharField          |
+|     1      |  Split Squat  | vimeo direct link | split-squat | - do this  |     Boolean value     | cloudinary.com/img |
 
+User Non Authorisation related fields:
+|     user_id      |    terms     | last_movement |
+| ---------------- | ------------ | ------------- |
+| ForeignKey(User) | BooleanField |   SlugField   |
+
+** Introduced in Phase 2
+Promotional material table:
+|     id     | Promo_name |  vid_link  |   slug    |
+| ---------- | ---------- | ---------- | --------- |
+| PrimaryKey |  CharField | CharField  | SlugField | 
+|     1      |  run club  | vimeo link | run-club  |
+
+**Implemented byt not utilised
 Tags table:
-
 | movement    | upper_body   | lower_body   | barbell | dumbbell | kettlebell | olympic | power   | strength | arms    | chest   | shoulders | back    |
 | ----------- | ------- | ------- | ------- | -------- | ---------- | ------- | ------- | -------- | ------- | ------- | --------- | ------- |
 | ForeignKey | Boolean | Boolean | Boolean | Boolean  | Boolean    | Boolean | Boolean | Boolean  | Boolean | Boolean | Boolean   | Boolean |
 | MovementLibrary.id | True    | False   | True    | False    | False      | False   | True    | False    | True    | False   | True      | False   |
 
 
-Bookmarks Table:
-|  user_id   |                     bookmarked                   |
-| ---------- | ------------------------------------------------ |
-| ForeignKey | [list, of, MovementLibrary.ids, as, ForeignKeys] |
-|     1      |                   [1, 3, 6, 22, 2]               |
+User Movement Notes:
+|      user_id     |       movement       | movement_notes |
+| ---------------- | -------------------- | -------------- |
+| ForeignKey(User) | ForeignKey(Movement) |    TextField   |
 
+
+** Not implemented in this version
 Flows Table:
 |  user_id   |                              flow                                 |
 | ---------- | ----------------------------------------------------------------- |
 | ForeignKey | {'named flow': [list, of, MovementLibrary.ids, as, ForeignKeys],} |
 |     1      |         {'International Chest Day': [3, 5, 8, 7, 4, 2],}          |
 
-#### __Entity Relationship Diagram__
-
-A movement:
-| Key | Name |      Type      |
-| --- | ---- | -------------- |
-|     | Name | Charfield[100] |
-|     | link | string         |
-|     | slug |                |
-
 ### **Skeleton Plane**
+
+### __Phase 1__
 
 #### **Wireframes**
 
@@ -314,7 +338,7 @@ Desktop / larger screen view:
 | ![Movement details page desktop](/static/media/readme-media/wireframes/desktop/04-dt-movement-details.webp) | ![User 1-Rep-max records for that movement Desktop](/static/media/readme-media/wireframes/desktop/05-dt-1rm-records.webp) | ![edit/add 1rm desktop](/static/media/readme-media/wireframes/desktop/06-dt-1rm-form.webp) |
 
 
-## Colour Scheme
+#### Colour Scheme
 
 As the branding and style is already created for the client, the Chrome extension [Site Palette](https://chrome.google.com/webstore/detail/site-palette/pekhihjiehdafocefoimckjpbkegknoh/related?hl=en-GB) was used to generate a board of colours to choose from when stylising the app elements:
 
@@ -326,16 +350,55 @@ As site palette only generated "like-colours" for the app, original brand colour
 
 ![Fly site Colours](/static/media/readme-media/fly-site-colours.png)
 
-## Typography
+#### Typography
 
 According to Dev Tools, the Fly Site uses only a thin variation of the Montserrat font. As such, The montserrat font was imported from [Google Fonts](https://fonts.google.com/) to stay congruent with the business branding
 
 ![Montserrat Font: Google Fonts](/static/media/readme-media/montserrat-font-google.png)
 
 
-## Imagery & Media
+#### Imagery & Media
 
 Imagery such as Logos were provided by the client. Access to the Client's Vimeo account to format the videos within Vimeo's API was also given. Slugs were then taken from vimeo and imported as keys within the database.
+
+### __Phase 2__
+
+#### Wireframes
+
+After the first review, site mapping was changed to reflect an experience that better suited the client as a stakeholder and as user:
+
+|                                  Revised Index/Dashboard                                   |
+| :----------------------------------------------------------------------------------------: |
+| ![Revised index/dashboard](/static/media/readme-media/wireframes/mobile/20-dashboard.webp) |
+
+
+|                             Revised Index/Dashboard (for Desktop)                              |
+| :--------------------------------------------------------------------------------------------: |
+| ![Revised index/dashboard](/static/media/readme-media/wireframes/desktop/21-dashboard-dt.webp) |
+
+
+|                                  Revised offcanvas elements                                   |
+| :-------------------------------------------------------------------------------------------: |
+|   ![Revised index/dashboard](/static/media/readme-media/wireframes/mobile/20-dashboard.webp)  |
+
+#### Colourscheme
+The initial colours generated by 3rd party service did not seem to mix with the media well. So as a solution, the [fly.fit](https://fly.fit) site was inspected with dev tools, colours were picked out from the page/
+
+Additionally, screen grabs were taken and the colours were eye-dropped for their HEX value in [GIMP](https://www.gimp.org/)
+
+#### Typography
+The social media team at fly were contacted and happily provided reference to the fonts that they used to build their social media and video content.
+The following fonts were then searched for and implemented via google fonts:
+
+- Oswald
+- Lato
+- Roboto
+- Montserrat
+
+#### Images and media
+
+As above, except now thumbnails were taken from the videos and implemented as a database item to avoid having to load a video when unnecessary.
+
 ___
 
 # F E A T U R E S
@@ -391,14 +454,18 @@ ___
 
 **__Searching movements__**
 - in the navbar, users can make use of the search field that allows them to search for specific movements
-- when searching, the search criteria filters through objects in the "Movement" database to find objects contain any string values entered into the search field, for example, the terms "floor" or "press" would both return the movement "floor press" along with any other movements that contain those string values in their names
-- on the search results page, users can click one of the results and will be redirected to the movement detail page for that movement
+- there are 2 search functions that the app runs. One through Javascript, and the other through django:
+    - Javascript-powered Search:
+        - On release of a key, a javascript function (for each movement) slices all of the words out of a movement slug into single word components. the function then takes the value entered into the search bar and checks if each individual string value in that last matches a combination entered into the field. Pressing on any of the predicted results will take you straight to the movement.
+    - Django-powered Search:
+        - when searching, the search criteria filters through objects in the "Movement" database to find objects contain any string values entered into the search field, for example, the terms "floor" or "press" would both return the movement "floor press" along with any other movements that contain those string values in their names
+        - on the search results page, users can click one of the results and will be redirected to the movement detail page for that movement
 
 **__Movement Details__**
-- when a moevement is selected, the database is queied and provides the following elements to the page:
+- when a moevement is selected, the database is queried and provides the following elements to the page:
     - A demonstration video of the moevement
     - Key information about the movement
-    - The 1-rep Max records for that moevement by the specific authenticated user
+    - The 1-rep Max records for that movement by the specific authenticated user
 
 **__Adding a 1-rep max__**
 - Authenticated users can click on a button that will open an off canvas element containing a form
