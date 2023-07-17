@@ -47,17 +47,6 @@
     align-content: center;
 }
 
-
-/* .account-panel {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: flex-start;
-    align-items: center;
-} */
-
 /* .sign-out {
     margin-top: 10%;
 } */
@@ -91,10 +80,6 @@ label {
 
 /* ______________________ */
 /* buttons */
-
-/* .button-box {
-    margin-top: 3rem;
-} */
 
 /* .fly-auth-btn {
     border-radius: 40px 40px 40px 40px;
@@ -160,6 +145,16 @@ label[for="id_remember"] {
 
  /* ______________________ */
  /* Edit profile template */
+ .account-panel {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
  .edit-name-form {
     position: relative;
     top: 20%;
@@ -168,6 +163,11 @@ label[for="id_remember"] {
  .edit-name-form>p {
     text-align: center;
  }
+
+ .button-box {
+    margin-top: 3rem;
+}
+
 
 /* notifications */
 .errorlist {
