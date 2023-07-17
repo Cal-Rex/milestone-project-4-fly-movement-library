@@ -41,8 +41,6 @@ $(function () {
 
         console.log($(`.${recordId}`)[0].innerHTML);
     });
-
-    let iconIdentify = $('.footer-icon')[0];
     
     // footer hover animations
     // animation class taken from Font-Awesome
