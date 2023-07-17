@@ -1,7 +1,6 @@
 from . import views
 from django.urls import path
 from django.conf import settings
-from django.conf.urls.static import static
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
@@ -29,7 +28,14 @@ urlpatterns = [
         views.MovementDetail.as_view(),
         name='movement_detail'
     ),
-    path('edit_one_rm/<slug:slug>/<record_id>/', views.edit_one_rm, name='edit_one_rm'),
-    path('delete_one_rm/<slug:slug>/<record_id>/', views.delete_one_rm, name='delete_one_rm'),
+    path(
+        'edit_one_rm/<slug:slug>/<record_id>/',
+        views.edit_one_rm,
+        name='edit_one_rm'
+    ),
+    path(
+        'delete_one_rm/<slug:slug>/<record_id>/',
+        views.delete_one_rm,
+        name='delete_one_rm'
+    ),
 ]
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
