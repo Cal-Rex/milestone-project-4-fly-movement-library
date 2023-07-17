@@ -102,9 +102,9 @@ a {
     margin-bottom: 10vh;
 } */
 
-/* .fly-auth-signup-text {
+.fly-auth-signup-text {
     text-align: center;
-} */
+}
 
 form > p > label {
     display: none;
