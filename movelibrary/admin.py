@@ -45,10 +45,5 @@ class UserOneRepMaxAdmin(SummernoteModelAdmin):
 
 @admin.register(SocialMediaCard)
 class SocialMediaCard(SummernoteModelAdmin):
-    
-    list_display = ('name', "thumbnail",)
 
-# Alternative method for if multiple arguments or packages
-# needed to be added to tables:
-# @admin.register(MovementLibrary)
-# @admin.register(Tags)
+    list_display = ('name', "thumbnail",)
