@@ -470,7 +470,7 @@ footer > .row > .col-4 > button > span > .fa-solid:hover {
     width: 100%;
 }
 
-{
+.hero-404-500 {
     background-image: url(../media/404-500-img.webp);
     background-size: contain;
     background-position: bottom;
