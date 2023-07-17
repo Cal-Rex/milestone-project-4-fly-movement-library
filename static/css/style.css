@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&family=Montserrat:wght@100;300;400&family=Oswald:wght@700&family=Roboto:wght@100;300;400&display=swap');
+
+/* Generic styles */
 body {
     min-height: 100vh;
     height: 100%;
@@ -45,20 +47,99 @@ a:hover {
     --bs-gutter-y: 1.5rem;
 }
 
-.fa-solid {
-    font-size: 1.3rem;
-}
-
+/* _______ */
+/* Titles */
 svg {
     width: 100%;
     height: 100%;
     pointer-events: none;
 }
 
+.base-title {
+    font-size: 2rem !important;
+}
+
+.white-title {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 3rem;
+    fill: #fff;
+}
+
+.outlined-title {
+    
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 3rem;
+    stroke: #52d458;
+    stroke-width: 1.75;
+    fill: none;
+}
+
+/* ___________ */
+/* Menu Icons */
+.fa-solid {
+    font-size: 1.3rem;
+}
+
+
+/* ________________________ */
+/* navbar */
+nav {
+    height: 10vh;
+    padding-top: 0px !important;
+}
+
+.bg-dark {
+    background-color: #000000 !important;
+}
+
+#nav-container {
+    background-image: url(https://res.cloudinary.com/deth0ifla/image/upload/v1689336988/static/media/flyfly.7cbf8301f811.webp);
+    background-repeat: no-repeat;
+    background-size: auto 90%;
+    background-position: top left;
+    height: 12vh;
+}
+
+nav > div > a {
+    margin-left: 75px;
+}
+
+nav > div > a > h1 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 0rem;
+    line-height: 1;
+}
+
+.title-subhead {
+    background-color: #2df64e;
+    padding-bottom: 5px;
+    padding-left: 0.5rem;
+    color: #000;
+}
+.navbar-toggler-icon {
+    background-image: none;
+}
+
+@media screen and (max-width: 280px) {
+    .navbar-brand {
+    margin-left: 20%;
+    }
+}
+
+
+/* ______________ */
+/* Forms styling */
 input::placeholder {
     color: #fafafabe;
 }
 
+
+/* _____________ */
 /* buttons */
 .btn {
     font-family: 'Roboto', sans-serif;
@@ -69,6 +150,7 @@ input::placeholder {
     line-height: 2rem;
     color: #000;
 }
+
 .btn-success {
     --bs-btn-color: #fff;
     --bs-btn-bg: #2df64e;
@@ -121,8 +203,6 @@ input::placeholder {
     display: none;
     color: #000;
 }
-
-
 @media screen and (min-width: 992px) {
     .large-search {
         display: inline;
@@ -130,33 +210,8 @@ input::placeholder {
 
 }
 
-
-/* fonts/text */
-.base-title {
-    font-size: 2rem !important;
-}
-
-.white-title {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-style: italic;
-    font-size: 3rem;
-    fill: #fff;
-}
-
-.outlined-title {
-    
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-style: italic;
-    font-size: 3rem;
-    stroke: #52d458;
-    stroke-width: 1.75;
-    fill: none;
-}
-
+/* ___________________ */
 /* offcanvas elements */
-/* background */
 .offcanvas {
     z-index: 9999 !important;
 }
@@ -221,6 +276,16 @@ input::placeholder {
     margin: 0.5rem 0px;
 }
 
+/* one-rep-max records offcanvas */
+.orm-record {
+    overflow-wrap: break-word;
+}
+.orm-record > p {
+    margin-bottom: 0px;
+    overflow-wrap: break-word;
+}
+
+
 /* ________________________ */
 /* Search form */
 .d-flex {
@@ -230,7 +295,6 @@ input::placeholder {
 .form-control {
     width: auto;
 }
-
 
 #library-search {
     background-color: #00000000;
@@ -257,51 +321,6 @@ input::placeholder {
     display: inline;
 }
 
-/* ________________________ */
-/* navbar */
-nav {
-    height: 10vh;
-    padding-top: 0px !important;
-}
-
-.bg-dark {
-    background-color: #000000 !important;
-}
-
-#nav-container {
-    background-image: url(https://res.cloudinary.com/deth0ifla/image/upload/v1689336988/static/media/flyfly.7cbf8301f811.webp);
-    background-repeat: no-repeat;
-    background-size: auto 90%;
-    background-position: top left;
-    height: 12vh;
-}
-
-nav > div > a {
-    margin-left: 75px;
-}
-
-nav > div > a > h1 {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    margin-bottom: 0rem;
-    line-height: 1;
-}
-
-.title-subhead {
-    background-color: #2df64e;
-    padding-bottom: 5px;
-    padding-left: 0.5rem;
-    color: #000;
-}
-.navbar-toggler-icon {
-    background-image: none;
-}
-
-@media screen and (max-width: 280px) {
-    .navbar-brand {
-    margin-left: 20%;
-    }
-}
 
 /* _______________________ */
 /* index */
@@ -319,6 +338,7 @@ nav > div > a > h1 {
 .index > .row > .welcome {
     padding-top: 10px;
 }
+
 
 /* what's on panel */
 .whats-on-panel {
@@ -362,16 +382,6 @@ nav > div > a > h1 {
     background-position: bottom;
 }
 
-/* library panel */
-/* #library-panel-filler {
-    display: none;
-}
-@media screen and (min-width: 992px) {
-    #library-panel-filler {
-        display: block;
-    }
-} */
-
 .library-panel {
     height: 100%;
 }
@@ -394,9 +404,6 @@ nav > div > a > h1 {
 }
 
 
-
-
-
 /* _______________________ */
 /* footer */
 footer * {
@@ -406,8 +413,6 @@ footer * {
 footer {
     height: 7vh;
     background-color: #0000002f;
-    
-    /* backdrop-filter: blur(5px); */
 }
 
 footer > .row {
@@ -456,14 +461,4 @@ footer > .row > .col-4 > button > span > .fa-solid {
 
 footer > .row > .col-4 > button > span > .fa-solid:hover {
     color: #2EF74F;
-}
-
-
-/* one-rep-max records offcanvas */
-.orm-record {
-    overflow-wrap: break-word;
-}
-.orm-record > p {
-    margin-bottom: 0px;
-    overflow-wrap: break-word;
 }
