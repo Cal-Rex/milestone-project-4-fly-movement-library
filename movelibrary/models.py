@@ -2,8 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-# Create your models here.
-
 
 class Movement(models.Model):
     movement_name = models.CharField(max_length=200, unique=True)
@@ -56,7 +54,11 @@ class UserMovementNotes(models.Model):
 
 class UserOneRepMax(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    movement = models.ForeignKey(Movement, on_delete=models.CASCADE, related_name="one_rm_list")
+    movement = models.ForeignKey(
+        Movement,
+        on_delete=models.CASCADE,
+        related_name="one_rm_list"
+    )
     one_rep_max = models.IntegerField(unique=False)
     date_recorded = models.DateTimeField(auto_now_add=True)
 
