@@ -1,3 +1,5 @@
+![Fly movement library resposive demo](/static/media/readme-media/responsive-demo.webp)
+
 # M O V E M E N T - L I B R A R Y
 ## F L Y - F U N C T I O N A L - F I T N E S S
 ___
@@ -446,11 +448,10 @@ ___
     - Sign out
 
 **__Book Classes__**
-- If authenticated, on the dashboard page, users can click a button that will redirect them to the booking system that the client uses to manage classes
+- If authenticated, there is a panel on the dashbaord that allows users to book into their next class by opening the gym booking app in a seperate tab.
 
 **__Social features__**
-- Links to social Media platforms for the business such as Instagram and Facebook appear as branded buttons at the bottom of the page in the footer.
-- clicking on them will open the desired page in a seperate tab
+- a video playing the latest promotional feature as hero material loads whenever a user arrives ont he dashboard.
 
 **__Searching movements__**
 - in the navbar, users can make use of the search field that allows them to search for specific movements
@@ -490,6 +491,24 @@ ___
 
 ## Visual Features
 
+**__Messages and prompts__**
+- whenever a user makes an account-related action (login/logout/signup/editname) or makes a post request to the database in the form of interacting with the app. A message will be generated to notify the user that the change that they have made has been successful.
+- Whenever a User bookmarks a movement, the bookmark icon goes from being a hollow icon to being a filled icon.
+- if a user is viewing a movement that they have no entered a 1-rep max for, there is a prompt with a flashing arrow that points to the add record button, in place of where the user's latest one-rep max would display.
+- upon add a new one rep max, the prompt above changes to show the record.
+- when loading the dashboard. If it is a user's first time signing into the app, the welcome message will be "welcome to the movement library [Name]", otherwise it will say "welcome back [name]" 
+
+**__responsive tile layout__**
+- components of the site are all reesponsive to different device sizes by utilising the rows and columns feature in bootstrap. any additonal menus and fields are housed in offcanvas menus that accomodate all device sizes.
+- the seach button; by default is just the magnifying glass icon. however, on larger screens the button expands to say "search" as well.
+
+**__Animations__**
+- when menu items are highlighted, the letter spacing increases and the underline for that item flashes. a single border line on the edge of the offcanvas will also show. this will turn green when active
+- menu buttons along the footer of the page are grayscale when inactive, and green when hovered over/clicked on
+- when buttons are hovered over, the font has an extra `100` added to its weight, and turns white, while the background of the button turns black, revealing a green border.
+- both the full library and the search results page have a central column of entries. when hovered over, these elements expand out from the center, become underlined, and have offset borders appear on the left and right. These borders turn green when the item is selected.
+
+
 ## Data Management
 
 All Data for this project is stored on a hosted server by ElephantSQL and Amazon Web Services on a TinyTurtle Package. The server is located in Ireland and is maintined by ElephantSQL.
@@ -502,10 +521,11 @@ The database contains the following tables:
 - Houses all of the movements in the movement library
 - contains the unique vimeo slug for each video, which calls the video from the vimeo database
 - a unique slug field for the app, that identifies the movement for the brower
-- a name field to identify the omvement to the user at the front end 
+- a name field to identify the movement to the user at the front end
+- A thumbnail field to be used by other elements of the app whent he movement is being referenced 
 
 **Tags**
-- contains a list of common tags associated with moevements in the library
+- contains a list of common tags associated with movements in the library
 - these tags are linked in each record by a foreign key, linking to the Movement Table
 - Each tag has a boolean value of true or false, true meaning that the tag is associated with that specific movement
 - This table was implemented with the hopes of adding more advanced search functionality, but due to setbacks in this iteration, this feature was postponed
@@ -520,8 +540,7 @@ The database contains the following tables:
 - It contains non-sensetive user information such as:
     - a boolean value to check if users agree toa privacy policy/GDPR
         - As this project will not be published commercially at the time of submission/examination, this feature has not been implemented on the front end of the app
-    - The last movement a user viewed
-        - Due to time onstraints, this feature was not implemented in the first iteration of the project
+    - The last movement a user viewed, which is updated with a movement's slug any time a user views a new movement.
 - The fields would be indexed by a foreign key linking to the User table
 
 **User One-Rep Maxes**
@@ -534,6 +553,7 @@ The database contains the following tables:
 - This table allows users to record accurate results, track their progress, and help manage the optimum working weight of their workouts
 
 ## 404 / 500 Features
+Should a 404 or 500 error aoccur. html templates and views have been created to accomodate such events.
 
 ## Agile Development Plan
 
@@ -541,17 +561,7 @@ First Iteration testing and feedback:
 
 To simulate Agile principles, this project took an incremental review approach to project development, where the project was released in a beta version to the same group over 2 iterations. This allowed to get feedback on functions and basic developed elements and allowed for the project to adapt to the client's needs
 
-New user stories:
-- _"As a user, i would like to log out from the profile view page, as i would find this more intuitive."_
-- _"As a user, i would like to have my personal settings be more visibly accessible so i can navigate the app more intuitively"_
-- _"As a user, i would like to access the full list of movements in the library in addition to searching for them"_
-- _"As a user, i would like to have a timer on the movement page, so i can track workout time, or rest periods when conducting a movement"_
-- _"As a user, i would like to have a playlist of videos that iterates through my bookmarked movements for a streamlined workout"_
-- _"As a user, i would like to access some of the partner app features on this app for a more seamless experience"_
-- _"As a user, i would like to view the last movement i logged a 1-rep max on from the dashboard"_
-- _"As a user, i would like to view my most viewed movement on the dashboard, as i keep searching for it"_
-
-additional feedback:
+phase 1 feedback:
 - _"Users found the app to look quite empty"_
     - As the app's first iteration was to focus on Assessment criteria, second stage development will aim to pad out the user experience
 - _"too many clicks to access a specific movement"_
@@ -561,6 +571,14 @@ additional feedback:
 - _"site elements seem a bit static and flat"_
     - objects will be assigned some javascript/css animation to give the objects more context
 
+Within deadline restrictions, the main focus was to sharpen the user experience. To make the App have a modular feel, tiles were implements with curved borders and reactive svg Elements. However, these will have to be animated at a future date. 
+
+Buttons were also given a fresh facelift with a revision of the colour palette.
+
+phase 2 feedback:
+
+![Feedback from Ross Park](/static/media/readme-media/stakeholder-feedback-phase-2.jpg)
+
 
 ## Future Development
 
@@ -568,16 +586,17 @@ The following features were not implemented in this iteration of the project due
 
 1. Adding of User Notes on a movement
 2. Implementation of a Terms/End User License agreement/GDPR disclaimer
-3. Reactive Search field that responds in real-time to the users entered data
-    - able to bypass search results page upon selecting a movement from a provided datalist depending on values keyed into search field
+3. Reactive Search field that responds in real-time to the users entered data (on mobile. implemented successfully on keyboard devices)
 4. Remove the reloading of Page elements on submission/POST requests by utilizing async functions and fetch commmands in Javascript
-5. Add the feature of allowing users to append notes to movements
 6. Implement a secure automated method where users can request to change their email
 7. Implement a feature that allows user's to Delete their account
 8. Add a modal that asks the user to confirm deletion of a 1-rep max record upon selecting the delete button for a 1-rep max instead of just immediately deleting the item
-
+9. a panel that displays a user's most-viewed movement
+10. interaction with the "whats on panel" to link to social media platforms
+11. reset password / account recovery feature
+12. a feature where users can create their own flow of movements.
+13. Circumstancial add 1-rm feature. where only weighted movements can only have a 1-rep max.
 ___
-
 
 
 # B U G S
@@ -602,7 +621,7 @@ ___
 - when a 1rm is entered, movement becomes un-bookmarked:
     - closing tag for the edit 1rm form was placed incorrectly inside a for loop on the template. replaced outside of loop and resolved issue
 - Youtube API for embeds fails to load on first attempt:
-    - Known issue with the youtube player API since 2021. Advised client to switch to different provider. In the event of needing to add youtube videos in the future, the following procedure code can be used:
+    - Known issue with the youtube player API since 2021 (https://issuetracker.google.com/issues/249707272?pli=1). Advised client to switch to different provider. In the event of needing to add youtube videos in the future, the following procedure code can be used:
     ``` html
     <!-- Temp if statement being used while library being transferred to different provider -->
       {% if library_movement.vid_link|length >= 12 %}
@@ -622,7 +641,7 @@ ___
     ```
 
 ## Un-resolved bugs
-- iframe in index will not respond to style rules set in style.css
+- iframe in index will not respond to aspect ratio style rule set in style.css
     - had to implement style rules directly into index.html
 - cant remove header from youtube video
     - can be done potentially by using jquery:
@@ -633,16 +652,12 @@ ___
                     .append($("<style type='text/css'>  .my-class{display:none;}  </style>"));
             });
             ```
-        - will address fix later
-- Youtube videos will always fail on first load:
-    - known issue by google and community, currently google are fixing
-        - https://issuetracker.google.com/issues/249707272?pli=1
-    - javascript and API override attempted, but couldn't get it to work
-        - https://stackoverflow.com/questions/19410789/youtube-player-api-with-loop
-    - client has alternative hosting service already set up. Will use this instead.
 - connection refused (error: 111) when trying to reset password.
 - use of brackets in search terms will yield no result.
-- background of footer cant be made transparent
+- bottom border on list elements flashes white before turning to desired color
+- when menu items in footer are targeted, the ancher targets the Paragraph tag it sits in, but the button will not activate it's hover element unless directly hovered over
+- some thumbnail text clashes with the alignment of the SVG elements superimposed over the top of them
+    - procedural code and extra database logic needed for thumbnails. simply a boolean data field to determine the alignment of the thumbnail title, then have javascript alter svg alignments based on the returned data on page load. 
 
 ___
 
@@ -702,6 +717,9 @@ Full Manual Testing of elements can be found in the appended document:
 First Iteration testing and feedback:
 
 To simulate Agile principles, this project took an incremental review approach to project development, where the project was released in a beta version to the same group over 2 iterations. This allowed to get feedback on functions and basic developed elements and allowed for the project to adapt to the client's needs
+
+Phase 1 User testing:
+
 
 # C R E D I T S
 
