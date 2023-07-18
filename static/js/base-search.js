@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 $(function () {
 
     $(`.query`).css('display', 'none');
@@ -8,7 +9,7 @@ $(function () {
         $(`.query`).css('display', 'none');
         var search = $('#library-search').val();
 
-        let querySet = document.getElementsByClassName('query')
+        let querySet = document.getElementsByClassName('query');
 
         for (value of querySet) {
             criteriaMatch = false;
@@ -16,7 +17,7 @@ $(function () {
             query = query.split("-");
             for (word of query) {
                 if (word.includes(search)) {
-                    criteriaMatch = true
+                    criteriaMatch = true;
                 }
                 if (criteriaMatch == true) {
                     document.getElementById(value.id).style.display = 'inline';

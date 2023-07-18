@@ -707,6 +707,8 @@ ___
 - [Zoom](https://zoom.us/)
 - [Cloud Convert](https://cloudconvert.com/)
 - [Google Fonts](https://fonts.google.com/)
+- [W3 Validator](https://validator.w3.org/)
+- [Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/)
 
 ___
 

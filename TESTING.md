@@ -44,8 +44,18 @@ Lighthouse in devtools on chrome was used to establish appropriate accessibility
 
 #### __HTML__
 
+https://validator.w3.org/
+
 **Sign in**
 
+
+#### __CSS__
+
+
+#### __javascript__
+
+
+#### __Python/Django__
 
 ____
 

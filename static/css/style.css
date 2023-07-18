@@ -245,7 +245,7 @@ input::placeholder {
 .dropdown-item:active {
     background-color: #00000000;
     --bs-dropdown-bg: #000;
-    color: fff;
+    color: #fff;
     border-left: 1px solid #2EF74F !important;
     transition-duration: 0.2s;
     transition-timing-function: ease-out;
@@ -262,7 +262,7 @@ input::placeholder {
 .dropdown-item:hover {
     background-color: #00000000;
     --bs-dropdown-bg: #000;
-    color: fff;
+    color: #fff;
     border-left: 1px solid #fff;
     padding-left: 10px;
 }
@@ -307,7 +307,7 @@ input::placeholder {
 #library-search:focus {
     color: #fff;
     background-color: #00000000;
-    border-color: none;
+    border-color: #00000000;
     outline: 0;
     box-shadow: none;
     border-color: #fff;;
