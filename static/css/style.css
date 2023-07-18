@@ -20,8 +20,8 @@ body::-webkit-scrollbar {
     background: transparent;
   }
 
-
 * {
+    scrollbar-width: none;
     background-color: #00000000;
     color: #fff;
     font-family: 'Montserrat', sans-serif;

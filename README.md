@@ -718,7 +718,24 @@ First Iteration testing and feedback:
 
 To simulate Agile principles, this project took an incremental review approach to project development, where the project was released in a beta version to the same group over 2 iterations. This allowed to get feedback on functions and basic developed elements and allowed for the project to adapt to the client's needs
 
-Phase 1 User testing:
+List of Testers:
+
+Alex Danks: Iphone 12 [Safari]
+Dan Cahill: Google Pixel 7 Pro [Chrome]
+Jonathan Walker: Windows PC [Firefox]
+Lily Elakha: Google Pixel 6 [Chrome]
+Christina Myrvold: Android [unknown] 
+Omercan Cirit: Google Pixel 4a [Chrome]
+Amanda Currie: Iphone 14 [Ecosia]
+Gavin Stewart: Android [unknown]
+Cherry Erskine: Samsung Galaxy S22 [Chrome] + [Native browser]
+
+Phase 1 User testing: [Appended as a seperate document here]()
+
+
+
+
+
 
 
 # C R E D I T S
