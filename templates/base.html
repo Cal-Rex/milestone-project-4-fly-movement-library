@@ -49,7 +49,7 @@
 
     <nav id="nav-container" class="navbar navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">
+            <a aria-label="page title" class="navbar-brand" href="{% url 'home' %}">
                 <h1>Movement</h1>
                 <h1 class="title-subhead">Library</h1>
             </a>
@@ -76,8 +76,8 @@
                             <hr class="dropdown-divider">
                         </li>
                         {% for movement in movement_library_list %}
-                        <li><a id="{{ movement.slug }}" class="dropdown-item query"
-                                href="{% url 'movement_detail' movement.slug %}">
+                        <li><a aria-label="view {{ movement.movement_name }}" id="{{ movement.slug }}"
+                                class="dropdown-item query" href="{% url 'movement_detail' movement.slug %}">
                                 {{ movement.movement_name }}
                                 <hr class="dropdown-divider">
                             </a>
@@ -104,25 +104,26 @@
         <div class="offcanvas-body search-offcanvas">
             <!-- body -->
             <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
-                <li><a class="dropdown-item" href="{% url 'home' %}">Dashboard</a></li>
+                <li><a aria-label="return to Dashboard" class="dropdown-item" href="{% url 'home' %}">Dashboard</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="{% url 'edit_profile' %}">Edit Profile</a></li>
+                <li><a aria-label="edit profile" class="dropdown-item" href="{% url 'edit_profile' %}">Edit Profile</a>
+                </li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Log out</a></li>
+                <li><a aria-label="log out" class="dropdown-item" href="{% url 'account_logout' %}">Log out</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- offcanvas 2 -->
+    <!-- offcanvas for bookmarked movements -->
     <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="bookmarks-offcanvas"
         aria-labelledby="offcanvas">
         <div class="offcanvas-header">
             <!-- header -->
-            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Bookmarked Movements</h5>
+            <h5 class="offcanvas-title">Bookmarked Movements</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                 aria-label="Close"></button>
         </div>
@@ -130,44 +131,13 @@
             <!-- body -->
             <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
                 {% for bookmark in bookmarks %}
-                <li><a class="dropdown-item"
+                <li><a aria-label="view {{ bookmark.movement_name }}" class="dropdown-item"
                         href="{% url 'movement_detail' bookmark.slug %}">{{ bookmark.movement_name }}</a>
                 </li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
                 {% endfor %}
-            </ul>
-        </div>
-    </div>
-
-    <!-- offcanvas 3 -->
-    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="library-offcanvas" aria-labelledby="offcanvas">
-        <div class="offcanvas-header">
-            <!-- header -->
-            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">1-Rep Max Records</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body search-offcanvas">
-            <!-- body -->
-            <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
-                {% for record in one_rm_records %}
-                <li>
-                    <a class="dropdown-item" href="{% url 'movement_detail' record.movement.slug %}">
-                        <div class="orm-record">
-                            <p>{{ record.movement }}</p>
-                            <p>{{ record.date_recorded }}</p>
-                        </div>
-                        <div class="orm-value">{{ record.one_rep_max }}</div>
-                    </a>
-                </li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                {% endfor %}
-            </ul>
-
             </ul>
         </div>
     </div>
@@ -184,8 +154,8 @@
             </div>
 
             <div class="col-4">
-                <a class="flycon-link" href="https://www.fly.fit/" target="_blank"><button class="navbar-toggler" type="button"
-                        aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                <a aria-label="Check out our website" class="flycon-link" href="https://www.fly.fit/" target="_blank"><button class="navbar-toggler"
+                        type="button" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon flycon"></span>
                     </button></a>
 

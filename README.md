@@ -4,36 +4,36 @@
 ## F L Y - F U N C T I O N A L - F I T N E S S
 ___
 # Table of Content
-1. Introduction
-2. Design
-    - Project Brief
-    - UX
-    - Development Planes
-        - Strategy
-        - Scope
-        - Structure
-        - Skeleton
-    - Color Scheme
-    - Typography
-    - Imagery & Media
-3. Features
-    - Design Features
-    - Visual Features
-    - Data Management
-    - 404 / 500 Features
-    - Future Development
-4. Bugs
-    - Resolved Bugs
-    - Unresolved Bugs
-5. Technologies
-    - Languages
-    - Frameworks
-    - Libraries
-    - Programs
-6. Testing
-7. Deployment
-8. Credits
-9. Acknowledgements
+1. [Introduction](#i-n-t-r-o-d-u-c-t-i-o-n)
+2. [Design](#d-e-s-i-g-n)
+    - [Project Brief](#project-brief)
+    - [UX](#ux)
+    - [Development Planes](#development-planes)
+        - [Strategy](#strategy-plane)
+        - [Scope](#scope-plane)
+        - [Structure](#structure-plane)
+        - [Skeleton](#skeleton-plane)
+    - [Color Scheme](#colour-scheme)
+    - [Typography](#typography)
+    - [Imagery & Media](#imagery--media)
+3. [Features](#f-e-a-t-u-r-e-s)
+    - [Design Features](#design-features)
+    - [Visual Features](#visual-features)
+    - [Data Management](#data-management)
+    - [404 / 500 Features](#data-management)
+    - [Future Development](#future-development)
+4. [Bugs](#b-u-g-s)
+    - [Resolved Bugs](#resolved-bugs)
+    - [Unresolved Bugs](#un-resolved-bugs)
+5. [Technologies](#t-e-c-h-n-o-l-o-g-i-e-s)
+    - [Languages](#languages)
+    - [Frameworks](#frameworks)
+    - [Libraries](#libraries)
+    - [Programs](#programs)
+6. [Testing](#t-e-s-t-i-n-g)
+7. 
+8. [Credits](#c-r-e-d-i-t-s)
+9. [Acknowledgements]
 
 ___
 
@@ -777,3 +777,29 @@ Manual testing: [Appended as a seperate document here](/TESTING.md)
 - https://stackoverflow.com/questions/30050556/how-to-make-a-text-stroke-with-transparent-text
 - https://stackoverflow.com/questions/20997183/how-to-hide-scrollbar-in-firefox
 
+
+# A C K N O W L E D G E M E N T S
+
+Special thanks to all the following who helped make this project work:
+
+- Ross Park and the Fly Project
+- Dan Cahill 
+- Kaiba the dog
+- everyone who took the time to test the app:
+    - Alex Danks
+    - Lily Elakha
+    - Omercan Cirit
+    - Christina Myrvold
+    - Kirsty Pennycook
+    - Jonathan Walker
+    - Cherry Erskine
+    - Andrew Breslin
+    - Gavin Stewart
+    - Amanda Currie
+- The tutors at code institute who spend a crazy amount of time trying to help me with all of my ridiculous bugs:
+    - Sarah
+    - Ed
+    - Oisin
+    - Josh
+    - Rebecca
+    - Alan

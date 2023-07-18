@@ -36,6 +36,8 @@ ___
 
 2. Login page
 
+![login page](/readme-media/testing/manual/login-page.gif)
+
 Working:
 + forgot password link
 + sign up link
