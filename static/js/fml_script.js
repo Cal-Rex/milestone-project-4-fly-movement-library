@@ -8,8 +8,7 @@ $(function () {
     // function to timeout system messages
     setTimeout(function() {
         let messages = document.getElementById("msg");
-        let alert = new bootstrap.Alert(messages);
-        alert.close();
+        messages.css('display', 'none');
     }, 3000);
 
     // search icon hover toggle
@@ -38,8 +37,6 @@ $(function () {
         let movementSlug = $('iframe')[0].id;
         $('#edit-record-form').attr('action', `/edit_one_rm/${movementSlug}/${recordId}/`);
         $('.edit-rm-oc-label')[0].innerHTML = "Edit 1-RM from:<br>" + $(`.${recordId}`)[0].innerHTML;
-
-        console.log($(`.${recordId}`)[0].innerHTML);
     });
     
     // footer hover animations
