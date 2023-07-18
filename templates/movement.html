@@ -36,12 +36,12 @@
                 <form class="d-inline" action="{% url 'movement_bookmark' library_movement.slug %}" method="POST">
                   {% csrf_token %}
                   {% if bookmarked %}
-                  <button class="btn bookmark-btn uf-btn" type="submit" name="bookmark_button"
+                  <button aria-label="This movement is bookmarked" class="btn bookmark-btn uf-btn" type="submit" name="bookmark_button"
                     value="{{ library_movement.slug }}">
                     <i class="fa-solid fa-bookmark"></i>
                   </button>
                   {% else %}
-                  <button class="btn bookmark-btn uf-btn" type="submit" name="bookmark_button"
+                  <button aria-label="This movement is not bookmarked" class="btn bookmark-btn uf-btn" type="submit" name="bookmark_button"
                     value="{{ library_movement.slug }}">
                     <i class="fa-regular fa-bookmark"></i>
                   </button>
@@ -65,19 +65,19 @@
 
               <!-- add 1-rm button -->
               <div id="add-record">
-                <button class="btn uf-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-a"
-                  aria-controls="offcanvasWithBothOptions"><i class="fa-regular fa-square-plus"></i></button>
+                <button class="btn uf-btn" aria-label="add a new one rep max" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-a">
+                  <i class="fa-regular fa-square-plus"></i>
+                </button>
               </div>
 
               <!-- view all 1-rm records button -->
               <div>
                 <!-- 1rm records -->
                 {% if one_rm_records|length < 1 %}
-                <button class="btn" type="button"><i
+                <button aria-label="you have to add a record to use this feature" class="btn" type="button"><i
                     class="empty-record fa-brands fa-square-font-awesome-stroke"></i></button>
                 {% else %}
-                <button class="btn uf-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-hof"
-                  aria-controls="offcanvasWithBothOptions"><i
+                <button aria-label="One Rep Max records" class="btn uf-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-hof"><i
                     class="fa-brands fa-square-font-awesome-stroke"></i></button>
                 {% endif %}
               </div>
@@ -151,7 +151,7 @@
       {% csrf_token %}
       <div style="margin-top: 20px;">
         <p>
-          <button class="btn btn-outline-success" type="submit"><strong>add</strong></button>
+          <button aria-label="Submit new one rep max" class="btn btn-outline-success" type="submit"><strong>add</strong></button>
         </p>
       </div>
     </form>
@@ -180,12 +180,12 @@
           <div class="col-4 record-button-box" style="text-align: right; padding: 0px 0px 10px 0px;">
             <!-- edit -->
             <!-- get the id of the 1rm record from the button, clarified as the "data" tag -->
-            <button class="btn record-edit" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-e"
-              id="{{ record.id }}" aria-controls="offcanvasWithBothOptions"><i
+            <button aria-label="edit 1rm record {{ record.id }}" class="btn record-edit" type="button" data-bs-toggle="offcanvas" data-bs-target="#oc-orm-e"
+              id="{{ record.id }}"><i
                 class="fa-solid fa-square-pen one-rm-rbtn"></i></button>
 
             <!-- delete -->
-            <a href="/delete_one_rm/{{ library_movement.slug }}/{{ record.id }}"><button class="btn"><i
+            <a href="/delete_one_rm/{{ library_movement.slug }}/{{ record.id }}"><button aria-label="delete record {{ record.id }}" class="btn"><i
                   class="fa-solid fa-square-xmark one-rm-rbtn"></i></button></a>
           </div>
         </div>
@@ -216,7 +216,7 @@
       {% csrf_token %}
       <div style="margin-top: 20px;">
         <p>
-          <button class="btn btn-outline-success" type="submit"><strong>add</strong></button>
+          <button aria-label="update 1rm record {{ record.id }}" class="btn btn-outline-success" type="submit"><strong>add</strong></button>
         </p>
       </div>
     </form>
