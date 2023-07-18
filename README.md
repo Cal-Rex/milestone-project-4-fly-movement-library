@@ -709,6 +709,8 @@ ___
 - [Google Fonts](https://fonts.google.com/)
 - [W3 Validator](https://validator.w3.org/)
 - [Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/)
+- [JSHint](https://jshint.com/)
+- [Code Institute Python Linter](https://pep8ci.herokuapp.com/)
 
 ___
 

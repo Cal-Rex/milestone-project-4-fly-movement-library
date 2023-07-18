@@ -40,23 +40,87 @@ Lighthouse in devtools on chrome was used to establish appropriate accessibility
 
 
 
-### **Code Validattion**
+## **Code Validattion**
 
-#### __HTML__
+### __HTML__
 
-https://validator.w3.org/
+[W3 Validator](https://validator.w3.org/) was used to check the HTML of all Pages cuctomised/not autocreated by django.
 
-**Sign in**
+**index**
+
+[Click to view index.html validation](/readme-media/testing/html-validation/index.png)
+
+**library**
+
+[Click to view library.html validation](/readme-media/testing/html-validation/library.png)
+
+**login**
+
+[Click to View accounts/login.html validation](/readme-media/testing/html-validation/login.png)
+
+**Movement**
+
+[Click to View movement.html validation](/readme-media/testing/html-validation/movement.png)
+
+**Password-reset**
+
+[Click to View accounts/password_reset.html](/readme-media/testing/html-validation/password-reset.png)
+
+**Search results**
+
+[Click to View search_results.html](/readme-media/testing/html-validation/search-results.png)
+
+**Sign up**
+
+[Click to view accounts/signup.html](/readme-media/testing/html-validation/signup.png)
 
 
-#### __CSS__
+### __CSS__
+
+[Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/) was used to check the CSS of all Stylesheets:
+
+**Account pages specific styling**
+[Click to view account-style.css](/readme-media/testing/css-validation/account-style-css.png)
+
+**Library and search result specific styling**
+[Click to view library.css](/readme-media/testing/css-validation/library-css.png)
+
+**style.css**
+
+[Click here to view style.css](/readme-media/testing/css-validation/)
 
 
 #### __javascript__
 
+[JSHint](https://jshint.com/) was used to validate all of the javascript files for this project:
+
+**auth template specific JS**
+[Click to view auth-styling.js](/readme-media/testing/js-validation/auth-styling-js.png)
+
+**search function js**
+[Click to view js for search suggestions function](/readme-media/testing/js-validation/base-search-js.png)
+
+**edit profile js**
+[Click to view input field override js](/readme-media/testing/js-validation/edit-profile-js.png)
+
+**Base JS for all docs**
+[Click to view main JS file](/readme-media/testing/js-validation/fml-script-js.png)
+
+**JS for movement template**
+[Click to view JS specific to the movement template](/readme-media/testing/js-validation/movement-js.png)
+
 
 #### __Python/Django__
 
+All python/Django code was checked using the [CI Python Linter](https://pep8ci.herokuapp.com/)
+
+| admin.py | FlyMovementLibrary/urls.py | movelibrary/urls.py |
+|:-:|:-:|:-:|
+| ![admin.py](/readme-media/testing/python-validation/admin-py.png) | ![FML/urls.py](/readme-media/testing/python-validation/fml-urls-py.png)| ![urls.py](/readme-media/testing/python-validation/urls-py.png) |
+
+| forms.py | models.py | settings.py | views.py |
+|:-:|:-:|:-:|:-:|
+| ![forms.py](/readme-media/testing/python-validation/forms-py.png) | ![models.py](/readme-media/testing/python-validation/models-py.png) | [settings.py](/readme-media/testing/python-validation/settings-py.png) ||
 ____
 
 1. 404/500
