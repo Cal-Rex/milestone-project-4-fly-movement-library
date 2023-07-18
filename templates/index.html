@@ -35,7 +35,7 @@
         </div>
 
         <div id="library-panel-filler" class="col-12 order-last col-lg-6 order-lg-3">
-            <a href="{% url 'library' %}">
+            <a aria-label="link to library" href="{% url 'library' %}">
                 <div class="library-panel index-panel card-bg" style="background-image: url({{ last_movement.thumbnail }});">
                 <p>
                     <!-- <span class="outlined-title">Last Viewed</span> -->
@@ -54,7 +54,7 @@
 
         <!-- Last viewed movement card -->
         <div class="last-movement-card col-12 col-lg-6 order-lg-4">
-            <a href="{% url 'movement_detail' last_movement.slug %}">
+            <a aria-label="link to last viewed movement" href="{% url 'movement_detail' last_movement.slug %}">
                 <div class="index-panel lm-link card-bg" style="background-image: url({{ last_movement.thumbnail }});">
                 <p>
                     <!-- <span class="outlined-title">Last Viewed</span> -->
@@ -73,7 +73,7 @@
 
         <!-- last user 1-rm card -->
         <div class="mini-card col-6 col-lg-3 order-lg-5">
-            <a href="{% url 'movement_detail' last_orm.slug %}">
+            <a aria-label="last movement where a 1-rep max was recorded" href="{% url 'movement_detail' last_orm.slug %}">
                 <div class="card-bg index-panel" style="background-image: url({{ last_orm.thumbnail }});">
                     <svg>
                         <text x="5%" y="30%" class="outlined-title">
@@ -89,7 +89,7 @@
 
         <!-- booking card card -->
         <div class="mini-card col-6 col-lg-3 order-lg-last">
-            <a id="book-a-class" href="https://goteamup.com/p/5379028-the-fly-project/">
+            <a aria-label="head over to TeamUp and log in" id="book-a-class" href="https://goteamup.com/p/5379028-the-fly-project/">
                 <div class="card-bg index-panel" style="background-image: url({{ insta_card.thumbnail }});">
                     <button id="book-a-class-btn" class="btn btn-success">Book a Class</button>
                 </div>
