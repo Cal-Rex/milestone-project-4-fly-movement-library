@@ -128,7 +128,6 @@ class Library(LoginRequiredMixin, generic.ListView):
     login_url = '/accounts/login/'
 
     model = Movement
-    template_name = 'index.html'
     context_object_name = 'movement'
 
     def get(self, request, *args, **kwargs):
@@ -278,7 +277,7 @@ class MovementSearch(LoginRequiredMixin, generic.ListView):
     """
     login_url = '/accounts/login/'
 
-    def get(self, request):
+    def get(self, request, *args, **kwargs):
         movement_library_list = Movement.objects.filter()
         alphabetized = sorted(
             movement_library_list,

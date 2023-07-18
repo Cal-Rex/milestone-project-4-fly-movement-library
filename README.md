@@ -730,9 +730,12 @@ Amanda Currie: Iphone 14 [Ecosia]
 Gavin Stewart: Android [unknown]
 Cherry Erskine: Samsung Galaxy S22 [Chrome] + [Native browser]
 
-Phase 1 User testing: [Appended as a seperate document here]()
 
+Phase 1 User testing: [Appended as a seperate document here](/USER-PHASE-1-TESTING.md)
 
+Phase 2 User testing: [Appended as a seperate document here](/USER-PHASE-2-TESTING.md)
+
+Manual testing: [Appended as a seperate document here](/TESTING.md)
 
 
 
@@ -772,4 +775,5 @@ Phase 1 User testing: [Appended as a seperate document here]()
 - https://www.w3schools.com/jsref/jsref_includes.asp
 - https://www.geeksforgeeks.org/jquery-set-the-value-of-an-input-text-field/
 - https://stackoverflow.com/questions/30050556/how-to-make-a-text-stroke-with-transparent-text
+- https://stackoverflow.com/questions/20997183/how-to-hide-scrollbar-in-firefox
 
