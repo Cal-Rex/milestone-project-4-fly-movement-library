@@ -18,6 +18,34 @@
     9. Library
     10. movement details
 
+____
+
+## **Automated Testing**
+
+### **Accessibility**
+
+Lighthouse in devtools on chrome was used to establish appropriate accessibility and best practices:
+
+| sign in | sign out | sign up |
+| :-----: | :------: | :-----: |
+| ![Lighthouse sign in](/readme-media/testing/lighthouse/sign-in.png) | ![Lighthouse sign out](/readme-media/testing/lighthouse/sign-out.png) | ![Lighthouse sign up](/readme-media/testing/lighthouse/sign-up.png) |
+
+| Password Reset | Search Results | Library |
+| :-----: | :------: | :-----: |
+| ![Lighthouse Password Reset](/readme-media/testing/lighthouse/password-reset.png) | ![Lighthouse Search Results](/readme-media/testing/lighthouse/search-results.png) | ![Lighthouse Library](/readme-media/testing/lighthouse/library.png) |
+
+| Edit Profile | Movement | Index |
+| :-----: | :------: | :-----: |
+| ![Lighthouse Edit Profile](/readme-media/testing/lighthouse/edit-profile.png) | ![Lighthouse Movement](/readme-media/testing/lighthouse/movement.png) | ![Lighthouse Index](/readme-media/testing/lighthouse/) |
+
+
+
+### **Code Validattion**
+
+#### __HTML__
+
+**Sign in**
+
 
 ____
 

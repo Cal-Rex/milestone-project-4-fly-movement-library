@@ -71,11 +71,11 @@ The First version of this Project is to be submitted as an assessment piece as p
 
 | **LO1** | Use an Agile methodology to plan and design a Full-Stack Web application using an MVC framework and related contemporary technologies | achieved by: |
 | ------- | ------------ |------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.1 |	Design a Front-End for a data-driven web application that meets accessibility guidelines, follows the principles of UX design, meets its given purpose and provides a set of user interactions. |    |
+| 1.1 |	Design a Front-End for a data-driven web application that meets accessibility guidelines, follows the principles of UX design, meets its given purpose and provides a set of user interactions. | tested via lighthouse, followed developmental stages using agile pricniples and methodology |
 | 1.2 |	Implement custom HTML and CSS code to create a responsive Full-Stack application consisting of one or more HTML pages with relevant responses to user actions and a set of data manipulation functions |  multiple HTML pages as templates called by Django framework  |
 | 1.3 |	Build a database-backed MVC web application that allows users to store and manipulate data records about a particular domain. | Users can Create, read, update and Delete their own dated 1-rep max records, as well as view the whole history |
-| 1.4 |	Design a database structure relevant for your domain, consisting of a minimum of one custom model. | database consists of 5 custom tables |
-| 1.5 |	Use an Agile tool to manage the planning and implementation of all significant functionality | used github issues/milestones/projects features to manage planning and implementation |
+| 1.4 |	Design a database structure relevant for your domain, consisting of a minimum of one custom model. | database consists of custom tables |
+| 1.5 |	Use an Agile tool to manage the planning and implementation of all significant functionality | used github issues/milestones/projects features to manage planning and implementation over 2 iterations |
 | 1.6 |	Document and implement all User Stories and map them to the project within an Agile tool | Github features (as above) used |
 | 1.7 |	Write Python code that is consistent in style and conforms to the PEP8 style guide and validated HTML and CSS code. | code validated using pylint and checkers |
 | 1.8 |	Include sufficient custom Python logic to demonstrate your proficiency in the language | see all .py files   |
@@ -711,6 +711,7 @@ ___
 ___
 
 # T E S T I N G
+
 
 Full Manual Testing of elements can be found in the appended document:
 
