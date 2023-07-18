@@ -389,6 +389,12 @@ class EditProfile(LoginRequiredMixin, View):
         get request which handles retrival of profile data
         in addition to standard base functions on the view
         """
+        movement_library_list = Movement.objects.filter()
+        alphabetized = sorted(
+            movement_library_list,
+            key=lambda item: item.movement_name
+        )
+        movement_library_list = alphabetized
         bookmarks = Movement.objects.filter(bookmarks__id=request.user.id)
         user = get_object_or_404(User, id=request.user.id)
         user_first_name = user.first_name
@@ -400,6 +406,7 @@ class EditProfile(LoginRequiredMixin, View):
             'profile.html',
             {
                 "name_edit_form": name_edit_form,
+                'movement_library_list': movement_library_list,
                 "bookmarks": bookmarks,
                 "user_first_name": user_first_name,
                 "user_last_name": user_last_name,
