@@ -41,7 +41,7 @@ class Tag(models.Model):
 
 
 class UserNonAuthField(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.PROTECT)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     terms = models.BooleanField(default=False)
     last_movement = models.SlugField(max_length=200, unique=False)
 

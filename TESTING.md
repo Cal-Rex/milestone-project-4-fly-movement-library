@@ -17,8 +17,100 @@
     8. Search results
     9. Library
     10. movement details
-
 ____
+
+## User stories Achieved:
+
+- _"as a User i want to be able to edit any 1-rep max records i have entered in the event that i was bad at math at the time of recording"_
+    - users can edit any one rep max for any movement they onter on the specific movement page, clicking th icon. then selecting the record from the list in the presented offcanvas. when they click the edit icon next to the record, they can then edit the record y filling in the form.
+
+- _"As a user, i want to be able to log in so that i can view specific workout/movement tutorials"_
+    - Log in feature enabled through django Allauth Plugin
+
+- _"As a user, I want to be able to search for specific workouts, so that I can easily find the movement I am looking for"_
+    - There is a search function which also has a responsive list generated in real time depending what is put into the fields
+    - while the tage model is implemented in the app it is not utilised in this version
+
+- _"As a User, I want to be able to Bookmark movements, so that I can refer to them easily at a later date"_
+    - The bookmarking feature is available on every movement
+    - A users bookmarks are always accessible from the bottom right of the app at any time when logged in
+
+- ~_"As a User, I want to be able to know what other exercises compliment the ones i have bookmarked, so that I can expand my training"_~
+    - not implemented in this version due to time constraints
+
+- ~_"As a User, I want to be able to create my own flow of movements, so that i can keep myself right during my own training"_~
+    - Clarified with team at start of project this would not be iable in this iteration
+
+- _"As a User, i want to be able to search for movements even if i am unsure of their names so that I can find my moevements easily without having to know all the correct terminology"_
+    - search function slices and maps words with javascript, meaning it will search every word of every movement for any combination of strings. maximising search capability
+    - this will be further enhanced in future iterations with the implementation of the tags table
+
+- ~_"As a user, I want to be able to have recommendations from my searches, so that if I cant find the movement I am looking for, I have alternatives to try"_~
+    - not implemented in this iteration
+
+- ~_"As a User i want to be able to add my own personal notes to a movement, for my own reference so that i can keep track of different aspects of my workout and training"_~
+    - removed from iteration due to time constraints
+
+- _"As a User I want to be able to record my own 1-rep maxes in the app and date them so that I can track my progression"_
+    - Users can record their one rep max for any movement
+    - whenever a record is creted, the date is automatically saved with the record at the time of creation
+
+- ~_"as a User I want to be able to edit any notes I attach to a workout so that I can amend my notes to have relevant information when I am training"_~
+    - not implemented in this iteration due to time constraints
+
+- ~_"As a user, i would like to log out from the profile view page, as i would find this more intuitive."_~
+    - ran out of time to implement, log out feature still omre readily available from dashboard
+
+- _"As a user, i would like to have my personal settings be more visibly accessible so i can navigate the app more intuitively"_
+    - settings removed from dropdowna nd given dedicated offcanvas on same level as dashboard commands
+
+- _"As a user, i would like to access the full list of movements in the library in addition to searching for them"_
+    - a panel on the dashboard is available that takes you to a full list of movements to select from
+
+- ~_"As a user, i would like to have a timer on the movement page, so i can track workout time, or rest periods when conducting a movement"_~
+     - agreed not to be implemented in this iteration
+
+- ~_"As a user, i would like to have a playlist of videos that iterates through my bookmarked movements for a streamlined workout"_~
+    - not implemented in this iteration
+
+- _"As a user, i would like to access some of the partner app features on this app for a more seamless experience"_
+    - links that open to the gyms booking page given an integral panel on the dashboard
+
+- _"As a user, i would like to view the last movement i logged a 1-rep max on from the dashboard"_
+    - panel available on dash that shows thumbnail of movement in additon to acting as a link ot go straight to that movement
+
+- ~_"As a user, i would like to view my most viewed movement on the dashboard, as i keep searching for it"_~
+    - not implemented due to time constraints
+
+
+## User Goals achieved:
+
+- _allows users to search and view specific functional training movements_
+    - yes, with search function and movement details view
+
+- _allows users to create, read, update, delete and track their development on specific goal-oriented movements_
+    - yes, one rep max feature allows users to create, read, update and delete important tracking info for lifting
+
+- _allows users to keep track of movements they are focusing on developing, or keeping as a handy reference_
+    - bookmarks feature allows movements to be readily avialable to users
+
+- ~_allows users to diversify their training with recommended alternatives_~
+    - not implemented in this version
+
+- ~_allows users to record their own notes and data pertaining to a specific movement_~
+    - not implemented in this version
+
+- _allows admins to see how many people use the app_
+    - features supplied by django
+
+- _allows admins to create, read, update and delete content within the apps dataset_
+    - features supplied by django
+
+- _allows admins to track the popularity of specific app content_
+    - features indirectly supplied by django
+
+- ~_allows users to use the app as a guide through their workout_~
+    - no features to support goal implemented in this version
 
 ## **Automated Testing**
 
@@ -120,8 +212,12 @@ All python/Django code was checked using the [CI Python Linter](https://pep8ci.h
 
 | forms.py | models.py | settings.py | views.py |
 |:-:|:-:|:-:|:-:|
-| ![forms.py](/readme-media/testing/python-validation/forms-py.png) | ![models.py](/readme-media/testing/python-validation/models-py.png) | [settings.py](/readme-media/testing/python-validation/settings-py.png) ||
+| ![forms.py](/readme-media/testing/python-validation/forms-py.png) | ![models.py](/readme-media/testing/python-validation/models-py.png) | ![settings.py](/readme-media/testing/python-validation/settings-py.png) | ![views.py](/readme-media/testing/python-validation/views-py.png) |
+
 ____
+
+
+## Manual testing
 
 1. 404/500
 
@@ -195,7 +291,6 @@ Working:
 
 bugs:
 - duplicate messages on sign in if user signs out and then back in
-- js throws error in console when it has no message box to close, but doesnt impact site function.
 
 ____
 

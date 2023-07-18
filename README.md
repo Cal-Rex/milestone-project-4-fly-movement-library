@@ -89,7 +89,7 @@ The First version of this Project is to be submitted as an assessment piece as p
 | ------- | ----------------- | ------------ |
 | 2.1 |	Develop the model into a usable database where data is stored in a consistent and well-organised manner. | tables structured and implemented where admin access is user friendly |
 | 2.2 | Create functionality for users to create, locate, display, edit and delete records | 1-rep max records feature |
-| 2.3 | All changes to the data should be notified to relevant user |    |
+| 2.3 | All changes to the data should be notified to relevant user | visual elements change on page when data changes, Messages app also employed within django to give real time responses regarding posted/update data to users  |
 | 2.4 | Implement at least one form, with validation, that allows users to create and edit models in the backend | 2 forms for 1 rm data, sugn up form implemented through allauth plugin |
 
 | **LO3** | Identify and apply authorisation, authentication and permission features in a Full-Stack web application solution | achieved by: |
@@ -100,13 +100,13 @@ The First version of this Project is to be submitted as an assessment piece as p
 
 | **LO4** | Create manual and/or automated tests for a Full-Stack Web application using an MVC framework and related contemporary technologies |  achieved by: |
 | ------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| 4.1 |	Design and implement manual and/or automated Python test procedures to assess functionality, usability, responsiveness and data management within the entire web application |    |
-| 4.2 |	Design and implement manual and/or automated JavaScript test procedures to assess functionality, usability, responsiveness and data management within the entire web application |    |
-| 4.3 |	Document all implemented testing in the README. |    |
+| 4.1 |	Design and implement manual and/or automated Python test procedures to assess functionality, usability, responsiveness and data management within the entire web application | Used Code institute Python Linter (see testing)   |
+| 4.2 |	Design and implement manual and/or automated JavaScript test procedures to assess functionality, usability, responsiveness and data management within the entire web application | Used JSHint to quality control code. manual testing conducted   |
+| 4.3 |	Document all implemented testing in the README. | Testing.md appended |
 
 | **LO5** | Use a distributed version control system and a repository hosting service to document, develop and maintain a Full-Stack Web application using an MVC framework and related contemporary technologies | achieved by: |
 | ------- | ------------------------------------------------------------ | ------------ |
-| 5.1 |	Use Git & GitHub for version control of a Full-Stack web application up to deployment, using commit messages to document the development process. |    |
+| 5.1 |	Use Git & GitHub for version control of a Full-Stack web application up to deployment, using commit messages to document the development process. |  attempted  |
 | 5.2 |	Commit final code that is free of any passwords or security-sensitive information to the repository and the hosting platform |    |
 
 | **LO6** | Deploy a Full-Stack Web application using an MVC framework and related contemporary technologies to a cloud-based platform | achieved by: |
@@ -582,7 +582,19 @@ phase 2 feedback:
 
 ## Future Development
 
-The following features were not implemented in this iteration of the project due to time constraints. But will be reviewed with the next iteration of the Project after this Project has been assessed:
+due to the sclae of this project, not all user stories and goals coudl be delivered. as such, the following user stories have been returned to the backlog for the next iteration post-assessment:
+
+- _"As a User, I want to be able to know what other exercises compliment the ones i have bookmarked, so that I can expand my training"_
+- _"As a User, I want to be able to create my own flow of movements, so that i can keep myself right during my own training"_
+- _"As a user, I want to be able to have recommendations from my searches, so that if I cant find the movement I am looking for, I have alternatives to try"_
+- _"As a User i want to be able to add my own personal notes to a movement, for my own reference so that i can keep track of different aspects of my workout and training"_
+- _"as a User I want to be able to edit any notes I attach to a workout so that I can amend my notes to have relevant information when I am training"_
+- _"As a user, i would like to log out from the profile view page, as i would find this more intuitive."_
+- _"As a user, i would like to have a timer on the movement page, so i can track workout time, or rest periods when conducting a movement"_
+- _"As a user, i would like to have a playlist of videos that iterates through my bookmarked movements for a streamlined workout"_
+- _"As a user, i would like to view my most viewed movement on the dashboard, as i keep searching for it"_
+
+as such, the following features were not implemented in this iteration of the project due to time constraints. But will be reviewed with the next iteration of the Project after this Project has been assessed:
 
 1. Adding of User Notes on a movement
 2. Implementation of a Terms/End User License agreement/GDPR disclaimer
@@ -657,7 +669,12 @@ ___
 - bottom border on list elements flashes white before turning to desired color
 - when menu items in footer are targeted, the ancher targets the Paragraph tag it sits in, but the button will not activate it's hover element unless directly hovered over
 - some thumbnail text clashes with the alignment of the SVG elements superimposed over the top of them
-    - procedural code and extra database logic needed for thumbnails. simply a boolean data field to determine the alignment of the thumbnail title, then have javascript alter svg alignments based on the returned data on page load. 
+    - procedural code and extra database logic needed for thumbnails. simply a boolean data field to determine the alignment of the thumbnail title, then have javascript alter svg alignments based on the returned data on page load.
+- when logging in directly after logging out, the app will generate 2 messages upon sign in if a user signs out and then back in again
+- attempting to use email password recovery will result in a 500 error (feature not implemented for assessment)
+- on the edit profile page, the search button animates on form button hover
+- search offcanvas does not have scroll ability, so when suggestions list is longer than viewport height, not all can be seen
+- if a value is entered into the search field and then removed, all movements become suggested in the offcanvas.
 
 ___
 
@@ -691,7 +708,6 @@ ___
     - Mobile
 - [Mozilla Firefox](https://www.mozilla.org/en-GB/firefox/)
 - [Safari](https://www.apple.com/uk/safari/)
-- [Opera GX](https://www.opera.com/)
 - [GIMP 2.10.32](https://www.gimp.org/)
 
 ## Web Applications / Services
@@ -808,3 +824,4 @@ Special thanks to all the following who helped make this project work:
     - Josh
     - Rebecca
     - Alan
+    - Jason
