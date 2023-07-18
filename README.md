@@ -107,14 +107,14 @@ The First version of this Project is to be submitted as an assessment piece as p
 | **LO5** | Use a distributed version control system and a repository hosting service to document, develop and maintain a Full-Stack Web application using an MVC framework and related contemporary technologies | achieved by: |
 | ------- | ------------------------------------------------------------ | ------------ |
 | 5.1 |	Use Git & GitHub for version control of a Full-Stack web application up to deployment, using commit messages to document the development process. |  attempted  |
-| 5.2 |	Commit final code that is free of any passwords or security-sensitive information to the repository and the hosting platform |    |
+| 5.2 |	Commit final code that is free of any passwords or security-sensitive information to the repository and the hosting platform | no sesnsetive info stored within repo |
 
 | **LO6** | Deploy a Full-Stack Web application using an MVC framework and related contemporary technologies to a cloud-based platform | achieved by: |
 | ------- | -------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| 6.1 |	Deploy a final version of the Full-Stack application code to a cloud-based hosting platform and test to ensure it matches the development version |
-| 6.2 |	Ensure that the final deployed code is free of commented out code and has no broken internal links |    |
-| 6.3 |	Document the deployment process in a README file in English |    |
-| 6.4 |	Ensure the security of the deployed version, making sure to not include any passwords in the git repository, that all secret keys are hidden in environment variables or in files that are in .gitignore, and that DEBUG mode is turned off |    |
+| 6.1 |	Deploy a final version of the Full-Stack application code to a cloud-based hosting platform and test to ensure it matches the development version | done |
+| 6.2 |	Ensure that the final deployed code is free of commented out code and has no broken internal links | done, only comments that are left to organise and structure files |
+| 6.3 |	Document the deployment process in a README file in English | yes |
+| 6.4 |	Ensure the security of the deployed version, making sure to not include any passwords in the git repository, that all secret keys are hidden in environment variables or in files that are in .gitignore, and that DEBUG mode is turned off | done |
 
 | **LO7** | Understand and use object-based software concepts | achieved by: |
 | ------- | ------------------------------------------------- | ------------ |
@@ -127,6 +127,12 @@ When undertaking this project, meetings were scheduled with the owner or the IP 
 
 To portray the process, development planes sections will house information for 2 phases. The first from the initial build, then with new criteria created during the first feedback session.
 
+during iterations. the agole process was managed in github. you can view the project boards via the links below:
+
+1. [Fly Movement Library Iteraton 1](https://github.com/users/Cal-Rex/projects/7)
+2. [Fly Movement Library Iteration 2](https://github.com/users/Cal-Rex/projects/9)
+3. [Fly Movement Library Project Backlog](https://github.com/users/Cal-Rex/projects/10)
+
 ## UX
 
 ### Research
@@ -134,7 +140,7 @@ To portray the process, development planes sections will house information for 2
 Training apps are absolutely not a new thing in the App market and economy, and there is an abundance of products out there to draw inspiration from. The idea for this project however, was inspired mainly by the App - [GOWOD](https://www.gowod.app/), which is an app that focuses on stretching and mobility, concepts that pair well and draw close parrallels with functional weightlifting:
 |                                                            |                          GOWOD UI                          |               |
 | :--------------------------------------------------------: | :--------------------------------------------------------: | :------------------------------------: |
-| ![gowod-preview-1](/static/media/readme-media/gowod-1.jpg) | ![gowod-preview-2](/static/media/readme-media/gowod-2.jpg) | ![gowod-preview-3](/static/media/readme-media/gowod-3.jpg) |
+| ![gowod-preview-1](/readme-media/gowod-1.jpg) | ![gowod-preview-2](/readme-media/gowod-2.jpg) | ![gowod-preview-3](/readme-media/gowod-3.jpg) |
 
 - The app is excellent in terms of responsiveness and is very user friendly
 - it provides fantastic tailored information and data to the user based on the information the user enters into the app
@@ -315,48 +321,48 @@ Mobile View:
 
 | Login Page | Sign-up Page | Sign-out Page |
 |:-:|:-:|:-:|
-| ![Login page](/static/media/readme-media/wireframes/mobile/11-log-in.webp) | ![Sign-up Page](/static/media/readme-media/wireframes/mobile/10-sign-up.webp) | ![Sign-out page](/static/media/readme-media/wireframes/mobile/12-sign-out.webp) |
+| ![Login page](/readme-media/wireframes/mobile/11-log-in.webp) | ![Sign-up Page](/readme-media/wireframes/mobile/10-sign-up.webp) | ![Sign-out page](/readme-media/wireframes/mobile/12-sign-out.webp) |
 
 | Index/dashbord | Navigation Menu | Navigation Menu Expanded |
 |:-:|:-:|:-:|
-| ![Dashboard page](/static/media/readme-media/wireframes/mobile/1-index-dashboard.webp) | ![Menu view](/static/media/readme-media/wireframes/mobile/2-menu-demo-1.webp) | ![Menu expanded](/static/media/readme-media/wireframes/mobile/3-menu-demo-2.webp) |
+| ![Dashboard page](/readme-media/wireframes/mobile/1-index-dashboard.webp) | ![Menu view](/readme-media/wireframes/mobile/2-menu-demo-1.webp) | ![Menu expanded](/readme-media/wireframes/mobile/3-menu-demo-2.webp) |
 
 | Edit Profile Page | Edit Profile Page with edited fields | Search Results |
 |:-:|:-:|:-:|
-| ![Edit Profile Page](/static/media/readme-media/wireframes/mobile/8-edit-profile-1.webp) | ![Edit Profile edited view](/static/media/readme-media/wireframes/mobile/9-edit-profile-2.webp) | ![Search Results page](/static/media/readme-media/wireframes/mobile/4-search-results.webp) |
+| ![Edit Profile Page](/readme-media/wireframes/mobile/8-edit-profile-1.webp) | ![Edit Profile edited view](/readme-media/wireframes/mobile/9-edit-profile-2.webp) | ![Search Results page](/readme-media/wireframes/mobile/4-search-results.webp) |
 
 | Movement Detail Page | User 1-Rep-max records for that movement | add / edit a 1-rep max |
 |:-:|:-:|:-:|
-| ![Movement Detail page](/static/media/readme-media/wireframes/mobile/5-movement-detail.webp) | ![1-Rep-max records for that movement](/static/media/readme-media/wireframes/mobile/6-records-menu.webp) | ![add / edit a 1-rep max](/static/media/readme-media/wireframes/mobile/7-add-new-record.webp) |
+| ![Movement Detail page](/readme-media/wireframes/mobile/5-movement-detail.webp) | ![1-Rep-max records for that movement](/readme-media/wireframes/mobile/6-records-menu.webp) | ![add / edit a 1-rep max](/readme-media/wireframes/mobile/7-add-new-record.webp) |
 
 Desktop / larger screen view:
 
 | Dashboard/index | Navigation menu | Search Results Page |
 |:-:|:-:|:-:|
-| ![Dashbaord page Desktop](/static/media/readme-media/wireframes/desktop/01-dt-dashboard.webp) | ![Navigation menu desktop](/static/media/readme-media/wireframes/desktop/02-dt-menu.webp) | ![Search results page desktop](/static/media/readme-media/wireframes/desktop/03-dt-search-results.webp) |
+| ![Dashbaord page Desktop](/readme-media/wireframes/desktop/01-dt-dashboard.webp) | ![Navigation menu desktop](/readme-media/wireframes/desktop/02-dt-menu.webp) | ![Search results page desktop](/readme-media/wireframes/desktop/03-dt-search-results.webp) |
 
 | Dashboard/index | Navigation menu | Search Results Page |
 |:-:|:-:|:-:|
-| ![Movement details page desktop](/static/media/readme-media/wireframes/desktop/04-dt-movement-details.webp) | ![User 1-Rep-max records for that movement Desktop](/static/media/readme-media/wireframes/desktop/05-dt-1rm-records.webp) | ![edit/add 1rm desktop](/static/media/readme-media/wireframes/desktop/06-dt-1rm-form.webp) |
+| ![Movement details page desktop](/readme-media/wireframes/desktop/04-dt-movement-details.webp) | ![User 1-Rep-max records for that movement Desktop](/readme-media/wireframes/desktop/05-dt-1rm-records.webp) | ![edit/add 1rm desktop](/readme-media/wireframes/desktop/06-dt-1rm-form.webp) |
 
 
 #### Colour Scheme
 
 As the branding and style is already created for the client, the Chrome extension [Site Palette](https://chrome.google.com/webstore/detail/site-palette/pekhihjiehdafocefoimckjpbkegknoh/related?hl=en-GB) was used to generate a board of colours to choose from when stylising the app elements:
 
-![colour palette by Site Palette](/static/media/readme-media/colour-palette-1.png)
+![colour palette by Site Palette](/readme-media/colour-palette-1.png)
 
-![colour palette by Site Palette](/static/media/readme-media/colour-palette-2.png)
+![colour palette by Site Palette](/readme-media/colour-palette-2.png)
 
 As site palette only generated "like-colours" for the app, original brand colours have been placed below using a screenshot from [Colormind](http://colormind.io/template/material-dashboard/):
 
-![Fly site Colours](/static/media/readme-media/fly-site-colours.png)
+![Fly site Colours](/readme-media/fly-site-colours.png)
 
 #### Typography
 
 According to Dev Tools, the Fly Site uses only a thin variation of the Montserrat font. As such, The montserrat font was imported from [Google Fonts](https://fonts.google.com/) to stay congruent with the business branding
 
-![Montserrat Font: Google Fonts](/static/media/readme-media/montserrat-font-google.png)
+![Montserrat Font: Google Fonts](/readme-media/montserrat-font-google.png)
 
 
 #### Imagery & Media
@@ -371,17 +377,17 @@ After the first review, site mapping was changed to reflect an experience that b
 
 |                                  Revised Index/Dashboard                                   |
 | :----------------------------------------------------------------------------------------: |
-| ![Revised index/dashboard](/static/media/readme-media/wireframes/mobile/20-dashboard.webp) |
+| ![Revised index/dashboard](/readme-media/wireframes/mobile/20-dashboard.webp) |
 
 
 |                             Revised Index/Dashboard (for Desktop)                              |
 | :--------------------------------------------------------------------------------------------: |
-| ![Revised index/dashboard](/static/media/readme-media/wireframes/desktop/21-dashboard-dt.webp) |
+| ![Revised index/dashboard](/readme-media/wireframes/desktop/21-dashboard-dt.webp) |
 
 
 |                                  Revised offcanvas elements                                   |
 | :-------------------------------------------------------------------------------------------: |
-|   ![Revised index/dashboard](/static/media/readme-media/wireframes/mobile/20-dashboard.webp)  |
+|   ![Revised index/dashboard](/readme-media/wireframes/mobile/20-dashboard.webp)  |
 
 #### Colourscheme
 The initial colours generated by 3rd party service did not seem to mix with the media well. So as a solution, the [fly.fit](https://fly.fit) site was inspected with dev tools, colours were picked out from the page/
@@ -577,7 +583,7 @@ Buttons were also given a fresh facelift with a revision of the colour palette.
 
 phase 2 feedback:
 
-![Feedback from Ross Park](/static/media/readme-media/stakeholder-feedback-phase-2.jpg)
+![Feedback from Ross Park](/readme-media/stakeholder-feedback-phase-2.jpg)
 
 
 ## Future Development
@@ -759,10 +765,9 @@ Phase 2 User testing: [Appended as a seperate document here](/USER-PHASE-2-TESTI
 Manual testing: [Appended as a seperate document here](/TESTING.md)
 
 
-
-
-
 # C R E D I T S
+
+The following sources were used to build and troubleshoot all the issues with this app:
 
 - https://www.csestack.org/django-default-user-model-fields/
 - https://stackoverflow.com/questions/44109/extending-the-user-model-with-custom-fields-in-django
@@ -797,6 +802,8 @@ Manual testing: [Appended as a seperate document here](/TESTING.md)
 - https://www.geeksforgeeks.org/jquery-set-the-value-of-an-input-text-field/
 - https://stackoverflow.com/questions/30050556/how-to-make-a-text-stroke-with-transparent-text
 - https://stackoverflow.com/questions/20997183/how-to-hide-scrollbar-in-firefox
+
+_____
 
 
 # A C K N O W L E D G E M E N T S

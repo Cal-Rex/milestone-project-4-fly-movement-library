@@ -4,19 +4,25 @@
 # Contents
 
 - User Stories
-    - User Stories: Answered
-    - Project Goals: Achieved
+    - [User Stories: Answered](#user-stories-achieved)
+    - [Project Goals: Achieved](#user-goals-achieved)
+- Automated Testing
+    - [Accesibility and best practice](#accessibility)
+    - [HTML](#html)
+    - [CSS](#css)
+    - [Javascript](#javascript)
+    - [Python](#pythondjango)
 - Manual Testing
-    1. 404 / 500
-    2. Login page
-    3. Sign up page
-    4. Forgot password
-    5. Index
-    6. Edit Profile
-    7. Log out
-    8. Search results
-    9. Library
-    10. movement details
+    1. [404 / 500](#1-404500)
+    2. [Login page](#2-login-page)
+    3. [Sign up page](#3-signup-page)
+    4. [Forgot password](#4-forgot-password)
+    5. [Index](#5-index)
+    6. [Edit Profile](#6-edit-profile)
+    7. [Log out](#7-log-out)
+    8. [Search results](#8-search-results)
+    9. [Library](#9-library-page)
+    10. [Movement details](#10-movement-details)
 ____
 
 ## User stories Achieved:
@@ -35,31 +41,13 @@ ____
     - The bookmarking feature is available on every movement
     - A users bookmarks are always accessible from the bottom right of the app at any time when logged in
 
-- ~_"As a User, I want to be able to know what other exercises compliment the ones i have bookmarked, so that I can expand my training"_~
-    - not implemented in this version due to time constraints
-
-- ~_"As a User, I want to be able to create my own flow of movements, so that i can keep myself right during my own training"_~
-    - Clarified with team at start of project this would not be iable in this iteration
-
 - _"As a User, i want to be able to search for movements even if i am unsure of their names so that I can find my moevements easily without having to know all the correct terminology"_
     - search function slices and maps words with javascript, meaning it will search every word of every movement for any combination of strings. maximising search capability
     - this will be further enhanced in future iterations with the implementation of the tags table
 
-- ~_"As a user, I want to be able to have recommendations from my searches, so that if I cant find the movement I am looking for, I have alternatives to try"_~
-    - not implemented in this iteration
-
-- ~_"As a User i want to be able to add my own personal notes to a movement, for my own reference so that i can keep track of different aspects of my workout and training"_~
-    - removed from iteration due to time constraints
-
 - _"As a User I want to be able to record my own 1-rep maxes in the app and date them so that I can track my progression"_
     - Users can record their one rep max for any movement
     - whenever a record is creted, the date is automatically saved with the record at the time of creation
-
-- ~_"as a User I want to be able to edit any notes I attach to a workout so that I can amend my notes to have relevant information when I am training"_~
-    - not implemented in this iteration due to time constraints
-
-- ~_"As a user, i would like to log out from the profile view page, as i would find this more intuitive."_~
-    - ran out of time to implement, log out feature still omre readily available from dashboard
 
 - _"As a user, i would like to have my personal settings be more visibly accessible so i can navigate the app more intuitively"_
     - settings removed from dropdowna nd given dedicated offcanvas on same level as dashboard commands
@@ -67,20 +55,11 @@ ____
 - _"As a user, i would like to access the full list of movements in the library in addition to searching for them"_
     - a panel on the dashboard is available that takes you to a full list of movements to select from
 
-- ~_"As a user, i would like to have a timer on the movement page, so i can track workout time, or rest periods when conducting a movement"_~
-     - agreed not to be implemented in this iteration
-
-- ~_"As a user, i would like to have a playlist of videos that iterates through my bookmarked movements for a streamlined workout"_~
-    - not implemented in this iteration
-
 - _"As a user, i would like to access some of the partner app features on this app for a more seamless experience"_
     - links that open to the gyms booking page given an integral panel on the dashboard
 
 - _"As a user, i would like to view the last movement i logged a 1-rep max on from the dashboard"_
     - panel available on dash that shows thumbnail of movement in additon to acting as a link ot go straight to that movement
-
-- ~_"As a user, i would like to view my most viewed movement on the dashboard, as i keep searching for it"_~
-    - not implemented due to time constraints
 
 
 ## User Goals achieved:
@@ -94,12 +73,6 @@ ____
 - _allows users to keep track of movements they are focusing on developing, or keeping as a handy reference_
     - bookmarks feature allows movements to be readily avialable to users
 
-- ~_allows users to diversify their training with recommended alternatives_~
-    - not implemented in this version
-
-- ~_allows users to record their own notes and data pertaining to a specific movement_~
-    - not implemented in this version
-
 - _allows admins to see how many people use the app_
     - features supplied by django
 
@@ -109,8 +82,6 @@ ____
 - _allows admins to track the popularity of specific app content_
     - features indirectly supplied by django
 
-- ~_allows users to use the app as a guide through their workout_~
-    - no features to support goal implemented in this version
 
 ## **Automated Testing**
 
@@ -219,7 +190,7 @@ ____
 
 ## Manual testing
 
-1. 404/500
+#### 1. 404/500
 
 ![404/500](/readme-media/testing/manual/404.gif)
 
@@ -232,7 +203,7 @@ bugs:
 
 ___
 
-2. Login page
+#### 2. Login page
 
 ![login page](/readme-media/testing/manual/login-page.gif)
 
@@ -247,9 +218,9 @@ bugs:
 
 ___
 
-3. Signup page
+#### 3. Signup page
 
-![sign up](/readme-media/testing/manual/Sign-up.gif)
+ ![sign up](/readme-media/testing/manual/Sign-up.gif)
 
 Working:
 + all fields working
@@ -259,9 +230,9 @@ Working:
 
 Bugs: none
 
-4.  Forgot Password
+#### 4. Forgot Password
 
-![Forgot password](/readme-media/testing/manual/forgot-password.gif)
+ ![Forgot password](/readme-media/testing/manual/forgot-password.gif)
 
 Working:
 + buttons
@@ -271,7 +242,7 @@ Working:
 bugs:
 - email recovery not working because not implemented for assessment
 
-5. Index
+#### 5. Index
 
 ![index](/readme-media/testing/manual/index.gif)
 
@@ -292,10 +263,8 @@ Working:
 bugs:
 - duplicate messages on sign in if user signs out and then back in
 
-____
 
-
-6. Edit Profile
+#### 6. Edit Profile
 
 ![Edit Profile](/readme-media/testing/manual/edit-profile.gif)
 
@@ -309,9 +278,8 @@ Working:
 Bugs:
 - search button animates on form button hover
 
-____
 
-7. log out
+#### 7. log out
 
 ![log out](/readme-media/testing/manual/log-out.gif)
 
@@ -321,9 +289,8 @@ working:
 
 bugs: none
 
-____
 
-8. search results
+#### 8. search results
 
 ![Search results](/readme-media/testing/manual/search-results.gif)
 
@@ -336,9 +303,8 @@ working:
 bugs:
 - none that havent already been mentioned
 
-___
 
-9. Library Page
+#### 9. Library Page
 
 ![library](/readme-media/testing/manual/library.gif)
 
@@ -351,7 +317,7 @@ bugs: none
 
 ____
 
-10. Movement details
+#### 10. Movement details
 
 ![movement-details](/readme-media/testing/manual/movement-details.gif)
 
