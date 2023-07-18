@@ -13,10 +13,10 @@
     4. Forgot password
     5. Index
     6. Edit Profile
-    - Log out
-    - Search results
-    - Library
-    - movement details
+    7. Log out
+    8. Search results
+    9. Library
+    10. movement details
 
 
 ____
@@ -93,4 +93,83 @@ bugs:
 - duplicate messages on sign in if user signs out and then back in
 - js throws error in console when it has no message box to close, but doesnt impact site function.
 
-6. 
+____
+
+
+6. Edit Profile
+
+![Edit Profile](/readme-media/testing/manual/edit-profile.gif)
+
+Working:
++ input fields
++ post method to update fields
++ message to confirm update
++ offcanvas functions provided by base html
++ buttons animate on hover
+
+Bugs:
+- search button animates on form button hover
+
+____
+
+7. log out
+
+![log out](/readme-media/testing/manual/log-out.gif)
+
+working:
++ return to dashboard button
++ log out button
+
+bugs: none
+
+____
+
+8. search results
+
+![Search results](/readme-media/testing/manual/search-results.gif)
+
+working:
++ list items animate on hover
++ base html functions like off canvas menus working
++ nav buttons hover
++ search function works within search function
+
+bugs:
+- none that havent already been mentioned
+
+___
+
+9. Library Page
+
+![library](/readme-media/testing/manual/library.gif)
+
+Working:
++ every list item animates on hover
++ every list item takes you to the correct movement and loads correctly
++ All base html templae functions work
+
+bugs: none
+
+____
+
+10. Movement details
+
+![movement-details](/readme-media/testing/manual/movement-details.gif)
+
+working:
++ specific directions for movement available.
++ link to full library available
+Search function works same as all other templates
++ video loads correctly
++ bookmark feature works
++ add new one rep max works
++ conditional statement of add 1rm changed with value upon database containing a record. will revert back when there is no record
++ user can add a new value
++ user can update a value
++ user can delete a value
++user can list full record of all recorded data
+
+bugs:
+- search offcanvas does not have scroll ability
+
+
