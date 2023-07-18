@@ -7,8 +7,7 @@ $(function () {
 
     // function to timeout system messages
     setTimeout(function() {
-        let messages = document.getElementById("msg");
-        messages.css('display', 'none');
+        $('msg').css('display', 'none');
     }, 3000);
 
     // search icon hover toggle
@@ -20,7 +19,6 @@ $(function () {
         $('.search-icon').removeClass('search-icon-hover');
         $('.large-search').css('color', '#000');
     });
-
 
     // book a class panel hover response
     $('#book-a-class').on('mouseenter', function() {
